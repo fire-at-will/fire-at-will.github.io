@@ -1,0 +1,429 @@
+<DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Will Taylor</title>
+  <meta name="author" content="Will Taylor">
+  <meta name="description" content="Will Taylor">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Include JQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+  <!-- Include MDL -->
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+
+  <!-- Colors -->
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.cyan-pink.min.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+  <!-- Email Script -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="scripts.js"></script>
+
+  <!-- Sweet Alert -->
+  <script src="dist/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="dist/sweetalert.css">
+
+  <script>
+    function adjustComputerSkillsHeight(){
+      // Called on load to make the computer skills section height correct
+      var computerSkillsHeight = $("#computer-skills").height();
+
+      var thirdOfHeight = computerSkillsHeight / 3;
+
+      computerSkillsHeight = computerSkillsHeight + thirdOfHeight;
+
+      $("#computer-skills").height(computerSkillsHeight);
+      alert("Done")
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+  <!-- Uses a header that contracts as the page scrolls down. -->
+  <!-- Uses a header that contracts as the page scrolls down. -->
+  <style>
+  .waterfall-demo-header-nav .mdl-navigation__link:last-of-type  {
+    padding-right: 0;
+  }
+  </style>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color-text--grey-700">
+
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall mdl-color-text--grey-700">
+        <div class="mdl-layout__header-row">
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <div class="android-navigation-container mdl-color-text--grey-700">
+            <nav class="android-navigation mdl-navigation mdl-color-text--grey-700">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-color-text--grey-700" href="#top-bar" id="about-me-button">About Me</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-color-text--grey-700" id="resume-button">Resume</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-color-text--grey-700" href="#contact">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Title</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#top-bar">About Me</a>
+        <a class="mdl-navigation__link" href="#work-experience">Resume</a>
+        <a class="mdl-navigation__link" href="#contact">Contact</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <!-- Your content goes here -->
+
+        <!-- My Name -->
+        <div class="mdl-color--primary" id="title">
+          <div class="mdl-layout__header-row">
+            <h1>Will Taylor</h1>
+          </div>
+          <!-- Bottom Half of Bar -->
+          <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          </div>
+        </div>
+        <!-- End My Name -->
+
+        <!-- Accent Bar -->
+        <section class="mdl-color--accent mdl-grid" id="top-bar"></section>
+
+
+        <!-- Start About Me -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing" id="about-me">
+          <div class="mdl-cell mdl-cell--12-col">
+            <h4>About Me</h4>
+
+            <p>Hi! My name is Will Taylor and I am currently a junior at Texas Christian University in Fort Worth, Texas.
+              I'm originally from Jackson, Mississippi, and am enjoying my new home in Texas very much.
+              I am currently pursuing a BS in computer science with a minor in business.
+            </p>
+
+            <p>TODO: Write more stuff about me...
+            </p>
+
+          </div>
+        </section>
+        <!-- End About Me-->
+
+        <!-- Start Resume Section (Work Experience) -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="work-experience">
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+              <h4 class="mdl-cell mdl-cell--12-col">Work Experience</h4>
+              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                <div class="section__circle-container__circle mdl-color--primary"></div>
+              </div>
+
+              <!-- C Spire Internship -->
+              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                <h4>Software Development Intern, C Spire</h4>
+
+                <h5>June - July 2015</h5>
+                <h5>Ridgeland, MS</h5>
+
+                <ul>
+                  <li>Created an auto-aiming robot turret using face-recognition technology.</li>
+                  <li>Implemented the Netflix Archaius framework in a proof of concept Scala application.</li>
+                </ul>
+
+              </div>
+
+              <!-- TCU Dev Job -->
+              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                <div class="section__circle-container__circle mdl-color--primary"></div>
+              </div>
+
+              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                <h4>Android Developer, Texas Christian University</h4>
+
+                <h5>May - August 2014</h5>
+                <h5>Fort Worth, Texas</h5>
+
+                <ul>
+                  <li>Used Java and Android APIs to develop the Alumni Module in the TCU Mobile Android App</li>
+                  <li>Added location and favorite features to the existing Frogsaver Android App</li>
+                </ul>
+
+              </div>
+
+              <!-- Millsaps Gig -->
+              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                <div class="section__circle-container__circle mdl-color--primary"></div>
+              </div>
+
+              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                <h4>Administrative Assistant, Millsaps College Else School of Management</h4>
+
+                <h5>June - August 2013</h5>
+                <h5>Jackson, MS</h5>
+
+                <ul>
+                  <li>Surveyed alumni of the Else school through phone calls, emails, and LinkedIn</li>
+                  <li>Compiled alumni information into Excel spreadsheet</li>
+                </ul>
+
+              </div>
+
+              <!-- Covenant Caregivers Gig -->
+              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                <div class="section__circle-container__circle mdl-color--primary"></div>
+              </div>
+
+              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                <h4>Administrative Assistant, Covenant Caregivers</h4>
+
+                <h5>May - August 2012</h5>
+                <h5>Madison, MS</h5>
+
+                <ul>
+                  <li>Arranged interview times for potential employees</li>
+                  <li>Sorted and organized employee W2 forms and other information</li>
+                </ul>
+
+              </div>
+
+          </div>
+        </div>
+          <!-- End Work Experience -->
+      </section>
+      <!-- End Work Experience Section -->
+
+      <!-- Start Education -->
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="education">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+          <div class="mdl-card__supporting-text">
+            <!-- Content -->
+            <div class="mdl-typography--display-1-color-contrast">Education</div>
+
+            <!-- TCU Picture -->
+            <div align="center">
+              <img src="./assets/images/tcu.jpg" align="center" alt="Texas Christian University">
+            </div>
+
+            <!-- Blank Line -->
+            <p></p>
+            <h4>Texas Christian University</h4>
+            <p align="left">Hello</p>
+            <p align="right">World</p>
+            <p>TODO: Write TCU Education stuff</p>
+          </div>
+          <div class="mdl-card__actions">
+            <a href="http://www.tcu.edu" target="_blank" class="mdl-button">TCU's Website</a>
+          </div>
+        </div>
+      </section>
+      <!-- End Education -->
+
+      <!-- Start Computer Skills -->
+      <div class="computer-skills-section mdl-typography--text-center" id="computer-skills">
+
+        <div class="mdl-typography--display-1-color-contrast" style="color:white;">Computer Skills</div>
+
+        <p>  </p>
+
+        <p class="dark-background-text" align="center">During my time at TCU and at my jobs, I have learned many different programming
+          languages and technologies.</p>
+
+          <p>  </p>
+
+          <!-- Start Programming Languages Table -->
+          <table class="mdl-data-table mdl-js-data-table" align="center">
+
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Skill Level</th>
+                <th>Programming Languages</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Advanced</td>
+                <td>Java</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Intermediate</td>
+                <td>Swift, Python, C, HTML/CSS, JavaScript, Scala</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Proficient</td>
+                <td>Fortran, Pascal</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!-- End Programming Languages Table -->
+
+          <p>  </p>
+          <p>  </p>
+
+          <!-- Start Technologies Table -->
+          <table class="mdl-data-table mdl-js-data-table" align="center">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">TODO:</th>
+                <th>Name these headers!!!</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">APIs / Libraries</td>
+                <td>Java Swing, Android APIs, SpriteKit API</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Operating Systems</td>
+                <td>Mac OSX, Windows (XP, 7, 8), Linux (Ubuntu, Debian, Mint, Rasbian)</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Applications</td>
+                <td>Eclipse, IntelliJ, XCode, Android Studio, Microsoft Word, Excel, Powerpoint</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!-- End Technologies Table -->
+
+      </div>
+      <!-- End Computer Skills -->
+
+      <!-- Start Contact -->
+      <section class="mdl-color--accent mdl-grid mdl-grid--nospacing mdl-shadow--2dp" id="contact">
+
+        <!-- Start Contact Card -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing" style="padding-top: 25px; padding-bottom: 25px;">
+          <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+            <div class="mdl-card__supporting-text">
+              <h4>Say Hi!</h4>
+              <p>Send me a message and I'll get back to you within one business day.</p>
+
+              <!-- Start Grid -->
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                  <!-- Name Text Field -->
+                  <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield textfield-demo">
+                      <input class="mdl-textfield__input" type="text" id="contact-name-textfield" />
+                      <label class="mdl-textfield__label" for="sample1">Name</label>
+                    </div>
+                  </form>
+                  <!-- End Name Text Field -->
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                  <!-- Email Text Field -->
+                  <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield textfield-demo">
+                      <input class="mdl-textfield__input" type="text" id="contact-email-textfield" />
+                      <label class="mdl-textfield__label" for="sample1">Email Address</label>
+                    </div>
+                  </form>
+                  <!-- End Email Text Field -->
+                </div>
+
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                  <!-- Message Text Area -->
+                  <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield textfield-demo">
+                      <textarea class="mdl-textfield__input" type="text" align="center" rows= "4" columns="20" id="contact-message-textarea" ></textarea>
+                      <label class="mdl-textfield__label" for="sample5">Message</label>
+                    </div>
+                  </form>
+                  <!-- End Message Text Area -->
+                </div>
+
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                  <!-- Send Button -->
+                  <div align="center">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" onclick="sendEmail()" id="send-button">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+                <!-- End Send Button -->
+
+          </div>
+          <!-- End Grid -->
+        </div>
+        <!-- End Contact Card -->
+
+        </section>
+
+        <section class="section--center mdl-grid mdl-grid--no-spacing" style="padding-top: 25px; padding-bottom: 25px;">
+          <!-- Start Social Card -->
+          <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" align="center">
+            <div class="mdl-card__supporting-text">
+              <h4 align="left">Social Media</h4>
+              <p alight="left">You can also reach me through these amazing social media sites.</p>
+
+              <!-- Grid For Social Media Links -->
+              <div class="mdl-grid" align="center">
+
+                <!-- Facebook Link -->
+                <div class="mdl-cell mdl-cell--4-col">
+                  <a href="https://www.facebook.com/will.taylor.3990" target="_blank" align="center">
+                    <img border="0" alt="Facebook" src="./assets/icons/facebook.png" width="64" height="64" align="center">
+                  </a>
+                </div>
+
+                <!-- Twitter Link -->
+                <div class="mdl-cell mdl-cell--4-col">
+                  <a href="https://twitter.com/Fire_At_Will_" target="_blank" align="center">
+                    <img border="0" alt="Facebook" src="./assets/icons/twitter.png" width="64" height="64" align="center">
+                  </a>
+                </div>
+
+                <!-- LinkedIn Link -->
+                <div class="mdl-cell mdl-cell--4-col">
+                  <a href="https://www.linkedin.com/pub/will-taylor/101/955/5ab" target="_blank" align="center">
+                    <img border="0" alt="LinkedIn" src="./assets/icons/linkedin.png" width="64" height="64" align="center">
+                  </a>
+                </div>
+              </div>
+
+            </div>
+            <!-- End Suporting Text -->
+        </div>
+        <!-- End Social Card -->
+        </section>
+
+      </section>
+
+      <!-- End Contact -->
+
+
+      <!-- Start Footer -->
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer--left-section">
+          <div class="mdl-logo">TODO:</div>
+          <ul class="mdl-mini-footer--link-list">
+            <li>Make</li>
+            <li>An</li>
+            <li>Interesting</li>
+            <li>Footer</li>
+          </ul>
+        </div>
+      </footer>
+      <!-- End Footer -->
+
+      <!-- End My Content -->
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
