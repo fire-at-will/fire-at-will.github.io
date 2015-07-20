@@ -1,3 +1,10 @@
+function onLoad(){
+  // Function called when the body of the HTML
+  // has loaded. Used for init stuff.
+
+  fixEducationWidth()
+}
+
 function sendEmail() {
 
   var name    = document.getElementById('contact-name-textfield').value
@@ -39,11 +46,19 @@ function sendEmail() {
      }
    }
   }).done(function(response) {
-    messageSentNotification();
-    console.log(response); // if you're into that sorta thing
+    swal("Message Sent!", "I'll get back to you within one business day. Thanks!", "success");
+    console.log(response);
   });
 }
 
-function messageSentNotification(){
-  swal("Message Sent!", "I'll get back to you within one business day. Thanks!", "success")
+
+function fixEducationWidth(){
+  // Called on to fix the width of the education card to match the width
+  // of the work experience card
+
+  // Get work experience width
+  var workExperienceCardWidth = $("#work-experience").width();
+
+  // Set education card width
+  $("#education-card").width(workExperienceCardWidth);
 }

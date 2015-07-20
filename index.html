@@ -30,10 +30,10 @@
 
   <link rel="stylesheet" href="styles.css">
 
+
 </head>
 
-<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-  <!-- Uses a header that contracts as the page scrolls down. -->
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" onload="onLoad()">
   <!-- Uses a header that contracts as the page scrolls down. -->
   <style>
   .waterfall-demo-header-nav .mdl-navigation__link:last-of-type  {
@@ -155,7 +155,7 @@
                 <h5>Jackson, MS</h5>
 
                 <ul>
-                  <li>Surveyed alumni of the Else school through phone calls, emails, and LinkedIn</li>
+                  <li>Surveyed alumni of the Else school on phone calls, emails, and LinkedIn</li>
                   <li>Compiled alumni information into Excel spreadsheet</li>
                 </ul>
 
@@ -185,108 +185,41 @@
       </section>
       <!-- End Work Experience Section -->
 
-      <!-- Start Education -->
-      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" style="background: #6239AB" id="education">
-        <div class="mdl-card mdl-cell mdl-cell--12-col">
-          <div class="mdl-card__supporting-text">
-            <!-- Content -->
-            <h4 class="mdl-cell mdl-cell--12-col">Education</h4>
+      <!-- Start Contact -->
+      <section class="mdl-grid mdl-grid--nospacing mdl-shadow--2dp" style="background: #6239AB" id="education-section">
 
-            <!-- TCU Picture -->
-            <div align="center">
-              <img src="./assets/images/tcu.jpg" align="center" alt="Texas Christian University">
+        <!-- Start Contact Card -->
+        <section class="section--center mdl-grid mdl-grid--no-spacing" style="background: #6239AB; padding-top: 25px; padding-bottom: 25px;">
+          <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" id="education-card">
+            <div class="mdl-card__supporting-text">
+              <!-- Content -->
+              <h4 class="mdl-cell mdl-cell--12-col">Education</h4>
+
+              <!-- TCU Picture -->
+              <div align="center">
+                <img src="./assets/images/tcu.jpg" align="center" alt="Texas Christian University">
+              </div>
+
+              <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone" style="padding-bottom: 10px;">
+                <h4>Texas Christian University</h4>
+
+                <h5>Computer Science Major, Business Minor</h5>
+                <h5>Class of 2017</h5>
+
+                <ul>
+                  <li>Computer Science GPA: 3.46</li>
+                  <li>Overall GPA: 3.22</li>
+                </ul>
+              </div>
+
             </div>
-
-            <!-- Blank Line -->
-            <p></p>
-            <h4>Texas Christian University</h4>
-            <p align="left">Hello</p>
-            <p align="right">World</p>
-            <p>TODO: Write TCU Education stuff</p>
-          </div>
-          <div class="mdl-card__actions">
-            <a href="http://www.tcu.edu" target="_blank" class="mdl-button" style="color: #FB2C7A">TCU's Website</a>
-          </div>
+            <div class="mdl-card__actions">
+              <a href="http://www.tcu.edu" target="_blank" class="mdl-button" style="color: #FB2C7A">TCU's Website</a>
+            </div>
         </div>
+        <!-- End Education Card -->
+        </section>
       </section>
-      <!-- End Education -->
-
-      <!-- Start Computer Skills -->
-      <div class="computer-skills-section mdl-typography--text-center" id="computer-skills">
-
-        <div class="mdl-typography--display-1-color-contrast" style="color:white;">Computer Skills</div>
-
-        <p>  </p>
-
-        <p class="dark-background-text" align="center">During my time at TCU and at my jobs, I have learned many different programming
-          languages and technologies.</p>
-
-          <p>  </p>
-
-          <!-- Start Programming Languages Table -->
-          <table class="mdl-data-table mdl-js-data-table" align="center">
-
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Skill Level</th>
-                <th>Programming Languages</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Advanced</td>
-                <td>Java</td>
-              </tr>
-
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Intermediate</td>
-                <td>Swift, Python, C, HTML/CSS, JavaScript, Scala</td>
-              </tr>
-
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Proficient</td>
-                <td>Fortran, Pascal</td>
-              </tr>
-
-            </tbody>
-          </table>
-          <!-- End Programming Languages Table -->
-
-          <p>  </p>
-          <p>  </p>
-
-          <!-- Start Technologies Table -->
-          <table class="mdl-data-table mdl-js-data-table" align="center">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">TODO:</th>
-                <th>Name these headers!!!</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">APIs / Libraries</td>
-                <td>Java Swing, Android APIs, SpriteKit API</td>
-              </tr>
-
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Operating Systems</td>
-                <td>Mac OSX, Windows (XP, 7, 8), Linux (Ubuntu, Debian, Mint, Rasbian)</td>
-              </tr>
-
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Applications</td>
-                <td>Eclipse, IntelliJ, XCode, Android Studio, Microsoft Word, Excel, Powerpoint</td>
-              </tr>
-
-            </tbody>
-          </table>
-          <!-- End Technologies Table -->
-
-      </div>
-      <!-- End Computer Skills -->
 
       <!--******************** Start Personal Projects *********************-->
       <section class="section--center mdl-grid mdl-grid--no-spacing" style="padding-top: 25px;">
@@ -380,6 +313,84 @@
           </div>
         </div>
       </section>
+      <!-- End Personal Projects -->
+
+      <!-- Start Computer Skills -->
+      <div class="computer-skills-section mdl-typography--text-center" id="computer-skills">
+
+        <div class="mdl-typography--display-1-color-contrast" style="color:white;">Computer Skills</div>
+
+        <p>  </p>
+
+        <p class="dark-background-text" align="center">During my time at TCU and at my jobs, I have learned many different programming
+          languages and technologies.</p>
+
+          <p>  </p>
+
+          <!-- Start Programming Languages Table -->
+          <table class="mdl-data-table mdl-js-data-table" align="center">
+
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Skill Level</th>
+                <th>Programming Languages</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Advanced</td>
+                <td>Java</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Intermediate</td>
+                <td>Swift, Python, C, HTML/CSS, JavaScript, Scala</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Proficient</td>
+                <td>Fortran, Pascal</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!-- End Programming Languages Table -->
+
+          <p>  </p>
+          <p>  </p>
+
+          <!-- Start Technologies Table -->
+          <table class="mdl-data-table mdl-js-data-table" align="center">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">TODO:</th>
+                <th>Name these headers!!!</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">APIs / Libraries</td>
+                <td>Java Swing, Android APIs, SpriteKit API</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Operating Systems</td>
+                <td>Mac OSX, Windows (XP, 7, 8), Linux (Ubuntu, Debian, Mint, Rasbian)</td>
+              </tr>
+
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Applications</td>
+                <td>Eclipse, IntelliJ, XCode, Android Studio, Microsoft Word, Excel, Powerpoint</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!-- End Technologies Table -->
+
+      </div>
+      <!-- End Computer Skills -->
 
       <!-- Start Contact -->
       <section class="mdl-grid mdl-grid--nospacing mdl-shadow--2dp" style="background: #00487C" id="contact">
