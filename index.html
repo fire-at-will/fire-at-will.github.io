@@ -28,20 +28,6 @@
   <script src="dist/sweetalert-dev.js"></script>
   <link rel="stylesheet" href="dist/sweetalert.css">
 
-  <script>
-    function adjustComputerSkillsHeight(){
-      // Called on load to make the computer skills section height correct
-      var computerSkillsHeight = $("#computer-skills").height();
-
-      var thirdOfHeight = computerSkillsHeight / 3;
-
-      computerSkillsHeight = computerSkillsHeight + thirdOfHeight;
-
-      $("#computer-skills").height(computerSkillsHeight);
-      alert("Done")
-    }
-  </script>
-
   <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -200,7 +186,7 @@
       <!-- End Work Experience Section -->
 
       <!-- Start Education -->
-      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="education">
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" style="background: #6239AB" id="education">
         <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__supporting-text">
             <!-- Content -->
@@ -219,7 +205,7 @@
             <p>TODO: Write TCU Education stuff</p>
           </div>
           <div class="mdl-card__actions">
-            <a href="http://www.tcu.edu" target="_blank" class="mdl-button">TCU's Website</a>
+            <a href="http://www.tcu.edu" target="_blank" class="mdl-button" style="color: #FB2C7A">TCU's Website</a>
           </div>
         </div>
       </section>
@@ -396,7 +382,7 @@
       </section>
 
       <!-- Start Contact -->
-      <section class="mdl-color--accent mdl-grid mdl-grid--nospacing mdl-shadow--2dp" id="contact">
+      <section class="mdl-grid mdl-grid--nospacing mdl-shadow--2dp" style="background: #00487C" id="contact">
 
         <!-- Start Contact Card -->
         <section class="section--center mdl-grid mdl-grid--no-spacing" style="padding-top: 25px; padding-bottom: 25px;">

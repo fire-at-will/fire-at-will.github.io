@@ -30,7 +30,8 @@ html, body {
   }
 
     .android-navigation .mdl-navigation__link:hover {
-      border-bottom: 4px solid #F99B32;
+      /*Navigavtion Tab Underline*/
+      border-bottom: 4px solid #FB2C7A;
     }
 
 
@@ -272,13 +273,6 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
-
-/*.computer-skills-section {
-  position: relative;
-  background: mdl-color--accent;
-  background-size: cover;
-  height: 800px;
-}*/
 
 .computer-skills-section {
   position: relative;
