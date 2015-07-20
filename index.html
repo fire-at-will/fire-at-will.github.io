@@ -7,27 +7,19 @@
   <meta name="description" content="Will Taylor">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Include JQuery -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 
-  <!-- Include MDL -->
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
 
   <!-- Colors -->
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.cyan-pink.min.css" />
 
+  <!-- Google Stuff -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Email Script -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="scripts.js"></script>
-
-  <!-- Sweet Alert -->
-  <script src="dist/sweetalert-dev.js"></script>
+  <!-- Sweet Alert Style Sheet -->
   <link rel="stylesheet" href="dist/sweetalert.css">
 
+  <!-- My Style Sheet -->
   <link rel="stylesheet" href="styles.css">
 
 
@@ -580,6 +572,36 @@
       </div>
     </main>
   </div>
+
+<!-- *************************** Scripts ***************************-->
+<!-- Include MDL -->
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+<!-- Include JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Include my scripts -->
+<script src="scripts.js"></script>
+<!-- Sweet Alert -->
+<script src="dist/sweetalert-dev.js"></script>
+<!-- Magical Scrolling Script -->
+<script type="text/javascript">
+  // This Script hijacks any hrefs that point to a spot on this page and then makes it scroll
+ $(document).ready(function(){
+   $('a[href*=#]').click(function() {
+     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+     && location.hostname == this.hostname) {
+       var $target = $(this.hash);
+       $target = $target.length && $target
+       || $('[name=' + this.hash.slice(1) +']');
+       if ($target.length) {
+         var targetOffset = $target.offset().top;
+         $('html,main')
+         .animate({scrollTop: targetOffset}, 1000);
+        return false;
+       }
+     }
+   });
+ });
+</script>
 
 </body>
 </html>
