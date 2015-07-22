@@ -10,6 +10,7 @@ function onLoadDesktop(){
     return false;
   }
 
+  alert("Not mobile")
   fixEducationWidth()
   removeGPSScreenshotIfNeeded)()
 }
