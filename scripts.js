@@ -11,6 +11,7 @@ function onLoadDesktop(){
   }
 
   fixEducationWidth()
+  removeGPSScreenshotIfNeeded)()
 }
 
 
@@ -23,6 +24,15 @@ function determineIfMobile(){
     return true;
   } else {
     return false;
+  }
+}
+
+function removeGPSScreenshotIfNeeded(){
+  var width = window.innerWidth;
+
+  if(width <= 826){
+    console.log("Removing GPS Screenshot")
+    document.getElementById("#removable-gps-screenshot").style.display = "none";
   }
 }
 
