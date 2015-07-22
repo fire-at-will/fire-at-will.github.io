@@ -5,6 +5,7 @@ function onLoadDesktop(){
   var onMobile = determineIfMobile();
 
   if(onMobile){
+    // Redirect to mobile page
     window.location = "mobile.html";
     return false;
   }
@@ -18,8 +19,7 @@ function determineIfMobile(){
   console.log(width)
 
   if (width <= 699) {
-    //document.location = "mobile.html";
-    alert("On mobile");
+    console.log("On Mobile")
     return true;
   } else {
     return false;
