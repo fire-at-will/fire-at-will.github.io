@@ -7,7 +7,6 @@
   <meta name="description" content="Will Taylor">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <!-- Colors -->
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.cyan-pink.min.css" />
 
@@ -19,12 +18,12 @@
   <link rel="stylesheet" href="dist/sweetalert.css">
 
   <!-- My Style Sheet -->
+  <link rel="stylesheet" href="mobileStyles.css">
   <link rel="stylesheet" href="styles.css">
 
 </head>
 
-<body>
-  <main>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
       <!-- The drawer is always open in large screens. The header is always shown,
       even in small screens. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -32,8 +31,6 @@
         <div class="mdl-layout__header-row">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                       mdl-textfield--floating-label mdl-textfield--align-right">
-
-            </label>
 
             <!-- Navigation -->
             <div class="android-navigation-container mdl-color-text--grey-700">
@@ -47,6 +44,7 @@
           </div>
         </div>
       </header>
+
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Will Taylor</span>
         <nav class="mdl-navigation">
@@ -55,16 +53,20 @@
           <a class="mdl-navigation__link" href="">Contact</a>
         </nav>
       </div>
+
       <main class="mdl-layout__content">
         <div class="page-content">
           <!-- Your content goes here -->
+
           <section class="mdl-color--accent mdl-grid" id="top-bar"></section>
 
+          <h1 align="center">Will Taylor</h1>
+          <h5 align="center">Some catchy phrase</h5>
 
           <!-- Start About Me -->
-          <section class="section--center mdl-grid mdl-grid--no-spacing" id="about-me">
-            <div class="mdl-cell mdl-cell--12-col">
-              <h4>About Me</h4>
+          <div class="mdl-card mdl-cell mdl-cell--12-col" style="padding-left: 10px; padding-right:10px;">
+            <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+              <h4 class="mobileHeader mdl-cell mdl-cell--12-col" style="color:#E4005B">About Me</h4>
 
               <p>Hi! My name is Will Taylor and I am currently a junior at Texas Christian University in Fort Worth, Texas.
                 I'm originally from Jackson, Mississippi, and am enjoying my new home in Texas very much.
@@ -75,97 +77,17 @@
               </p>
 
             </div>
-          </section>
-          <!-- End About Me-->
-
-          <!-- Start Resume Section (Work Experience) -->
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="work-experience">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                <h4 class="mdl-cell mdl-cell--12-col">Work Experience</h4>
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-
-                <!-- C Spire Internship -->
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h4>Software Development Intern, C Spire</h4>
-
-                  <h5>June - July 2015</h5>
-                  <h5>Ridgeland, MS</h5>
-
-                  <ul>
-                    <li>Created an auto-aiming robot turret using face-recognition technology.</li>
-                    <li>Implemented the Netflix Archaius framework in a proof of concept Scala application.</li>
-                  </ul>
-
-                </div>
-
-                <!-- TCU Dev Job -->
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h4>Android Developer, Texas Christian University</h4>
-
-                  <h5>May - August 2014</h5>
-                  <h5>Fort Worth, Texas</h5>
-
-                  <ul>
-                    <li>Used Java and Android APIs to develop the Alumni Module in the TCU Mobile Android App</li>
-                    <li>Added location and favorite features to the existing Frogsaver Android App</li>
-                  </ul>
-
-                </div>
-
-                <!-- Millsaps Gig -->
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h4>Administrative Assistant, Millsaps College Else School of Management</h4>
-
-                  <h5>June - August 2013</h5>
-                  <h5>Jackson, MS</h5>
-
-                  <ul>
-                    <li>Surveyed alumni of the Else school on phone calls, emails, and LinkedIn</li>
-                    <li>Compiled alumni information into Excel spreadsheet</li>
-                  </ul>
-
-                </div>
-
-                <!-- Covenant Caregivers Gig -->
-                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-                  <div class="section__circle-container__circle mdl-color--primary"></div>
-                </div>
-
-                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <h4>Administrative Assistant, Covenant Caregivers</h4>
-
-                  <h5>May - August 2012</h5>
-                  <h5>Madison, MS</h5>
-
-                  <ul>
-                    <li>Arranged interview times for potential employees</li>
-                    <li>Sorted and organized employee W2 forms and other information</li>
-                  </ul>
-
-                </div>
-
-            </div>
           </div>
-            <!-- End Work Experience -->
-        </section>
-        <!-- End Work Experience Section -->
+          <!-- End About Me -->
+
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="work-experience">
+
+          </section>
+
           <!-- End My Content -->
         </div>
-      </main>
-    </div>
-
-  </main>
+    </main>
+</div>
 
 
 
@@ -176,7 +98,6 @@
 <!-- *************************** Scripts ***************************-->
 <!-- Include MDL -->
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
-
 <!-- Include JQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- Include my scripts -->
@@ -203,7 +124,5 @@
    });
  });
 </script>
-
-
 </body>
 </html>
