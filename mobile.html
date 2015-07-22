@@ -1,0 +1,110 @@
+<DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile</title>
+  <meta name="author" content="Will Taylor">
+  <meta name="description" content="Will Taylor">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Colors -->
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.cyan-pink.min.css" />
+
+  <!-- Google Stuff -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Sweet Alert Style Sheet -->
+  <link rel="stylesheet" href="dist/sweetalert.css">
+
+  <!-- My Style Sheet -->
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+
+
+</head>
+
+<body>
+  <main>
+      <!-- The drawer is always open in large screens. The header is always shown,
+      even in small screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+                mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                      mdl-textfield--floating-label mdl-textfield--align-right">
+
+            </label>
+
+            <!-- Navigation -->
+            <div class="android-navigation-container mdl-color-text--grey-700">
+              <nav class="android-navigation mdl-navigation mdl-color-text--grey-700">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-color-text--grey-700" href="#top-bar" id="about-me-button">About Me</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-color-text--grey-700" href="#work-experience" id="resume-button">Resume</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-color-text--grey-700" href="#contact">Contact</a>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Will Taylor</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">About Me</a>
+          <a class="mdl-navigation__link" href="">Resume</a>
+          <a class="mdl-navigation__link" href="">Contact</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+
+        </div>
+      </main>
+    </div>
+
+  </main>
+
+
+
+<!-- </div> -->
+<!-- </main> -->
+
+
+<!-- *************************** Scripts ***************************-->
+<!-- Include MDL -->
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+
+<!-- Include JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Include my scripts -->
+<script src="scripts.js"></script>
+<!-- Sweet Alert -->
+<script src="dist/sweetalert-dev.js"></script>
+<!-- Magical Scrolling Script -->
+<script type="text/javascript">
+  // This Script hijacks any hrefs that point to a spot on this page and then makes it scroll
+ $(document).ready(function(){
+   $('a[href*=#]').click(function() {
+     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+     && location.hostname == this.hostname) {
+       var $target = $(this.hash);
+       $target = $target.length && $target
+       || $('[name=' + this.hash.slice(1) +']');
+       if ($target.length) {
+         var targetOffset = $target.offset().top;
+         $('html,main')
+         .animate({scrollTop: targetOffset}, 1000);
+        return false;
+       }
+     }
+   });
+ });
+</script>
+
+
+</body>
+</html>

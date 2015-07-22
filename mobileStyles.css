@@ -1,0 +1,12 @@
+.mobile-navigation .mdl-navigation__link {
+  display: inline-block;
+  height: 60px;
+  line-height: 68px;
+  background-color: transparent !important;
+  border-bottom: 4px solid transparent;
+}
+
+  .mobile-navigation .mdl-navigation__link:hover {
+    /*Navigavtion Tab Underline*/
+    border-bottom: 4px solid #FB2C7A;
+  }

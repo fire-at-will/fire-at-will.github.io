@@ -1,8 +1,29 @@
-function onLoad(){
+function onLoadDesktop(){
   // Function called when the body of the HTML
   // has loaded. Used for init stuff.
 
+  var onMobile = determineIfMobile();
+
+  if(onMobile){
+    window.location = "mobile.html";
+    return false;
+  }
+
   fixEducationWidth()
+}
+
+
+function determineIfMobile(){
+  var width = window.innerWidth;
+  console.log(width)
+
+  if (width <= 699) {
+    //document.location = "mobile.html";
+    alert("On mobile");
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function sendEmail() {
