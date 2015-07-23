@@ -10,9 +10,8 @@ function onLoadDesktop(){
     return false;
   }
 
-  alert("Not mobile")
   fixEducationWidth()
-  removeGPSScreenshotIfNeeded)()
+  removeGPSScreenshotIfNeeded()
 }
 
 
@@ -29,13 +28,12 @@ function determineIfMobile(){
 }
 
 function removeGPSScreenshotIfNeeded(){
-  alert("Testing GPS Screenshot")
   var width = window.innerWidth;
 
-  if(width <= 826){
-    alert("Removing Screenshot")
+  if(width <= 840){
     console.log("Removing GPS Screenshot")
-    document.getElementById("#removable-gps-screenshot").style.display = "none";
+
+    document.getElementById("removable-gps-screenshot").style.display = "none"
   }
 }
 
