@@ -284,6 +284,7 @@ html, body {
 .dark-background-text {
   color: white;
   font-size: 120%;
+  padding-top: 25px;
 }
 
 .android-wear-band {
