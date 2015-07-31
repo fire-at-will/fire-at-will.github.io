@@ -108,7 +108,7 @@ function fixEducationWidth(){
   // of the work experience card
 
   // Get work experience width
-  var workExperienceCardWidth = $("#work-experience").width();
+  var workExperienceCardWidth = $("#work-experience-card").width();
 
   // Set education card width
   $("#education-card").width(workExperienceCardWidth);
