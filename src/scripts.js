@@ -12,12 +12,16 @@ function onLoadDesktop(){
 
   fixEducationWidth()
   removeGPSScreenshotIfNeeded()
+
+  // Register Card Expansion
+  $('.goldie-expand').simpleexpand();
+  $('.gps-expand').simpleexpand();
+  $('.resume-expand').simpleexpand();
 }
 
 
 function determineIfMobile(){
   var width = window.innerWidth;
-  console.log(width)
 
   if (width <= 699) {
     console.log("On Mobile")
@@ -35,6 +39,21 @@ function removeGPSScreenshotIfNeeded(){
 
     document.getElementById("removable-gps-screenshot").style.display = "none"
   }
+}
+
+function toggleButtonText(element){
+  var button = element
+  var showMore = button.getAttribute("data-show-more")
+
+  if(showMore == "true"){
+    button.text = "Click to Show Less"
+    button.setAttribute("data-show-more", "false")
+  } else {
+    button.text = "Click to Show More"
+    button.setAttribute("data-show-more", "true")
+  }
+
+
 }
 
 function sendEmail() {
