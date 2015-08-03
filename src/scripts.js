@@ -17,8 +17,8 @@ function onLoadDesktop(){
   $('.goldie-expand').simpleexpand();
   $('.gps-expand').simpleexpand();
   $('.resume-expand').simpleexpand();
-}
 
+}
 
 function determineIfMobile(){
   var width = window.innerWidth;
