@@ -10,8 +10,6 @@
   <!-- Colors -->
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.cyan-pink.min.css" />
 
-  <link rel="shortcut icon" href="/icon.ico" />
-
   <!-- Google Stuff -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -52,6 +50,14 @@
         </div>
       </div>
 
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Will Taylor</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#title">About Me</a>
+        <a class="mdl-navigation__link" href="#work-experience">Resume</a>
+        <a class="mdl-navigation__link" href="#contact">Contact</a>
+      </nav>
+    </div>
     <main class="mdl-layout__content" onscroll="onScroll()">
       <div class="page-content">
         <!-- Your content goes here -->
@@ -780,7 +786,6 @@
 <!-- Magical Scrolling Script -->
 <script type="text/javascript">
   // This function hijacks any href links that go to this page and then make them scroll nicely
-
    $(document).ready(function() {
     function filterPath(string) {
     return string
@@ -790,7 +795,6 @@
     }
     var locationPath = filterPath(location.pathname);
     var scrollElem = scrollableElement('html', 'main');
-
     $('a[href*=#]').each(function() {
       var thisPath = filterPath(this.pathname) || locationPath;
       if (  locationPath == thisPath
@@ -808,7 +812,6 @@
         }
       }
     });
-
     function scrollableElement(els) {
       for (var i = 0, argLength = arguments.length; i <argLength; i++) {
         var el = arguments[i],
@@ -826,7 +829,6 @@
       }
       return [];
     }
-
   });
 </script>
 
