@@ -647,7 +647,6 @@
 
     $('a[href*=#]').each(function() {
       var thisPath = filterPath(this.pathname) || locationPath;
-      alert(thisPath)
       if (  locationPath == thisPath
       && (location.hostname == this.hostname || !this.hostname)
       && this.hash.replace(/#/,'') ) {
