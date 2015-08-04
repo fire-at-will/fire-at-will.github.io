@@ -34,7 +34,7 @@
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall mdl-color-text--grey-700">
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-color-text--grey-700" style="font-size: 25px;">Will Taylor</span>
+          <span class="mdl-color-text--grey-700" style="font-size: 25px;" id="myNameScroll">Will Taylor</span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <!-- Navigation -->
@@ -58,14 +58,14 @@
         <a class="mdl-navigation__link" href="#contact">Contact</a>
       </nav>
     </div>
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content" onscroll="onScroll()">
       <div class="page-content">
         <!-- Your content goes here -->
 
         <!-- My Name -->
         <div class="mdl-color--primary" id="title">
           <div class="mdl-layout__header-row">
-            <h1>Will Taylor</h1>
+            <h1 id="my-name-title">Will Taylor</h1>
           </div>
           <!-- Bottom Half of Bar -->
           <div class="mdl-layout--large-screen-only mdl-layout__header-row">
@@ -74,7 +74,7 @@
         <!-- End My Name -->
 
         <!-- Accent Bar -->
-        <section class="mdl-color--accent mdl-grid" id="top-bar"></section>
+        <section class="mdl-color--accent mdl-grid" id="accent-bar"></section>
 
         <!-- Start About Me -->
         <section class="section--center mdl-grid mdl-grid--no-spacing" id="about-me">
@@ -763,6 +763,8 @@
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
 <!-- Include JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Include JQuery Waypoints -->
+<script src="src/jquery.visible.min.js"></script>
 <!-- Sweet Alert -->
 <script src="dist/sweetalert-dev.js"></script>
 <!-- Simple Expand -->

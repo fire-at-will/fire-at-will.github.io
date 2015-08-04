@@ -18,6 +18,24 @@ function onLoadDesktop(){
   $('.gps-expand').simpleexpand();
   $('.resume-expand').simpleexpand();
 
+
+
+}
+
+function onScroll(){
+  // Listen for when accent bar goes in and out of viewport
+  // to show the will taylor in the menu bar
+
+  var titleName   = $('#my-name-title')
+  var scrollName  = document.getElementById("myNameScroll")
+
+  if ($(titleName).visible(true)) {
+    // The element is visible, do something
+    scrollName.style.display = "none"
+  } else {
+      // The element is NOT visible, do something else
+    scrollName.style.display = "inline"
+  }
 }
 
 function determineIfMobile(){
