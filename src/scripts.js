@@ -17,9 +17,27 @@ function onLoadDesktop(){
   $('.goldie-expand').simpleexpand();
   $('.gps-expand').simpleexpand();
   $('.resume-expand').simpleexpand();
+}
 
+function onLoadMobile(){
+  // Function called when the body of the HTML
+  // has loaded. Used for init stuff.
 
+  var onMobile = determineIfMobile();
 
+  if(!onMobile){
+    // Redirect to desktop page
+    window.location = "index.html";
+    return false;
+  }
+
+  fixEducationWidth()
+  removeGPSScreenshotIfNeeded()
+
+  // Register Card Expansion
+  $('.goldie-expand').simpleexpand();
+  $('.gps-expand').simpleexpand();
+  $('.resume-expand').simpleexpand();
 }
 
 function onScroll(){
