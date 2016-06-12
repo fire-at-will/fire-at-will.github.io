@@ -24,7 +24,7 @@ if(SORT_BY_ROWS){
 
   for(i = 0; i < imageData.height; i++){
 
-     //console.log("Processing row: " + i + "/" + imageData.height)
+     console.log("Processing row: " + i + "/" + imageData.height)
 
     var rowInterval = SORT_INTERVAL
     if(RANDOM_INTERVAL){
