@@ -62,6 +62,6 @@ onmessage = function(e){
 
   // Done sorting!
   console.log("Done!")
-  postMessage({'data': imageData})
+  self.postMessage(imageData)
   close()
 }
