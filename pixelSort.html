@@ -38,9 +38,10 @@
 
             <h3 style="color: #E4005B">Pixel Sorting</h3>
 
-            <div id="canvasDiv" style="text-align: center;">
-              <canvas id="imageCanvas"></canvas><br>
-            </div>
+            <!-- <div id="canvasDiv" style="text-align: center;"> -->
+              <!-- <canvas id="imageCanvas"></canvas><br> -->
+              <img id="imageItem" style="max-width: 100%; height: auto;"></img>
+            <!-- </div> -->
 
             <div class="mdl-grid" >
               <div class="mdl-cell mdl-cell--6-col">
@@ -50,7 +51,7 @@
 
               <div class="mdl-cell mdl-cell--6-col" style="text-align: right">
                 <br><br>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="sortImage()">
                   Sort
                 </button>
               </div>
@@ -74,22 +75,22 @@
                 <div class="mdl-grid" style="text-align: center">
 
                   <div class="mdl-cell mdl-cell--4-col">
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                      <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="row-radio-button">
+                      <input type="radio" id="row-radio-button" class="mdl-radio__button" name="sort-by-settings" value="1" checked>
                       <span class="mdl-radio__label">Rows</span>
                     </label>
                   </div>
 
                   <div class="mdl-cell mdl-cell--4-col">
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                      <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="column-radio-button">
+                      <input type="radio" id="column-radio-button" class="mdl-radio__button" name="sort-by-settings" value="2">
                       <span class="mdl-radio__label">Columns</span>
                     </label>
                   </div>
 
                   <div class="mdl-cell mdl-cell--4-col">
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                      <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="circle-radio-button">
+                      <input type="radio" id="circle-radio-button" class="mdl-radio__button" name="sort-by-settings" value="3">
                       <span class="mdl-radio__label">Circles</span>
                     </label>
                   </div>
@@ -118,8 +119,8 @@
                   <!-- Random checkbox -->
                   <div class="mdl-cell mdl-cell--6-col">
                     <br>
-                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-                      <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="random-interval-switch">
+                      <input type="checkbox" id="random-interval-switch" class="mdl-switch__input" checked>
                       <span class="mdl-switch__label">Random Interval Size</span>
                     </label>
                   </div>
