@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pixel Sorting</title>
+
+    <!-- Colors -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css" />
+
+    <!-- Google Stuff -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="about_styles.css">
+
+  </head>
+
+  <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+
+          <span class="mdl-layout-title" style="font-size: 200%;">Pixel Sorting</span>
+
+          <div class="mdl-layout-spacer"></div>
+
+        </div>
+      </header>
+      <div class="demo-ribbon mdl-color--primary"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+
+            <h3 style="color: #E4005B">Pixel Sorting</h3>
+
+            <div id="canvasDiv" style="text-align: center;">
+              <canvas id="imageCanvas"></canvas><br>
+            </div>
+
+            <div class="mdl-grid" >
+              <div class="mdl-cell mdl-cell--6-col">
+                <h5>Image File</h5>
+                <input type="file" accept="image/*" id="imageLoader" name="imageLoader"/>
+              </div>
+
+              <div class="mdl-cell mdl-cell--6-col" style="text-align: right">
+                <br><br>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                  Sort
+                </button>
+              </div>
+
+            </div>
+
+
+
+            <br><br>
+
+            <!--**************** Settings ****************-->
+            <h5>Settings</h5>
+
+            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+              <div class="mdl-tabs__tab-bar">
+                  <a href="#sort-by-panel" class="mdl-tabs__tab is-active">Sort By</a>
+                  <a href="#sort-interval-panel" class="mdl-tabs__tab">Sort Interval</a>
+              </div>
+
+              <div class="mdl-tabs__panel is-active" id="sort-by-panel">
+                <div class="mdl-grid" style="text-align: center">
+
+                  <div class="mdl-cell mdl-cell--4-col">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                      <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+                      <span class="mdl-radio__label">Rows</span>
+                    </label>
+                  </div>
+
+                  <div class="mdl-cell mdl-cell--4-col">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                      <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+                      <span class="mdl-radio__label">Columns</span>
+                    </label>
+                  </div>
+
+                  <div class="mdl-cell mdl-cell--4-col">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                      <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
+                      <span class="mdl-radio__label">Circles</span>
+                    </label>
+                  </div>
+
+                </div> <!-- End Grid -->
+
+              <p>This setting lets you control how your picture is sorted. By choosing rows or columns, your picture will
+                be sorted by rows or columns with a width of one pixel. If you choose to sort by circles, your picture will be
+                sorted in circles, starting at the center of the image and going out from there.
+              </p>
+              </div>
+
+              <div class="mdl-tabs__panel" id="sort-interval-panel">
+
+                <div class="mdl-grid">
+
+                  <!-- Input value -->
+                  <div class="mdl-cell mdl-cell--6-col" style="text-align: center">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\[0-9]+)?" id="sortIntervalInput" value=200>
+                      <label class="mdl-textfield__label" for="sortIntervalInput">Sort Interval</label>
+                      <span class="mdl-textfield__error">ERROR: Input is not an integer!</span>
+                    </div>
+                  </div>
+
+                  <!-- Random checkbox -->
+                  <div class="mdl-cell mdl-cell--6-col">
+                    <br>
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                      <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                      <span class="mdl-switch__label">Random Interval Size</span>
+                    </label>
+                  </div>
+                </div>
+
+                <p>The sort interval determines how many pixels we sort at a time. The lower this value is, the less the sorted
+                  picture will look like the original picture. Enabling random interval size gives each row or column sorted to
+                  have a different random value which maxes out at the sort interval provided. Circle sorting does not currently
+                  support sorting intervals.
+                </p>
+
+
+
+              </div>  <!-- End Sort Interval Panel -->
+
+            </div>
+
+          </div>
+        </div>
+      </main>
+
+      <footer class="demo-footer mdl-mini-footer">
+        <div class="mdl-mini-footer--right-section">
+          <ul class="mdl-mini-footer--link-list">
+            <li>
+              <a style="color: #E4005B; font-size: 107%;" href="http://willtaylor.io/index.html">Go to main page</a>
+            </li>
+          </ul>
+
+        </div>
+      </footer>
+
+    </div>
+    <!-- Include MDL -->
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+    <!-- Include JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include my scripts -->
+    <script src="src/pixelSort.js"></script>
+  </body>
+</html>
