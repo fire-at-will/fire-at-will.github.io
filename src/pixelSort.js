@@ -87,7 +87,7 @@ function sortImage(){
         progressLabel.innerText = "Sorting " + sortName + " " + (e.data[1] + 1) + "/" + e.data[2];
 
         var progressBar = document.getElementById('progressBar');
-        progressBar.MaterialProgress.setProgress( (e.data[1] + 1 / e.data[2]) * 100);
+        progressBar.MaterialProgress.setProgress( (e.data[1] + 1 / e.data[2]));
 
       } else {
         // Sort complete
