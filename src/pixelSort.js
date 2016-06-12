@@ -59,60 +59,16 @@ function sortImage(){
 
   if (window.Worker) {
 
+    // Get image data
+    var tempCanvas = document.createElement('canvas');   // Create new canvas in memory. Otherwise we get the downsized image.
+    var context = tempCanvas.getContext('2d');
+
+    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
     var worker = new Worker("src/sort.js");
+    worker.postMessage(imageData, SORT_BY_ROWS, SORT_BY_COLUMNS, SORT_BY_CIRCLES, SORT_INTERVAL, RANDOM_INTERVAL);
 
   }
-
-  // Get image data
-  var tempCanvas = document.createElement('canvas');   // Create new canvas in memory. Otherwise we get the downsized image.
-  var context = tempCanvas.getContext('2d');
-
-  imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-  if(SORT_BY_ROWS){
-    console.log("Sorting by rows.")
-
-    for(i = 0; i < imageData.height; i++){
-
-       //console.log("Processing row: " + i + "/" + imageData.height)
-
-      var rowInterval = SORT_INTERVAL
-      if(RANDOM_INTERVAL){
-        // Create a random number x where 2 < x < SORT_INTERVAL
-        rowInterval = Math.floor((Math.random() * SORT_INTERVAL) + 2);
-      }
-
-      var endOfLine = imageData.width
-
-      // How many sections we have to sort in each row
-      var loops = Math.floor(imageData.width / rowInterval)
-      //console.log(loops)
-      for(k = 0; k < loops; k++){
-        var array = []
-
-        // Get the next pixels to sort in the interval
-        for(j = 0; j < rowInterval; j++){
-          //console.log(i)
-          array.push(getPixelData(k * rowInterval + j, i))
-        }
-
-        // Sort this interval
-        quickSort(array)
-        //console.log(array)
-
-        // Replace image pixels with the sorted pixels
-        for(j = 0; j < rowInterval; j++){
-          setPixelData( (k * rowInterval + j), i, array[j] )
-        }
-
-      }
-
-    }
-  }
-
-  // Done sorting!
-  console.log("Done!")
-  drawImage(imageData)
 }
 
 function getSettingValues(){
