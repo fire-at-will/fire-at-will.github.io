@@ -17,50 +17,51 @@ onmessage = function(e){
   SORT_BY_CIRCLES = e.data[3]
   SORT_INTERVAL = e.data[4]
   RANDOM_INTERVAL = e.data[5]
-}
 
-if(SORT_BY_ROWS){
-  console.log("Sorting by rows.")
+  console.log(SORT_BY_ROWS)
+  if(SORT_BY_ROWS){
+    console.log("Sorting by rows.")
 
-  for(i = 0; i < imageData.height; i++){
+    for(i = 0; i < imageData.height; i++){
 
-     console.log("Processing row: " + i + "/" + imageData.height)
+       console.log("Processing row: " + i + "/" + imageData.height)
 
-    var rowInterval = SORT_INTERVAL
-    if(RANDOM_INTERVAL){
-      // Create a random number x where 2 < x < SORT_INTERVAL
-      rowInterval = Math.floor((Math.random() * SORT_INTERVAL) + 2);
-    }
-
-    var endOfLine = imageData.width
-
-    // How many sections we have to sort in each row
-    var loops = Math.floor(imageData.width / rowInterval)
-    //console.log(loops)
-    for(k = 0; k < loops; k++){
-      var array = []
-
-      // Get the next pixels to sort in the interval
-      for(j = 0; j < rowInterval; j++){
-        //console.log(i)
-        array.push(getPixelData(k * rowInterval + j, i))
+      var rowInterval = SORT_INTERVAL
+      if(RANDOM_INTERVAL){
+        // Create a random number x where 2 < x < SORT_INTERVAL
+        rowInterval = Math.floor((Math.random() * SORT_INTERVAL) + 2);
       }
 
-      // Sort this interval
-      quickSort(array)
-      //console.log(array)
+      var endOfLine = imageData.width
 
-      // Replace image pixels with the sorted pixels
-      for(j = 0; j < rowInterval; j++){
-        setPixelData( (k * rowInterval + j), i, array[j] )
+      // How many sections we have to sort in each row
+      var loops = Math.floor(imageData.width / rowInterval)
+      //console.log(loops)
+      for(k = 0; k < loops; k++){
+        var array = []
+
+        // Get the next pixels to sort in the interval
+        for(j = 0; j < rowInterval; j++){
+          //console.log(i)
+          array.push(getPixelData(k * rowInterval + j, i))
+        }
+
+        // Sort this interval
+        quickSort(array)
+        //console.log(array)
+
+        // Replace image pixels with the sorted pixels
+        for(j = 0; j < rowInterval; j++){
+          setPixelData( (k * rowInterval + j), i, array[j] )
+        }
+
       }
 
     }
-
   }
-}
 
-// Done sorting!
-console.log("Done!")
-postMessage({'data': imageData})
-close()
+  // Done sorting!
+  console.log("Done!")
+  postMessage({'data': imageData})
+  close()
+}
