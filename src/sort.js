@@ -62,4 +62,5 @@ if(SORT_BY_ROWS){
 
 // Done sorting!
 console.log("Done!")
-drawImage(imageData)
+postMessage(imageData)
+close()
