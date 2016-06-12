@@ -68,7 +68,7 @@ function sortImage(){
     var worker = new Worker("src/sort.js");
     worker.postMessage([imageData, SORT_BY_ROWS, SORT_BY_COLUMNS, SORT_BY_CIRCLES, SORT_INTERVAL, RANDOM_INTERVAL]);
 
-    myWorker.onmessage = function(e) {
+    worker.onmessage = function(e) {
       console.log('Got sorted image back from worker.');
       drawImage(e.data);
     }
