@@ -25,7 +25,7 @@ onmessage = function(e){
     for(i = 0; i < imageData.height; i++){
 
        console.log("Processing row: " + i + "/" + imageData.height)
-       self.postMessage(0, i, imageData.height);
+       self.postMessage([0, i, imageData.height]);
 
       var rowInterval = SORT_INTERVAL
       if(RANDOM_INTERVAL){
