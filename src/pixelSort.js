@@ -84,12 +84,15 @@ function sortImage(){
         // Update on status
         console.log("Update")
         var progressLabel = document.getElementById('progressLabel');
-        progressLabel.innerText = "Sorting " + sortName + e.data[1] + "/" + e.data[2];
+        progressLabel.innerText = "Sorting " + sortName + " " + (e.data[1] + 1) + "/" + e.data[2];
 
+        var progressBar = document.getElementById('progressBar');
+        progressBar.MaterialProgress.setProgress( (e.data[1] + 1 / e.data[2]) * 100);
 
       } else {
         // Sort complete
         drawImage(e.data[1])
+        progressLabel.innerText = "Done!";
       }
 
     }, false);
