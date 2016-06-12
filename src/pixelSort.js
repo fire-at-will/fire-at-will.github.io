@@ -84,7 +84,7 @@ function sortImage(){
         // Update on status
         console.log("Update")
         var progressLabel = document.getElementById('progressLabel');
-        progressLabel.text = "Sorting " + sortName + e.data[1] + "/" + e.data[2];
+        progressLabel.innerText = "Sorting " + sortName + e.data[1] + "/" + e.data[2];
 
 
       } else {
