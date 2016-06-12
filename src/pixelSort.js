@@ -66,7 +66,7 @@ function sortImage(){
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
     var worker = new Worker("src/sort.js");
-    worker.postMessage(imageData, SORT_BY_ROWS, SORT_BY_COLUMNS, SORT_BY_CIRCLES, SORT_INTERVAL, RANDOM_INTERVAL);
+    worker.postMessage([imageData, SORT_BY_ROWS, SORT_BY_COLUMNS, SORT_BY_CIRCLES, SORT_INTERVAL, RANDOM_INTERVAL]);
 
   }
 }
