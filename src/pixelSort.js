@@ -4,6 +4,10 @@ var SORT_BY_CIRCLES = false;
 var SORT_INTERVAL = 200;
 var RANDOM_INTERVAL = true;
 
+var sortName = ""
+
+var sortButton = document.getElementById('sort-button');
+
 var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
 
@@ -46,6 +50,8 @@ function handleImage(e){
             // Put canvas onto img
             imageItem.src = canvas.toDataURL()
 
+            // Enable Sort button
+            sortButton.removeAttribute("disabled")
          image = img
        };
        img.src = e.target.result;
@@ -56,6 +62,10 @@ function handleImage(e){
 
 function sortImage(){
   getSettingValues();
+
+  // Display progress div
+  var progressDiv = document.getElementById('progressDiv');
+  progressDiv.style.display = 'block'
 
   if (window.Worker) {
 
@@ -70,8 +80,18 @@ function sortImage(){
 
     worker.addEventListener('message', function(e) {
       // Log the workers message.
-      console.log(e.data)
-      drawImage(e.data)
+      if(e.data[0] == 0){
+        // Update on status
+        console.log("Update")
+        var progressLabel = document.getElementById('progressLabel');
+        progressLabel.text = "Sorting " + sortName + e.data[1] + "/" e.data[2];
+
+        
+      } else {
+        // Sort complete
+        drawImage(e.data[1])
+      }
+
     }, false);
 
   }
@@ -95,12 +115,15 @@ function getSettingValues(){
   switch (selectedVal) {
     case 1:
       SORT_BY_ROWS = true
+      sortName = "row"
       break;
     case 2:
       SORT_BY_COLUMNS = true
+      sortName = "column"
       break;
     case 3:
       SORT_BY_CIRCLES = true
+      sortName = "circle"
       break;
     default:
       break;
