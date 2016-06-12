@@ -70,7 +70,7 @@ function sortImage(){
 
     worker.onmessage = function(e) {
       console.log('Got sorted image back from worker.');
-      drawImage(e.data);
+      drawImage(e.data[0]);
     }
 
   }
