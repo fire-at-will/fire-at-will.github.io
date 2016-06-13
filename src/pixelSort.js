@@ -28,7 +28,7 @@ var ctx = canvas.getContext('2d');
 function drawImage(imageData){
   ctx.putImageData(imageData, 0, 0);
   imageItem.src = canvas.toDataURL()
-  //imageItem.style.height = img.height + 'px;'
+  progressBar.className = "mdl-progress mdl-js-progress"
 }
 
 function handleImage(e){
@@ -89,12 +89,10 @@ function sortImage(){
         // Update on status
         progressLabel.innerText = "Sorting " + sortName + " " + (e.data[1] + 1) + "/" + e.data[2];
 
-
       } else {
         // Sort complete
         drawImage(e.data[1])
         progressLabel.innerText = "Done!";
-        progressBar.className = "mdl-progress mdl-js-progress"
         sortButton.removeAttribute("disabled")
       }
 
