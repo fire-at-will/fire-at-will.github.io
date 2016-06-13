@@ -65,7 +65,7 @@ onmessage = function(e){
 
       var columnInterval = SORT_INTERVAL;
       if(RANDOM_INTERVAL){
-        columnInterval = Math.floor()(Math.random() * SORT_INTERVAL) + 2) )
+        columnInterval = Math.floor((Math.random() * SORT_INTERVAL) + 2) 
       }
 
       var endOfLine = imageData.height
