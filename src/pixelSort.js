@@ -10,6 +10,8 @@ var sortButton = document.getElementById('sort-button');
 var progressLabel = document.getElementById('progressLabel');
 var progressBar = document.getElementById('progressBar');
 
+progressBar.MaterialProgress.setProgress(100);
+
 var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
 
@@ -64,7 +66,7 @@ function handleImage(e){
 
 function sortImage(){
   sortButton.setAttribute('disabled', 'disabled')
-  progressBar.MaterialProgress.setProgress(0);
+  progressBar.className = "mdl-progress mdl-js-progress mdl-progress__indeterminate"
   getSettingValues();
 
   // Display progress div
@@ -87,12 +89,13 @@ function sortImage(){
       if(e.data[0] == 0){
         // Update on status
         progressLabel.innerText = "Sorting " + sortName + " " + (e.data[1] + 1) + "/" + e.data[2];
-        progressBar.MaterialProgress.setProgress( (e.data[1] / e.data[2]) * 100);
+
 
       } else {
         // Sort complete
         drawImage(e.data[1])
         progressLabel.innerText = "Done!";
+        progressBar.className = "mdl-progress mdl-js-progress"
         sortButton.removeAttribute("disabled")
       }
 
