@@ -64,6 +64,7 @@ function handleImage(e){
 
 function sortImage(){
   sortButton.setAttribute('disabled', 'disabled')
+  progressBar.MaterialProgress.setProgress(0);
   getSettingValues();
 
   // Display progress div
