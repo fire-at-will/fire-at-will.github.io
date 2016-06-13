@@ -24,8 +24,7 @@ onmessage = function(e){
 
     for(i = 0; i < imageData.height; i++){
 
-       console.log("Processing row: " + i + "/" + imageData.height)
-       self.postMessage([0, i, imageData.height]);
+      self.postMessage([0, i, imageData.height]);
 
       var rowInterval = SORT_INTERVAL
       if(RANDOM_INTERVAL){
@@ -37,7 +36,6 @@ onmessage = function(e){
 
       // How many sections we have to sort in each row
       var loops = Math.floor(imageData.width / rowInterval)
-      //console.log(loops)
       for(k = 0; k < loops; k++){
         var array = []
 
@@ -58,6 +56,37 @@ onmessage = function(e){
 
       }
 
+    }
+  } else if(SORT_BY_COLUMNS){
+    console.log("Sorting by column.");
+
+    for(i = 0; i < imageData.width; i++){
+      self.postMessage(0, i, imageData.width);
+
+      var columnInterval = SORT_INTERVAL;
+      if(RANDOM_INTERVAL){
+        columnInterval = Math.floor()(Math.random() * SORT_INTERVAL) + 2)
+      }
+
+      var endOfLine = imageData.height
+
+      // How many sections we have to sort in each column
+      var loops = Math.floor(imageData.height / columnInterval);
+
+      for(k = 0; k < loops; k++){
+        // For each pixel in column sections
+        var array = []
+
+        for(j = 0; j < columnInterval; j++){
+          array.push(getPixelData(i, k * columnInterval + j))
+        }
+
+        quickSort(array)
+
+        for(j = 0; j < columnInterval; j++){
+          setPixelData(i, (k * columnInterval + j), array[j] )
+        }
+      }
     }
   }
 

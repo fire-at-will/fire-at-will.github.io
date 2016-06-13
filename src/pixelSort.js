@@ -61,6 +61,7 @@ function handleImage(e){
 }
 
 function sortImage(){
+  sortButton.setAttribute("disabled")
   getSettingValues();
 
   // Display progress div
@@ -87,12 +88,13 @@ function sortImage(){
         progressLabel.innerText = "Sorting " + sortName + " " + (e.data[1] + 1) + "/" + e.data[2];
 
         var progressBar = document.getElementById('progressBar');
-        progressBar.MaterialProgress.setProgress( (e.data[1] + 1 / e.data[2]));
+        progressBar.MaterialProgress.setProgress( (e.data[1] / e.data[2]) * 100);
 
       } else {
         // Sort complete
         drawImage(e.data[1])
         progressLabel.innerText = "Done!";
+        sortButton.removeAttribute("disabled")
       }
 
     }, false);
