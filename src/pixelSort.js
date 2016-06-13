@@ -10,8 +10,6 @@ var sortButton = document.getElementById('sort-button');
 var progressLabel = document.getElementById('progressLabel');
 var progressBar = document.getElementById('progressBar');
 
-progressBar.MaterialProgress.setProgress(100);
-
 var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
 
@@ -66,6 +64,7 @@ function handleImage(e){
 
 function sortImage(){
   sortButton.setAttribute('disabled', 'disabled')
+  progressBar.MaterialProgress.setProgress(100);
   progressBar.className = "mdl-progress mdl-js-progress mdl-progress__indeterminate"
   getSettingValues();
 
