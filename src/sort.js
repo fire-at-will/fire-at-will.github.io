@@ -61,11 +61,11 @@ onmessage = function(e){
     console.log("Sorting by column.");
 
     for(i = 0; i < imageData.width; i++){
-      self.postMessage(0, i, imageData.width);
+      self.postMessage([0, i, imageData.width]);
 
       var columnInterval = SORT_INTERVAL;
       if(RANDOM_INTERVAL){
-        columnInterval = Math.floor((Math.random() * SORT_INTERVAL) + 2) 
+        columnInterval = Math.floor((Math.random() * SORT_INTERVAL) + 2)
       }
 
       var endOfLine = imageData.height
