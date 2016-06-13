@@ -61,7 +61,7 @@ function handleImage(e){
 }
 
 function sortImage(){
-  sortButton.setAttribute("disabled")
+  sortButton.setAttribute('disabled', 'disabled')
   getSettingValues();
 
   // Display progress div
