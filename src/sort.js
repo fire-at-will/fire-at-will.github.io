@@ -120,7 +120,7 @@ onmessage = function(e){
       }
 
       // Sort circle
-      console.log("Sorting")
+      console.log("Sorting", array.length, array)
       quickSort(array)
 
       // Replace image pixels with sorted pixels
