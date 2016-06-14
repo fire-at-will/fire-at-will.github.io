@@ -100,6 +100,7 @@ onmessage = function(e){
     while(radius < centerX){
       // For each radius size, do...
 
+      console.log("loop")
       self.postMessage([0, radius, centerX]);
 
       var array = []
@@ -107,6 +108,7 @@ onmessage = function(e){
       var minX = Math.floor(centerX - radius)
       var maxX = Math.floor(centerX + radius)
 
+      console.log("Collecting")
       // Top half of circle
       for(x = minX; x < maxX; x++){
         array.push(getPixelData(x, (centerY + circleEquation("positive"), x, centerX, radius) ) )
@@ -118,11 +120,13 @@ onmessage = function(e){
       }
 
       // Sort circle
+      console.log("Sorting")
       quickSort(array)
 
       // Replace image pixels with sorted pixels
       var arrayIndex = 0
 
+      console.log("Setting")
       // Top half of circle
       for(x = minX; x < maxX; x++){
         setPixelData(x, centerY + circleEquation("positive", x, centerX, radius), array[arrayIndex]);
