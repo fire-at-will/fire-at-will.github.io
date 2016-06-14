@@ -201,7 +201,7 @@ function partition(pixelArray, low, high){
 }
 
 function circleEquation(mode, x, h, r){
-  var y = Math.sqrt( (r * r) - ( (x - h) * (x - h) ) )
+  var y = Math.floor(Math.sqrt( (r * r) - ( (x - h) * (x - h) ) ))
 
   if(mode == "positive"){
     // Return positive version
