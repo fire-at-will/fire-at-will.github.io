@@ -140,7 +140,7 @@ onmessage = function(e){
       }
 
       // Increase radius by 1 and repeat
-      radius = radius + 1
+      radius = radius + 2
     }
   }
 
