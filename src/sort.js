@@ -91,7 +91,7 @@ onmessage = function(e){
   } else if(SORT_BY_CIRCLES){
     console.log("Sorting by circles.")
 
-    var radius = 3
+    var radius = 1
     var centerX = Math.floor(imageData.width / 2);
     var centerY = Math.floor(imageData.height / 2);
 
@@ -111,12 +111,12 @@ onmessage = function(e){
       console.log("Collecting")
       // Top half of circle
       for(x = minX; x < maxX; x++){
-        array.push(getPixelData(x, (centerY + circleEquation("positive"), x, centerX, radius) ) )
+        array.push(getPixelData(x, (centerY + circleEquation("positive", x, centerX, radius) ) ) )
       }
 
       // Bottom half of circle
       for(x = minX; x < maxX; x++){
-        array.push( getPixelData( x, centerY + circleEquation("negative"), x, centerX, radius ) )
+        array.push( getPixelData( x, centerY + circleEquation("negative", x, centerX, radius) ) )
       }
 
       // Sort circle
@@ -140,7 +140,7 @@ onmessage = function(e){
       }
 
       // Increase radius by 1 and repeat
-      radius = radius + 2
+      radius = radius + 1
     }
   }
 
@@ -156,7 +156,7 @@ function quickSort(pixelArray){
 }
 
 function quickSortAlgorithm(pixelArray, low, high){
-  console.log("QSA", pixelArray)
+  console.log("QSA")
   if(low < high){
     let midpoint = partition(pixelArray, low, high)
 
