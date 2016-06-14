@@ -205,13 +205,14 @@ function circleEquation(mode, x, h, r){
 
   if(mode == "positive"){
     // Return positive version
+    console.log("Returning", Math.abs(y))
     return Math.abs(y)
   } else {
     // Return negative version
     if(y > 0){
       y = y - y - y
     }
-
+    console.log("Returning", y)
     return y
   }
 }
