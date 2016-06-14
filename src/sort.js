@@ -58,7 +58,7 @@ onmessage = function(e){
 
     }
   } else if(SORT_BY_COLUMNS){
-    console.log("Sorting by column.");
+    console.log("Sorting by columns.");
 
     for(i = 0; i < imageData.width; i++){
       self.postMessage([0, i, imageData.width]);
@@ -87,6 +87,53 @@ onmessage = function(e){
           setPixelData(i, (k * columnInterval + j), array[j] )
         }
       }
+    }
+  } else if(SORT_BY_CIRCLES){
+    console.log("Sorting by circles.")
+
+    var radius = 1
+    var centerX = Math.floor(imageData / 2);
+    ver centerY = Math.floor(height / 2);
+
+    var originalInterval = SORT_INTERVAL;
+
+    while(radius < centerX){
+      // For each radius size, do...
+
+      self.postMessage([0, radius, centerX]);
+
+      var array = []
+
+      // Top half of circle
+      for(x = minX; x < minY; x++){
+        array.push(getPixelData(x, (centerY + circleEquation("positive"), x, centerX, radius) )
+      }
+
+      // Bottom half of circle
+      for(x = minX; maxY){
+        array.push( getPixelData( x, centerY + circleEquation("negative"), x, centerX, radius ) )
+      }
+
+      // Sort circle
+      quickSort(array)
+
+      // Replace image pixels with sorted pixels
+      var arrayIndex = 0
+
+      // Top half of circle
+      for(x = minX; x < maxY; x++){
+        setPixelData(x, centerY + circleEquation("positive", x, centerX, radius), array[arrayIndex]);
+        arrayIndex = arrayIndex + 1
+      }
+
+      // Bottom half of circle
+      for(x = minX; x < maxY; x++){
+        setPixelData(x, centerY + circleEquation("negative", x, centerX, radius), array[arrayIndex]);
+        arrayIndex = arrayIndex + 1
+      }
+
+      // Increase radius by 1 and repeat
+      radius = radius + 1
     }
   }
 
