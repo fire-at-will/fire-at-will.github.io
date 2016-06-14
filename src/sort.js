@@ -152,7 +152,7 @@ onmessage = function(e){
 
 function quickSort(pixelArray){
   console.log("Calling QSA")
-  quickSortAlgorithm(pixelArray, 0, pixelArray.length - 1)
+  quickSortAlgorithm(pixelArray, 0, pixelArray.length )
 }
 
 function quickSortAlgorithm(pixelArray, low, high){
@@ -176,8 +176,6 @@ function partition(pixelArray, low, high){
   var done = false
 
   while(!done){
-
-    console.log("Partition loop")
 
     while(leftmark <= rightmark && ( getPixelValue(pixelArray[leftmark]) <= pivot ) ){
       leftmark = leftmark + 1
