@@ -242,6 +242,5 @@ function getPixelValue(pixelData){
   let g = pixelData[1]
   let b = pixelData[2]
 
-  console.log(r + g + b)
   return r + g + b
 }
