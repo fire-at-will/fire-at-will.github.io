@@ -110,7 +110,7 @@ onmessage = function(e){
       }
 
       // Bottom half of circle
-      for(x = minX; maxY){
+      for(x = minX; x < maxY; x++){
         array.push( getPixelData( x, centerY + circleEquation("negative"), x, centerX, radius ) )
       }
 
