@@ -41,13 +41,11 @@ onmessage = function(e){
 
         // Get the next pixels to sort in the interval
         for(j = 0; j < rowInterval; j++){
-          //console.log(i)
           array.push(getPixelData(k * rowInterval + j, i))
         }
 
         // Sort this interval
         quickSort(array)
-        //console.log(array)
 
         // Replace image pixels with the sorted pixels
         for(j = 0; j < rowInterval; j++){
@@ -100,7 +98,6 @@ onmessage = function(e){
     while(radius < centerX){
       // For each radius size, do...
 
-      console.log("loop")
       self.postMessage([0, radius, centerX]);
 
       var array = []
@@ -108,7 +105,6 @@ onmessage = function(e){
       var minX = Math.floor(centerX - radius)
       var maxX = Math.floor(centerX + radius)
 
-      console.log("Collecting")
       // Top half of circle
       for(x = minX; x < maxX; x++){
         array.push(getPixelData(x, (centerY + circleEquation("positive", x, centerX, radius) ) ) )
@@ -120,13 +116,11 @@ onmessage = function(e){
       }
 
       // Sort circle
-      console.log("Sorting", array.length, array)
       quickSort(array)
 
       // Replace image pixels with sorted pixels
       var arrayIndex = 0
 
-      console.log("Setting")
       // Top half of circle
       for(x = minX; x < maxX; x++){
         setPixelData(x, centerY + circleEquation("positive", x, centerX, radius), array[arrayIndex]);
