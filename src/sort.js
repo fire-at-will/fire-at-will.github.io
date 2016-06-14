@@ -151,12 +151,10 @@ onmessage = function(e){
 }
 
 function quickSort(pixelArray){
-  console.log("Calling QSA")
   quickSortAlgorithm(pixelArray, 0, pixelArray.length - 1)
 }
 
 function quickSortAlgorithm(pixelArray, low, high){
-  console.log("QSA")
   if(low < high){
     let midpoint = partition(pixelArray, low, high)
 
