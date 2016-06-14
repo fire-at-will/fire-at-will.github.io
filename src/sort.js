@@ -104,13 +104,16 @@ onmessage = function(e){
 
       var array = []
 
+      var minX = Math.floor(centerX - radius)
+      var maxX = Math.floor(centerX + radius)
+
       // Top half of circle
-      for(x = minX; x < minY; x++){
+      for(x = minX; x < maxX; x++){
         array.push(getPixelData(x, (centerY + circleEquation("positive"), x, centerX, radius) ) )
       }
 
       // Bottom half of circle
-      for(x = minX; x < maxY; x++){
+      for(x = minX; x < maxX; x++){
         array.push( getPixelData( x, centerY + circleEquation("negative"), x, centerX, radius ) )
       }
 
@@ -121,13 +124,13 @@ onmessage = function(e){
       var arrayIndex = 0
 
       // Top half of circle
-      for(x = minX; x < maxY; x++){
+      for(x = minX; x < maxX; x++){
         setPixelData(x, centerY + circleEquation("positive", x, centerX, radius), array[arrayIndex]);
         arrayIndex = arrayIndex + 1
       }
 
       // Bottom half of circle
-      for(x = minX; x < maxY; x++){
+      for(x = minX; x < maxX; x++){
         setPixelData(x, centerY + circleEquation("negative", x, centerX, radius), array[arrayIndex]);
         arrayIndex = arrayIndex + 1
       }
