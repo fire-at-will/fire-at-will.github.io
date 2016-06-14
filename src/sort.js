@@ -116,7 +116,7 @@ onmessage = function(e){
 
       // Bottom half of circle
       for(x = minX; x < maxX; x++){
-        array.push( getPixelData( x, centerY + circleEquation("negative", x, centerX, radius) ) )
+        array.push( getPixelData( x, (centerY + circleEquation("negative", x, centerX, radius) ) ) )
       }
 
       // Sort circle
@@ -176,6 +176,8 @@ function partition(pixelArray, low, high){
   var done = false
 
   while(!done){
+
+    console.log("Partition loop")
 
     while(leftmark <= rightmark && ( getPixelValue(pixelArray[leftmark]) <= pivot ) ){
       leftmark = leftmark + 1
