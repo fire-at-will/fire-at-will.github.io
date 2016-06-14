@@ -91,7 +91,7 @@ onmessage = function(e){
   } else if(SORT_BY_CIRCLES){
     console.log("Sorting by circles.")
 
-    var radius = 1
+    var radius = 3
     var centerX = Math.floor(imageData.width / 2);
     var centerY = Math.floor(imageData.height / 2);
 
@@ -151,10 +151,12 @@ onmessage = function(e){
 }
 
 function quickSort(pixelArray){
+  console.log("Calling QSA")
   quickSortAlgorithm(pixelArray, 0, pixelArray.length - 1)
 }
 
 function quickSortAlgorithm(pixelArray, low, high){
+  console.log("QSA", pixelArray)
   if(low < high){
     let midpoint = partition(pixelArray, low, high)
 
