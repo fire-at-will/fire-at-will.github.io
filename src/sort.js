@@ -175,12 +175,11 @@ function partition(pixelArray, low, high){
 
   while(!done){
 
-    while(leftmark <= rightmark && ( getPixelValue(pixelArray[leftmark]) <= pivot ) ){
+    while(leftmark < rightmark && ( getPixelValue(pixelArray[leftmark]) <= pivot ) ){
       leftmark = leftmark + 1
     }
 
-
-    while( (getPixelValue(pixelArray[rightmark]) >= pivot ) && rightmark >= leftmark ){
+    while( (getPixelValue(pixelArray[rightmark]) > pivot ) && rightmark >= leftmark ){
       rightmark = rightmark - 1
     }
 
