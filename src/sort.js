@@ -92,8 +92,8 @@ onmessage = function(e){
     console.log("Sorting by circles.")
 
     var radius = 1
-    var centerX = Math.floor(imageData / 2);
-    var centerY = Math.floor(height / 2);
+    var centerX = Math.floor(imageData.width / 2);
+    var centerY = Math.floor(imageData.height / 2);
 
     var originalInterval = SORT_INTERVAL;
 
