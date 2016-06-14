@@ -175,11 +175,11 @@ function partition(pixelArray, low, high){
 
   while(!done){
 
-    while(leftmark < rightmark && ( getPixelValue(pixelArray[leftmark]) <= pivot ) ){
+    while(leftmark <= rightmark && ( getPixelValue(pixelArray[leftmark]) <= pivot ) ){
       leftmark = leftmark + 1
     }
 
-    while( (getPixelValue(pixelArray[rightmark]) > pivot ) && rightmark >= leftmark ){
+    while( (getPixelValue(pixelArray[rightmark]) >= pivot ) && rightmark >= leftmark ){
       rightmark = rightmark - 1
     }
 
@@ -230,7 +230,6 @@ function getPixelData(x, y){
   let r = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 0];
   let g = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 1];
   let b = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 2];
-
 
   return [r, g, b]
 }
