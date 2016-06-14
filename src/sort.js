@@ -197,6 +197,22 @@ function partition(pixelArray, low, high){
   return rightmark
 }
 
+function circleEquation(mode, x, h, r){
+  var y = Math.sqrt( (r * r) - ( (x - h) * (x - h) ) )
+
+  if(mode == "positive"){
+    // Return positive version
+    return Math.abs(y)
+  } else {
+    // Return negative version
+    if(y > 0){
+      y = y - y - y
+    }
+
+    return y
+  }
+}
+
 function setPixelData(x, y, dataArray){
   // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas
 
