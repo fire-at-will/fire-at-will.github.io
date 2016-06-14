@@ -93,7 +93,7 @@ onmessage = function(e){
 
     var radius = 1
     var centerX = Math.floor(imageData / 2);
-    ver centerY = Math.floor(height / 2);
+    var centerY = Math.floor(height / 2);
 
     var originalInterval = SORT_INTERVAL;
 
