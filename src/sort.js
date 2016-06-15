@@ -123,8 +123,16 @@ onmessage = function(e){
         array.push( getPixelData( x, (centerY + circleEquation("negative", x, centerX, radius) ) ) )
       }
 
+      // Check for any undefined values (we've gone too far and gone outside the range of the circle)
+      for(x = 0; x < array.length; x++){
+        let pixelData = array[x];
+        if(pixelData[0] == undefined || pixelData[1] == undefined || pixelData[2] == undefined){
+          console.log("Undefined pixel. Breaking out.")
+          break
+        }
+      }
+
       // Sort circle
-      console.log(array)
       quickSort(array)
 
       // Replace image pixels with sorted pixels
