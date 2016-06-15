@@ -13,6 +13,9 @@ var imageItem = document.getElementById('imageItem');
 
 var imageLoader = document.getElementById('imageLoader');
 imageLoader.addEventListener('change', handleImage, false);
+imageLoader.onclick = function () {
+    this.value = '';
+};
 
 //var canvas = document.getElementById('imageCanvas');
 var canvas = document.createElement('canvas')
@@ -54,8 +57,6 @@ function handleImage(e){
           // Enable Sort button
           sortButton.removeAttribute("disabled")
           image = img
-          let inputButton = document.getElementById('imageLoader');
-          inputButton.value = "";
        };
        img.src = e.target.result;
 
