@@ -14,7 +14,7 @@ var imageItem = document.getElementById('imageItem');
 var imageLoader = document.getElementById('imageLoader');
 imageLoader.addEventListener('change', handleImage, false);
 imageLoader.onclick = function () {
-    this.value = '';
+    this.value = null;
 };
 
 //var canvas = document.getElementById('imageCanvas');
