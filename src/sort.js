@@ -23,7 +23,6 @@ onmessage = function(e){
     console.log("Sorting by rows.")
 
     if(SORT_INTERVAL > imageData.width){
-      console.log("Changing SI")
       SORT_INTERVAL = imageData.width;
     }
 
@@ -64,7 +63,6 @@ onmessage = function(e){
     console.log("Sorting by columns.");
 
     if(SORT_INTERVAL > imageData.height){
-      console.log("Changing SI")
       SORT_INTERVAL = imageData.height;
     }
 
@@ -126,6 +124,7 @@ onmessage = function(e){
       }
 
       // Sort circle
+      console.log(array)
       quickSort(array)
 
       // Replace image pixels with sorted pixels
