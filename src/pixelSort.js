@@ -9,6 +9,7 @@ var sortName = ""
 var sortButton = document.getElementById('sort-button');
 var progressLabel = document.getElementById('progressLabel');
 var progressBar = document.getElementById('progressBar');
+var imageItem = document.getElementById('imageItem');
 
 var imageLoader = document.getElementById('imageLoader');
     imageLoader.addEventListener('change', handleImage, false);
@@ -32,6 +33,7 @@ function drawImage(imageData){
 }
 
 function handleImage(e){
+  imageItem.src = "";
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
     var fileReader = new FileReader();
@@ -39,8 +41,6 @@ function handleImage(e){
        var img = new Image();
 
        img.onload = function() {
-
-            var imageItem = document.getElementById('imageItem');
 
             // Set width and height
             canvas.width = img.width
