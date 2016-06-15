@@ -41,28 +41,27 @@ function handleImage(e){
 
        img.onload = function() {
 
-            // Set width and height
-            canvas.width = img.width
-            canvas.height = img.height
+          // Set width and height
+          canvas.width = img.width
+          canvas.height = img.height
 
-            // Draw to canvas
-            ctx.drawImage(img, 0, 0)
+          // Draw to canvas
+          ctx.drawImage(img, 0, 0)
 
-            // Put canvas onto img
-            imageItem.src = canvas.toDataURL()
+          // Put canvas onto img
+          imageItem.src = canvas.toDataURL()
 
-            // Enable Sort button
-            sortButton.removeAttribute("disabled")
-         image = img
+          // Enable Sort button
+          sortButton.removeAttribute("disabled")
+          image = img
+          let inputButton = document.getElementById('imageLoader');
+          inputButton.value = null;
        };
        img.src = e.target.result;
 
     };
     imageItem.src = e.target.files[0]
     fileReader.readAsDataURL(e.target.files[0] );
-
-    let inputButton = document.getElementById('imageLoader');
-    inputButton.value = null;
 }
 
 function sortImage(){
