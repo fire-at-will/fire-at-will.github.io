@@ -125,12 +125,20 @@ onmessage = function(e){
 
       console.log("Sort")
       // Check for any undefined values (we've gone too far and gone outside the range of the circle)
+      var breakOut = false;
       for(x = 0; x < array.length; x++){
         let pixelData = array[x];
         if(pixelData[0] == undefined || pixelData[1] == undefined || pixelData[2] == undefined){
           console.log("Undefined pixel. Breaking out.")
+          // Isn't it funny how we can't break out of a while loop while also in a for loop?
+          breakOut = true;
           break
         }
+      }
+
+
+      if(breakOut){
+        break
       }
 
       // Sort circle
