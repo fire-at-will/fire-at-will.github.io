@@ -104,6 +104,8 @@ function sortImage(){
 
     }, false);
 
+  } else {
+    alert("Your browser does not support web workers. We'll hopefully add support for you in a bit. :)");
   }
 }
 
