@@ -33,11 +33,11 @@ function drawImage(imageData){
 }
 
 function handleImage(e){
-  console.log("Handle image")
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
     var fileReader = new FileReader();
     fileReader.onload = function(e) {
+      imageItem.src = e.target.files[0]
        var img = new Image();
 
        img.onload = function() {
@@ -50,7 +50,7 @@ function handleImage(e){
             ctx.drawImage(img, 0, 0)
 
             // Put canvas onto img
-            imageItem.src = canvas.toDataURL()
+            //imageItem.src = canvas.toDataURL()
 
             // Enable Sort button
             sortButton.removeAttribute("disabled")
@@ -60,7 +60,7 @@ function handleImage(e){
 
     };
     fileReader.readAsDataURL(e.target.files[0] );
-    
+
     let inputButton = document.getElementById('imageLoader');
     inputButton.value = null;
 }
