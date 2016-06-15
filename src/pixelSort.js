@@ -33,7 +33,11 @@ function drawImage(imageData){
 }
 
 function handleImage(e){
-  imageItem.src = "";
+  var imageDiv = document.getElementById("imageDiv");
+  $('.imageItem').remove()
+  imageItem = document.createElement('img');
+  imageItem.setAttribute('href',"yourlink.htm");
+  imageDiv.appendChild(imageItem);
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
     var fileReader = new FileReader();
