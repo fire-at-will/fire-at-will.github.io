@@ -22,9 +22,9 @@ onmessage = function(e){
   if(SORT_BY_ROWS){
     console.log("Sorting by rows.")
 
-    if(SORT_INTERVAL > imageData.height){
+    if(SORT_INTERVAL > imageData.width){
       console.log("Changing SI")
-      SORT_INTERVAL = imageData.height;
+      SORT_INTERVAL = imageData.width;
     }
 
     for(i = 0; i < imageData.height; i++){
@@ -63,9 +63,9 @@ onmessage = function(e){
   } else if(SORT_BY_COLUMNS){
     console.log("Sorting by columns.");
 
-    if(SORT_INTERVAL > imageData.width){
+    if(SORT_INTERVAL > imageData.height){
       console.log("Changing SI")
-      SORT_INTERVAL = imageData.width;
+      SORT_INTERVAL = imageData.height;
     }
 
     for(i = 0; i < imageData.width; i++){
