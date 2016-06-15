@@ -38,7 +38,7 @@ function handleImage(e){
     var fileReader = new FileReader();
     fileReader.onload = function(e) {
        var img = new Image();
-       imageItem.src = e.target.result
+       $('#imageItem').attr('src',e.target.result);
 
        img.onload = function() {
 
