@@ -60,7 +60,9 @@ function handleImage(e){
 
     };
     fileReader.readAsDataURL(e.target.files[0] );
-    e.target.files[0] = undefined;
+    
+    let inputButton = document.getElementById('imageLoader');
+    inputButton.value = null;
 }
 
 function sortImage(){
