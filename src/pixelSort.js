@@ -12,7 +12,7 @@ var progressBar = document.getElementById('progressBar');
 var imageItem = document.getElementById('imageItem');
 
 var imageLoader = document.getElementById('imageLoader');
-    imageLoader.addEventListener('change', handleImage, false);
+imageLoader.addEventListener('change', handleImage, false);
 
 //var canvas = document.getElementById('imageCanvas');
 var canvas = document.createElement('canvas')
@@ -37,8 +37,8 @@ function handleImage(e){
 
     var fileReader = new FileReader();
     fileReader.onload = function(e) {
-      imageItem.src = e.target.files[0]
        var img = new Image();
+       imageItem.src = e.target.result
 
        img.onload = function() {
 
@@ -59,6 +59,7 @@ function handleImage(e){
        img.src = e.target.result;
 
     };
+    imageItem.src = e.target.files[0]
     fileReader.readAsDataURL(e.target.files[0] );
 
     let inputButton = document.getElementById('imageLoader');
