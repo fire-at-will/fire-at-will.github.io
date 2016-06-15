@@ -34,7 +34,7 @@ function drawImage(imageData){
 
 function handleImage(e){
   console.log("Handle image")
-  imageItem.src = "";
+  imageItem.src = "#";
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
     var fileReader = new FileReader();
