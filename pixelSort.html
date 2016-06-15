@@ -37,7 +37,7 @@
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 
             <h3 style="color: #E4005B">Pixel Sorting</h3>
-            
+
             <img id="imageItem" style="max-width: 100%; height: auto; text-align: center;"></img>
 
             <div id="progressDiv" style="text-align: center; display: none">
@@ -45,7 +45,7 @@
               <div id="progressBar" class="mdl-progress mdl-js-progress" style="display: inline-block;"></div>
             </div>
 
-            <div class="mdl-grid" >
+            <div class="mdl-grid">
               <div class="mdl-cell mdl-cell--6-col">
                 <h5>Image File</h5>
                 <input type="file" accept="image/*" id="imageLoader" name="imageLoader"/>
@@ -140,6 +140,40 @@
 
           </div>
         </div>
+
+        <!-- About Card -->
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+
+            <h3 style="color: #E4005B">About Pixel Sorting</h3>
+
+            <h5>What is Pixel Sorting?</h5>
+            <p>Pixel sorting is the process of taking in pixels from a picture and rearranging them based on the numerical value of the pixels.
+            In our case, it means that we sort pixels from darkest to lightest. What is this numerical value? Well, inside the
+            computer, a pixel is represented by four numbers: red(R), green(G), blue(B), and alpha(A). We get the value of each
+            pixel by simply adding the red, green, and blue numbers together!
+            </p>
+
+            <h5>How Does This Website Work Under The Hood?</h5>
+            <p>The website first uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">HTML Canvas API</a> to break down
+              images into an array of RGBA values. The website then chooses the order in which to sort the pixels based on the settings provided,
+              and then uses a <a href="https://en.wikipedia.org/wiki/Quicksort">quick sort</a> to rearrange the pixels.
+            </p>
+            <p>I coded this website by hand in HTML, CSS, and Javascript with a touch of JQuery every here and there. Oh, and I used Google's
+              <a href="https://getmdl.io/index.html">Material Design Lite</a> for the fantastic theming.
+            </p>
+
+            <h5>Other Resources</h5>
+            <ul>
+              <li>Reddit's <a href="https://www.reddit.com/r/pixelsorting">r/pixelsorting</a></li>
+              <li>Kim Asendorf's original pixel sorting <a href="https://github.com/kimasendorf/ASDFPixelSort">code</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <!-- /About Card -->
+
       </main>
 
       <footer class="demo-footer mdl-mini-footer">
