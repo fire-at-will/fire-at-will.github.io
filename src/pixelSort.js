@@ -55,7 +55,7 @@ function handleImage(e){
           sortButton.removeAttribute("disabled")
           image = img
           let inputButton = document.getElementById('imageLoader');
-          inputButton.value = null;
+          inputButton.value = undefined;
        };
        img.src = e.target.result;
 
