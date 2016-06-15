@@ -38,7 +38,6 @@ function handleImage(e){
     var fileReader = new FileReader();
     fileReader.onload = function(e) {
        var img = new Image();
-       $('#imageItem').attr('src',e.target.result);
 
        img.onload = function() {
 
@@ -50,7 +49,7 @@ function handleImage(e){
             ctx.drawImage(img, 0, 0)
 
             // Put canvas onto img
-            //imageItem.src = canvas.toDataURL()
+            imageItem.src = canvas.toDataURL()
 
             // Enable Sort button
             sortButton.removeAttribute("disabled")
