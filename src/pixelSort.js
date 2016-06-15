@@ -86,14 +86,17 @@ function sortImage(){
     worker.addEventListener('message', function(e) {
       // Log the workers message.
       if(e.data[0] == 0){
-        // Update on status
+        // Update on row or column status
         progressLabel.innerText = "Sorting " + sortName + " " + (e.data[1] + 1) + "/" + e.data[2];
 
-      } else {
+      } else if(e.data[0] == 1) {
         // Sort complete
         drawImage(e.data[1])
         progressLabel.innerText = "Done!";
         sortButton.removeAttribute("disabled")
+      } else if(e.data[2] == 2){
+        // Update on circle status
+        progressLabel.innerText = "Sorting circle " + e.data;
       }
 
     }, false);

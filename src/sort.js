@@ -1,7 +1,3 @@
-console.log("Hello from worker!")
-
-//worker.postMessage(imageData, SORT_BY_ROWS, SORT_BY_COLUMNS, SORT_BY_CIRCLES, SORT_INTERVAL, RANDOM_INTERVAL);
-
 var imageData;
 var SORT_BY_ROWS;
 var SORT_BY_COLUMNS;
@@ -10,7 +6,6 @@ var SORT_INTERVAL;
 var RANDOM_INTERVAL;
 
 onmessage = function(e){
-  console.log("Received message from main script")
   imageData = e.data[0]
   SORT_BY_ROWS = e.data[1]
   SORT_BY_COLUMNS = e.data[2]
@@ -18,7 +13,6 @@ onmessage = function(e){
   SORT_INTERVAL = e.data[4]
   RANDOM_INTERVAL = e.data[5]
 
-  console.log(SORT_BY_ROWS)
   if(SORT_BY_ROWS){
     console.log("Sorting by rows.")
 
@@ -106,7 +100,7 @@ onmessage = function(e){
     while(radius < centerX){
       // For each radius size, do...
 
-      self.postMessage([0, radius, centerX]);
+      self.postMessage([2, radius, centerX]);
 
       var array = []
 
@@ -123,13 +117,11 @@ onmessage = function(e){
         array.push( getPixelData( x, (centerY + circleEquation("negative", x, centerX, radius) ) ) )
       }
 
-      console.log("Sort")
       // Check for any undefined values (we've gone too far and gone outside the range of the circle)
       var breakOut = false;
       for(x = 0; x < array.length; x++){
         let pixelData = array[x];
         if(pixelData[0] == undefined || pixelData[1] == undefined || pixelData[2] == undefined){
-          console.log("Undefined pixel. Breaking out.")
           // Isn't it funny how we can't break out of a while loop while also in a for loop?
           breakOut = true;
           break
