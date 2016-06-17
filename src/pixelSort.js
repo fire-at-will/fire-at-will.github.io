@@ -8,9 +8,15 @@ var sortName = ""
 
 var sortButton      = document.getElementById('sort-button');
 var resetButton     = document.getElementById('reset-button');
+var downloadButton  = document.getElementById('download-button');
 var progressLabel   = document.getElementById('progressLabel');
 var progressBar     = document.getElementById('progressBar');
 var imageItem       = document.getElementById('imageItem');
+
+downloadButton.addEventListener('click', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    downloadButton.href = dataURL;
+});
 
 var imageLoader = document.getElementById('imageLoader');
 imageLoader.addEventListener('change', handleImage, false);
@@ -26,11 +32,8 @@ $("#instructionsLink").click(function() {
     }, 2000);
 });
 
-//var canvas = document.getElementById('imageCanvas');
 var canvas = document.createElement('canvas')
 var canvasDiv = document.getElementById('canvasDiv');
-//canvas.width = canvasDiv.clientWidth;
-//canvas.height = canvasDiv.clientHeight;
 
 var image = new Image();
 var img = new Image();
@@ -70,6 +73,9 @@ function handleImage(e){
 
           // Enable Sort button
           sortButton.removeAttribute("disabled")
+
+          // Enable download button
+          downloadButton.removeAttribute("disabled")
           image = img
           // Get image data
           var tempCanvas = document.createElement('canvas');   // Create new canvas in memory. Otherwise we get the downsized image.
