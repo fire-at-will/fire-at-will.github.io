@@ -71,7 +71,11 @@ function handleImage(e){
           // Enable Sort button
           sortButton.removeAttribute("disabled")
           image = img
-          originalImageData = img;
+          // Get image data
+          var tempCanvas = document.createElement('canvas');   // Create new canvas in memory. Otherwise we get the downsized image.
+          var context = tempCanvas.getContext('2d');
+
+          originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
        };
        img.src = e.target.result;
 
