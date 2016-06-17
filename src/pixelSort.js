@@ -6,16 +6,25 @@ var RANDOM_INTERVAL = true;
 
 var sortName = ""
 
-var sortButton = document.getElementById('sort-button');
-var progressLabel = document.getElementById('progressLabel');
-var progressBar = document.getElementById('progressBar');
-var imageItem = document.getElementById('imageItem');
+var sortButton      = document.getElementById('sort-button');
+var resetButton     = document.getElementById('reset-button');
+var progressLabel   = document.getElementById('progressLabel');
+var progressBar     = document.getElementById('progressBar');
+var imageItem       = document.getElementById('imageItem');
 
 var imageLoader = document.getElementById('imageLoader');
 imageLoader.addEventListener('change', handleImage, false);
 imageLoader.onclick = function () {
     this.value = null;
 };
+
+$("#instructionsLink").click(function() {
+  console.log("Scrolly scroll")
+  console.log($("#instructions").offset().top);
+    $('html, body').animate({
+        scrollTop: $("#instructions").offset().top
+    }, 2000);
+});
 
 //var canvas = document.getElementById('imageCanvas');
 var canvas = document.createElement('canvas')
@@ -26,6 +35,7 @@ var canvasDiv = document.getElementById('canvasDiv');
 var image = new Image();
 var img = new Image();
 var imageData;
+var originalImageData;
 
 var ctx = canvas.getContext('2d');
 
@@ -33,6 +43,10 @@ function drawImage(imageData){
   ctx.putImageData(imageData, 0, 0);
   imageItem.src = canvas.toDataURL()
   progressBar.className = "mdl-progress mdl-js-progress"
+}
+
+function resetImage(){
+  drawImage(originalImageData);
 }
 
 function handleImage(e){
@@ -57,6 +71,7 @@ function handleImage(e){
           // Enable Sort button
           sortButton.removeAttribute("disabled")
           image = img
+          originalImageData = img;
        };
        img.src = e.target.result;
 
@@ -94,9 +109,10 @@ function sortImage(){
 
       } else if(e.data[0] == 1) {
         // Sort complete
-        drawImage(e.data[1])
+        drawImage(e.data[1]);
         progressLabel.innerText = "Done!";
-        sortButton.removeAttribute("disabled")
+        sortButton.removeAttribute("disabled");
+        resetButton.removeAttribute("disabled");
       } else if(e.data[2] == 2){
         // Update on circle status
         progressLabel.innerText = "Sorting circle " + e.data;

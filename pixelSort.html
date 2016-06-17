@@ -37,6 +37,7 @@
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 
             <h3 style="color: #E4005B">Pixel Sorting</h3>
+            <!-- <h5 style="color: #E4005B" id="instructionsLink">Not sure what to do? Click here for instructions.</h5> -->
 
             <img id="imageItem" style="max-width: 100%; height: auto; text-align: center;"></img>
 
@@ -53,6 +54,9 @@
 
               <div class="mdl-cell mdl-cell--6-col" style="text-align: right">
                 <br><br>
+                <button id='reset-button' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="resetImage()" disabled="true">
+                  Reset Image
+                </button>
                 <button id='sort-button' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="sortImage()" disabled="true">
                   Sort
                 </button>
@@ -132,8 +136,6 @@
                   support sorting intervals.
                 </p>
 
-
-
               </div>  <!-- End Sort Interval Panel -->
 
             </div>
@@ -154,6 +156,24 @@
             computer, a pixel is represented by four numbers: red(R), green(G), blue(B), and alpha(A). We get the value of each
             pixel by simply adding the red, green, and blue numbers together!
             </p>
+
+            <h5 id="instructions">Instructions</h5>
+            <ol>
+              <li>Upload an image from your computer using the "Choose File" button.</li>
+              <li>Choose your sort settings!</li>
+              <ol>
+                <li>Use the buttons under the "Sort By" tab to pick if you want to sort by rows, columns, or circles.</li>
+                <li>Choose a sort interval under the "Sort Interval" tab. The higher this number is, the more the picture will
+                  be sorted.
+                </li>
+              </ol>
+              <li>You're ready to go! Push the pink sort button and let us do the rest!</li>
+              <li>Now that the sort is done, you can either sort your picture again by repeating steps 2 &amp; 3. If you want
+                to download the sorted picture, click the "Download" button, and if you'd like to start over, hit the "Reset"
+                button.
+              </li>
+
+            </ol>
 
             <h5>How Does This Website Work Under The Hood?</h5>
             <p>The website first uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">HTML Canvas API</a> to break down
@@ -195,5 +215,11 @@
     <!-- Include my scripts -->
     <script src="src/pixelSort.js"></script>
     <script src="src/sort.js"></script>
+    <script type="text/javascript">
+        function scrollToInstructions() {
+            $('html, body').animate({ scrollTop: $('#instructions').offset().top }, 'slow');
+            return false;
+        }
+    </script>
   </body>
 </html>
