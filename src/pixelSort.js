@@ -14,8 +14,10 @@ var progressBar     = document.getElementById('progressBar');
 var imageItem       = document.getElementById('imageItem');
 
 downloadButton.addEventListener('click', function (e) {
+    console.log("Download...");
     var dataURL = canvas.toDataURL('image/png');
-    downloadButton.href = dataURL.replace(/^data:image\/[^;]/, 'data:application/octet-stream');;
+    downloadButton.download = "image.png";
+    downloadButton.href = dataURL;
 });
 
 var imageLoader = document.getElementById('imageLoader');
