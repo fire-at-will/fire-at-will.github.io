@@ -27,11 +27,7 @@ imageLoader.onclick = function () {
 };
 
 $("#instructionsLink").click(function() {
-  console.log("Scrolly scroll")
-  console.log($("#instructions").offset().top);
-    $('html, body').animate({
-        scrollTop: $("#instructions").offset().top
-    }, 2000);
+  $(".mdl-layout").animate({scrollTop: Math.floor($("#instructions").offset().top) - 20}, 1000, "swing");
 });
 
 var canvas = document.createElement('canvas')
