@@ -15,7 +15,7 @@ var imageItem       = document.getElementById('imageItem');
 
 downloadButton.addEventListener('click', function (e) {
     var dataURL = canvas.toDataURL('image/png');
-    downloadButton.href = dataURL;
+    downloadButton.href = dataURL.replace(/^data:image\/[^;]/, 'data:application/octet-stream');;
 });
 
 var imageLoader = document.getElementById('imageLoader');
