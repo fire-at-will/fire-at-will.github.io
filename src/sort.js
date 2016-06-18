@@ -120,7 +120,7 @@ onmessage = function(e){
       // Check for any undefined values (we've gone too far and gone outside the range of the circle)
       var breakOut = false;
       for(x = 0; x < array.length; x++){
-        let pixelData = array[x];
+        var pixelData = array[x];
         if(pixelData[0] == undefined || pixelData[1] == undefined || pixelData[2] == undefined){
           // Isn't it funny how we can't break out of a while loop while also in a for loop?
           breakOut = true;
@@ -168,7 +168,7 @@ function quickSort(pixelArray){
 
 function quickSortAlgorithm(pixelArray, low, high){
   if(low < high){
-    let midpoint = partition(pixelArray, low, high)
+    var midpoint = partition(pixelArray, low, high)
 
     quickSortAlgorithm(pixelArray, low, midpoint - 1)
     quickSortAlgorithm(pixelArray, midpoint + 1, high)
@@ -178,7 +178,7 @@ function quickSortAlgorithm(pixelArray, low, high){
 
 function partition(pixelArray, low, high){
 
-  let pivot = getPixelValue(pixelArray[low])
+  var pivot = getPixelValue(pixelArray[low])
 
   var leftmark = low + 1
   var rightmark = high
@@ -198,14 +198,14 @@ function partition(pixelArray, low, high){
     if(rightmark < leftmark){
       done = true
     } else {
-      let temp = pixelArray[leftmark]
+      var temp = pixelArray[leftmark]
       pixelArray[leftmark] = pixelArray[rightmark]
       pixelArray[rightmark] = temp
     }
 
   }
 
-  let temp = pixelArray[low]
+  var temp = pixelArray[low]
   pixelArray[low] = pixelArray[rightmark]
   pixelArray[rightmark] = temp
 
@@ -238,9 +238,9 @@ function setPixelData(x, y, dataArray){
 function getPixelData(x, y){
   // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas
 
-  let r = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 0];
-  let g = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 1];
-  let b = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 2];
+  var r = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 0];
+  var g = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 1];
+  var b = imageData.data[((y * (imageData.width * 4)) + (x * 4)) + 2];
 
   return [r, g, b]
 }
@@ -248,9 +248,9 @@ function getPixelData(x, y){
 function getPixelValue(pixelData){
   // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas
 
-  let r = pixelData[0]
-  let g = pixelData[1]
-  let b = pixelData[2]
+  var r = pixelData[0]
+  var g = pixelData[1]
+  var b = pixelData[2]
 
   return r + g + b
 }
