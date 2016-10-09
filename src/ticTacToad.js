@@ -344,24 +344,6 @@ function updateBoardGUI(){
   }
 }
 
-function onMouseOver(row, col){
-  if(board[row][col] != null){
-    // Don't do anything
-    return
-  }
-
-  document.getElementById("" + row + col).innerHTML = "X"
-}
-
-function onMouseLeave(row, col){
-  if(board[row][col] != null){
-    // Don't do anything
-    return
-  }
-
-  document.getElementById("" + row + col).innerHTML = ""
-}
-
 function updateGUIWithEndState(endState){
   switch (endState) {
     case 'O':
