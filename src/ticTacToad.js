@@ -55,28 +55,6 @@ function userTurn(row, col) {
 }
 
 function computerTurn(){
-  // Check to see if we can win on this turn
-  for(var ii = 0; ii < 3; ii++){
-      for(var jj = 0; jj < 3; jj++){
-
-        var boardCopy = getBoardCopy(board)
-        if(boardCopy[ii][jj] == null){
-          boardCopy[ii][jj] = 'O'
-
-          if(isWinner(boardCopy) != null){
-            // X is going to win if they were to play here. Let's take it.
-            console.log("Choosing " + stringForBoard(boardCopy) + " for the win!")
-            boardCopy[ii][jj] = 'O'
-            board = boardCopy
-            updateBoardGUI()
-            turn = !turn;
-            return;
-          }
-        } else {
-          continue
-        }
-      }
-  }
 
   // Check to make sure player can't win on next turn
   for(var ii = 0; ii < 3; ii++){
@@ -102,6 +80,31 @@ function computerTurn(){
 
       }
   }
+
+  // Check to see if we can win on this turn
+  for(var ii = 0; ii < 3; ii++){
+      for(var jj = 0; jj < 3; jj++){
+
+        var boardCopy = getBoardCopy(board)
+        if(boardCopy[ii][jj] == null){
+          boardCopy[ii][jj] = 'O'
+
+          if(isWinner(boardCopy) != null){
+            // X is going to win if they were to play here. Let's take it.
+            console.log("Choosing " + stringForBoard(boardCopy) + " for the win!")
+            boardCopy[ii][jj] = 'O'
+            board = boardCopy
+            updateBoardGUI()
+            turn = !turn;
+            return;
+          }
+        } else {
+          continue
+        }
+      }
+  }
+
+
 
   // 1. Create token's potential moves
   var moves = []
