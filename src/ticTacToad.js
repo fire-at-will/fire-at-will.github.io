@@ -363,11 +363,13 @@ function updateGUIWithEndState(endState){
 
   // Show retry button
   document.getElementById("retry-button").style.display = "inline-block"
+
 }
 
 function resetGame(){
   // Hide retry button
   document.getElementById("retry-button").style.display = "none"
+  document.getElementById("message").innerHTML = "Think you can beat me? :)"
 
   // Reset board
   board = [
