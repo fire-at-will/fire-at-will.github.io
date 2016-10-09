@@ -13,34 +13,48 @@ var board = [
 
 var boardDictionary = {}  // Used for memoization
 
+var gameIsOver = false
 var turn = true
 var turnNumber = -1
 
 function userTurn(row, col) {
 
-    if(!turn){
-      return
-    }
-    turnNumber++;
+  if(gameIsOver || !turn){
+    return
+  }
 
-    if(board[row][col] != null){
-      // If someone has already played in this spot, return
-      return;
-    } else {
-      // Set board
-      board[row][col] = 'X'
-      updateBoardGUI();
-    }
+  turnNumber++;
 
-    // Switch turn
-    turn = !turn;
-    turnNumber++;
-    computerTurn();
+  if(board[row][col] != null){
+  // If someone has already played in this spot, return
+    return;
+  } else {
+    // Set board
+    board[row][col] = 'X'
+    updateBoardGUI();
+  }
+
+  // Check for winner
+  var winner = isGameOver(board)
+  if(winner != 'N'){
+    console.log(winner + " wins!")
+    updateGUIWithEndState(winner)
+    return
+  }
+
+  // Switch turn
+  turn = !turn;
+  turnNumber++;
+  computerTurn();
+
+  winner = isGameOver(board)
+  if(winner != 'N'){
+    console.log(winner + " wins!")
+    updateGUIWithEndState(winner)
+  }
 }
 
 function computerTurn(){
-
-  console.log("====== STARTING COMPUTER TURN ======\n--012345678")
 
   // 1. Create token's potential moves
   var moves = []
@@ -54,7 +68,7 @@ function computerTurn(){
           moves.push(getBoardCopy(boardCopy))
 
 
-          let moveScore = minMax(boardCopy, turnNumber, true)
+          let moveScore = evaluateMove(boardCopy, turnNumber, true)
           moveScores.push(moveScore);
         } else {
           continue
@@ -63,12 +77,7 @@ function computerTurn(){
       }
   }
 
-  // Now we have our choices. Let's evaluate our choices.
-
-
-  for(var ii = 0; ii < moveScores.length; ii++){
-    console.log("--" + stringForBoard(moves[ii]) + ": Score: " + moveScores[ii])
-  }
+  // Now we have our potential choices. Let's evaluate our choices.
 
   var maxScore = -1000
   var index = -1
@@ -81,16 +90,13 @@ function computerTurn(){
   }
 
   // Choose moves[maxScore] to play.
-  //if(moves[index] != null){
   board = moves[index]
-  //}
-  console.log("Choosing move " + stringForBoard(board) + " with score: " + maxScore)
   updateBoardGUI()
 
   turn = !turn;
 }
 
-function minMax(move, depth, isMaximizing){
+function evaluateMove(move, depth, isMaximizing){
   // Exit recursion
   if(isWinner(move) != null){
       if(isWinner(move) == 'X'){
@@ -116,7 +122,7 @@ function minMax(move, depth, isMaximizing){
           if(boardCopy[ii][jj] == null){
             boardCopy[ii][jj] = 'X'
             moves.push(getBoardCopy(boardCopy))
-            let moveScore = minMax(boardCopy, depth + 1, !isMaximizing);
+            let moveScore = evaluateMove(boardCopy, depth + 1, !isMaximizing);
             moveScores.push(moveScore);
           } else {
             continue;
@@ -149,7 +155,7 @@ function minMax(move, depth, isMaximizing){
           if(boardCopy[ii][jj] == null){
             boardCopy[ii][jj] = 'O'
             moves.push(getBoardCopy(boardCopy))
-            let moveScore = minMax(boardCopy, depth + 1, !isMaximizing);
+            let moveScore = evaluateMove(boardCopy, depth + 1, !isMaximizing);
             moveScores.push(moveScore);
           } else {
             continue;
@@ -172,10 +178,6 @@ function minMax(move, depth, isMaximizing){
 }
 
 function isWinner(theBoard){
-  if(theBoard == null){
-    console.log("Prevented issue in isWinner")
-    return null
-  }
   // Returns char of winner
   // *|*|*
   //  | |
@@ -234,6 +236,37 @@ function isWinner(theBoard){
   }
 
   return null
+}
+
+function isGameOver(theBoard){
+  // Determines if a board represents an end state.
+  // Return values:
+  // X: X is the winner
+  // Y: Y is the winner
+  // D: Draw
+  // N: Game is not over
+  let winner = isWinner(theBoard)
+  if(winner != null){
+    return winner
+  }
+
+  // Check for draw
+  var draw = true
+  for(var ii = 0; ii < 3; ii++){
+    for(var jj = 0; jj < 3; jj++){
+      if(theBoard[ii][jj] == null){
+        // There is an unused spot
+        draw = false
+      }
+    }
+  }
+
+  if(draw){
+    return 'D'  // D for draw
+  }
+
+  // At this point, the game must not be over
+  return 'N'
 }
 
 function stringForBoard(theBoard){
@@ -309,4 +342,62 @@ function updateBoardGUI(){
       }
     }
   }
+}
+
+function onMouseOver(row, col){
+  if(board[row][col] != null){
+    // Don't do anything
+    return
+  }
+
+  document.getElementById("" + row + col).innerHTML = "X"
+}
+
+function onMouseLeave(row, col){
+  if(board[row][col] != null){
+    // Don't do anything
+    return
+  }
+
+  document.getElementById("" + row + col).innerHTML = ""
+}
+
+function updateGUIWithEndState(endState){
+  switch (endState) {
+    case 'O':
+      // Computer wins
+      document.getElementById("message").innerHTML = "Looks like I win! Want to try again?"
+      break;
+    case 'X':
+      // User wins
+      document.getElementById("message").innerHTML = "Wow, good job! Everyone gets lucky every now and then...want to try your luck and play again?"
+      break;
+    case 'D':
+      document.getElementById("message").innerHTML = "Drats, its a draw. Rematch?"
+      break;
+    default:
+      break;
+  }
+
+  // Show retry button
+  document.getElementById("retry-button").style.display = "inline-block"
+}
+
+function resetGame(){
+  // Hide retry button
+  document.getElementById("retry-button").style.display = "none"
+
+  // Reset board
+  board = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null]
+  ];
+
+  updateBoardGUI()
+
+  // Reset global game state variables
+  turnNumber = -1
+  gameIsOver = false
+  turn = true
 }

@@ -19,60 +19,55 @@
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjxsfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script src="src/ticTacToad.js"></script>
   </head>
-  <body>
+  <body id="main-body" style="text-align: center;">
 
-    <!-- Nav Bar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Tic Tac Toad</a>
-      </div>
-    </nav>
+    <h2 id="title">Tic Tac Toad</h2>
 
-    <div class="container">
+    <div class="container" id="main-background">
 
       <br>
 
-      <div class="panel panel-default">
-        <div class="panel-body" style="text-align:center">
+      <div class="panel panel-default" id="main-panel">
+        <div class="panel-body" style="text-align:center;">
           <!-- Row 0 -->
 
-          <div class="square container-fluid">
+          <div class="square container-fluid" style="margin-bottom: 0;">
 
             <!-- Row 0 -->
             <div class="row" style="text-align: center;">
-                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(0, 0)">
+                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(0, 0)" onmouseover="onMouseOver(0, 0)" onmouseleave="onMouseLeave(0, 0)">
                   <p class="game-piece" id="00"></p>
                 </div>
-                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(0, 1)">
+                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(0, 1)" onmouseover="onMouseOver(0, 1)" onmouseleave="onMouseLeave(0, 1)">
                   <p class="game-piece" id="01"><p>
                 </div>
-                <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;" onclick="userTurn(0, 2)">
+                <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;" onclick="userTurn(0, 2)" onmouseover="onMouseOver(0, 2)" onmouseleave="onMouseLeave(0, 2)">
                   <p class="game-piece" id="02"></p>
                 </div>
               </div>
 
               <!-- Row 1 -->
               <div class="row" style="text-align: center;">
-                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(1, 0)">
+                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(1, 0)" onmouseover="onMouseOver(1, 0)" onmouseleave="onMouseLeave(1, 0)">
                     <p class="game-piece" id="10"></p>
                   </div>
-                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(1, 1)">
+                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(1, 1)" onmouseover="onMouseOver(1, 1)" onmouseleave="onMouseLeave(1, 1)">
                     <p class="game-piece" id="11"><p>
                   </div>
-                  <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;" onclick="userTurn(1, 2)">
+                  <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;" onclick="userTurn(1, 2)" onmouseover="onMouseOver(1, 2)" onmouseleave="onMouseLeave(1, 2)">
                     <p class="game-piece" id="12"></p>
                   </div>
                 </div>
 
                 <!-- Row 2 -->
                 <div class="row" style="text-align: center;">
-                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;" onclick="userTurn(2, 0)">
+                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;" onclick="userTurn(2, 0)" onmouseover="onMouseOver(2, 0)" onmouseleave="onMouseLeave(2, 0)">
                       <p class="game-piece" id="20"></p>
                     </div>
-                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;" onclick="userTurn(2, 1)">
+                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;" onclick="userTurn(2, 1)" onmouseover="onMouseOver(2, 1)" onmouseleave="onMouseLeave(2, 1)">
                       <p class="game-piece" id="21"><p>
                     </div>
-                    <div class="col-xs-4 tic-tac-square" onclick="userTurn(2, 2)">
+                    <div class="col-xs-4 tic-tac-square" onclick="userTurn(2, 2)" onmouseover="onMouseOver(2, 2)" onmouseleave="onMouseLeave(2, 2)">
                       <p class="game-piece" id="22"></p>
                     </div>
                   </div>
@@ -81,13 +76,16 @@
         </div>
       </div>
 
-      <br>
     </div>  <!-- End container -->
 
-    <div class="jumbotron">
-      <div class="container">
-        <p>Settings will go here later.</p>
+    <div class="jumbotron" style="text-align:center" id="footer">
+      <div class="container" style="text-align:center">
+        <p id="message">Think you can beat me? :)</p>
+        <button type="button" class="btn btn-default" style="display: none;" id="retry-button" onclick="resetGame()">Play Again</button>
       </div>
+
+      <br>
+      <p class="bottom-text">Website made by <a href="http://www.willtaylor.io" style="color: #DF3B57;">Will Taylor</a>.</p>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

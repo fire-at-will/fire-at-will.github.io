@@ -1,6 +1,6 @@
-body {
+/*body {
   padding-top: 50px;
-}
+}*/
 
 .tic-tac-square{
     width:10vw;
@@ -16,4 +16,26 @@ body {
   line-height: 10vw;
   /*font-size: xx-large;*/
   font-size: 150%;
+}
+
+#title{
+  color: #F6F7EB;
+}
+
+#main-background{
+  background-color: #507DBC;
+}
+
+#main-body{
+  background-color: #507DBC;
+}
+
+#main-panel{
+  background-color: #F6F7EB;
+}
+
+#footer{
+  background-color: #3C4859;
+  margin-bottom: 0;
+  color: #F6F7EB;
 }
