@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjxsfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjxsfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="src/ticTacToad.js"></script>
   </head>
   <body>
 
@@ -40,40 +40,40 @@
 
             <!-- Row 0 -->
             <div class="row" style="text-align: center;">
-                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;">
-                  <p class="game-piece">O</p>
+                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(0, 0)">
+                  <p class="game-piece" id="00"></p>
                 </div>
-                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;">
-                  <p class="game-piece">X<p>
+                <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(0, 1)">
+                  <p class="game-piece" id="01"><p>
                 </div>
-                <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;">
-                  <p class="game-piece">O</p>
+                <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;" onclick="userTurn(0, 2)">
+                  <p class="game-piece" id="02"></p>
                 </div>
               </div>
 
               <!-- Row 1 -->
               <div class="row" style="text-align: center;">
-                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;">
-                    <p class="game-piece">O</p>
+                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(1, 0)">
+                    <p class="game-piece" id="10"></p>
                   </div>
-                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;">
-                    <p class="game-piece">X<p>
+                  <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc; border-bottom: 2px solid #ccc;" onclick="userTurn(1, 1)">
+                    <p class="game-piece" id="11"><p>
                   </div>
-                  <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;">
-                    <p class="game-piece">O</p>
+                  <div class="col-xs-4 tic-tac-square" style="border-bottom: 2px solid #ccc;" onclick="userTurn(1, 2)">
+                    <p class="game-piece" id="12"></p>
                   </div>
                 </div>
 
                 <!-- Row 2 -->
                 <div class="row" style="text-align: center;">
-                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;">
-                      <p class="game-piece">O</p>
+                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;" onclick="userTurn(2, 0)">
+                      <p class="game-piece" id="20"></p>
                     </div>
-                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;">
-                      <p class="game-piece">X<p>
+                    <div class="col-xs-4 tic-tac-square" style="border-right: 2px solid #ccc;" onclick="userTurn(2, 1)">
+                      <p class="game-piece" id="21"><p>
                     </div>
-                    <div class="col-xs-4 tic-tac-square">
-                      <p class="game-piece">O</p>
+                    <div class="col-xs-4 tic-tac-square" onclick="userTurn(2, 2)">
+                      <p class="game-piece" id="22"></p>
                     </div>
                   </div>
           </div>
@@ -86,12 +86,10 @@
 
     <div class="jumbotron">
       <div class="container">
-        <p>Settings will go here.</p>
+        <p>Settings will go here later.</p>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
