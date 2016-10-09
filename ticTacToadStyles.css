@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+
+.tic-tac-square{
+    width:10vw;
+    height: 10vw;
+}
+
+.square {
+    width: 30vw;
+    height: 30vw;
+}
+
+.game-piece{
+  line-height: 10vw;
+  /*font-size: xx-large;*/
+  font-size: 300%;
+}
