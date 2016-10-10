@@ -92,7 +92,6 @@ function computerTurn(){
   }
 
   // Check to make sure player can't win on next turn
-  console.log("-------")
   for(var ii = 0; ii < 3; ii++){
       for(var jj = 0; jj < 3; jj++){
 
@@ -121,7 +120,16 @@ function computerTurn(){
   // If it's the first turn and player played in a corner, play in center
   if(turnNumber == 1){
     if(board[0][0] == 'X' || board[0][2] == 'X' || board[2][0] == 'X' || board[2][2] == 'X'){
+      console.log("Other X World")
       board[1][1] = 'O'
+      updateBoardGUI()
+      turn = !turn;
+      return;
+    }
+
+    if(board[1][1] == 'X'){
+      console.log("X World")
+      board[0][0] = 'O'
       updateBoardGUI()
       turn = !turn;
       return;
