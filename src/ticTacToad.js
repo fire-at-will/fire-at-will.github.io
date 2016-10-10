@@ -19,7 +19,19 @@ var turnNumber = -1
 
 function userTurn(row, col) {
 
-  if(gameIsOver || !turn){
+  // var test= [
+  //   ['O', null, null],
+  //   [null, 'X', null],
+  //   [null, null, 'X']
+  // ];
+
+  //board = test
+  //computerTurn()
+
+  if(gameIsOver){
+    return
+  }
+  if(!turn){
     return
   }
 
@@ -56,31 +68,6 @@ function userTurn(row, col) {
 
 function computerTurn(){
 
-  // Check to make sure player can't win on next turn
-  for(var ii = 0; ii < 3; ii++){
-      for(var jj = 0; jj < 3; jj++){
-
-        var boardCopy = getBoardCopy(board)
-        if(boardCopy[ii][jj] == null){
-          boardCopy[ii][jj] = 'X'
-
-          if(isWinner(boardCopy) != null){
-            // X is going to win if they were to play here. Let's take it.
-            console.log("Choosing " + stringForBoard(boardCopy) + " so X won't win.")
-            boardCopy[ii][jj] = 'O'
-            board = boardCopy
-            updateBoardGUI()
-            turn = !turn;
-            return;
-          }
-
-        } else {
-          continue
-        }
-
-      }
-  }
-
   // Check to see if we can win on this turn
   for(var ii = 0; ii < 3; ii++){
       for(var jj = 0; jj < 3; jj++){
@@ -104,6 +91,42 @@ function computerTurn(){
       }
   }
 
+  // Check to make sure player can't win on next turn
+  console.log("-------")
+  for(var ii = 0; ii < 3; ii++){
+      for(var jj = 0; jj < 3; jj++){
+
+        var boardCopy = getBoardCopy(board)
+        if(boardCopy[ii][jj] == null){
+          boardCopy[ii][jj] = 'X'
+          console.log("Seeing if " + stringForBoard(boardCopy) + " will let X win.")
+
+          if(isWinner(boardCopy) != null){
+            // X is going to win if they were to play here. Let's take it.
+            console.log("Choosing " + stringForBoard(boardCopy) + " so X won't win.")
+            boardCopy[ii][jj] = 'O'
+            board = boardCopy
+            updateBoardGUI()
+            turn = !turn;
+            return;
+          }
+
+        } else {
+          continue
+        }
+
+      }
+  }
+
+  // If it's the first turn and player played in a corner, play in center
+  if(turnNumber == 1){
+    if(board[0][0] == 'X' || board[0][2] == 'X' || board[2][0] == 'X' || board[2][2] == 'X'){
+      board[1][1] = 'O'
+      updateBoardGUI()
+      turn = !turn;
+      return;
+    }
+  }
 
 
   // 1. Create token's potential moves
@@ -116,7 +139,6 @@ function computerTurn(){
         if(boardCopy[ii][jj] == null){
           boardCopy[ii][jj] = 'O'
           moves.push(getBoardCopy(boardCopy))
-
 
           let moveScore = evaluateMove(boardCopy, turnNumber, true)
           moveScores.push(moveScore);
@@ -143,6 +165,32 @@ function computerTurn(){
     }
   }
 
+  // Pick random of the best choices
+  var count = 0
+  for(var ii = 0; ii < moveScores.length; ii++){
+    if(moveScores[ii] == maxScore){
+      count++
+    }
+  }
+
+  if(count > 1){
+    var rand = Math.floor(Math.random() * count)
+    console.log("Rand " + rand)
+    var temp = 0
+    for(var ii = 0; ii < count; ii++){
+      if(moveScores[ii] == maxScore){
+        temp++
+        if(temp == rand){
+          console.log("Setting index to " + ii)
+          index = ii
+        }
+
+      }
+    }
+  }
+
+
+
   // Choose moves[maxScore] to play.
   console.log("Choosing " + stringForBoard(moves[index]) + " for " + maxScore)
   board = moves[index]
@@ -159,7 +207,7 @@ function evaluateMove(move, depth, isMaximizing){
       }
       if(isWinner(move) == 'O'){
         // O is winner (computer)
-        return (10)
+        return (10 - depth)
       }
   }
 
@@ -236,56 +284,56 @@ function isWinner(theBoard){
   // *|*|*
   //  | |
   //  | |
-  if((theBoard[0][0] == theBoard[0][1]) && (theBoard[0][1] == theBoard[0][2])){
+  if((theBoard[0][0] == theBoard[0][1]) && (theBoard[0][1] == theBoard[0][2]) && (theBoard[0][0] != null)){
     return theBoard[0][0]
   }
 
   //  | |
   // *|*|*
   //  | |
-  if((theBoard[1][0] == theBoard[1][1]) && (theBoard[1][1] == theBoard[1][2])){
+  if((theBoard[1][0] == theBoard[1][1]) && (theBoard[1][1] == theBoard[1][2]) && (theBoard[1][0] != null)){
     return theBoard[1][0]
   }
 
   //  | |
   //  | |
   // *|*|*
-  if((theBoard[2][0] == theBoard[2][1]) && (theBoard[2][1] == theBoard[2][2])){
+  if((theBoard[2][0] == theBoard[2][1]) && (theBoard[2][1] == theBoard[2][2]) && (theBoard[2][2] != null)){
     return theBoard[2][2]
   }
 
   // *| |
   // *| |
   // *| |
-  if((theBoard[0][0] == theBoard[1][0]) && (theBoard[1][0] == theBoard[2][0])){
+  if((theBoard[0][0] == theBoard[1][0]) && (theBoard[1][0] == theBoard[2][0]) && (theBoard[0][0] != null)){
     return theBoard[0][0]
   }
 
   //  |*|
   //  |*|
   //  |*|
-  if((theBoard[0][1] == theBoard[1][1]) && (theBoard[1][1] == theBoard[2][1])){
+  if((theBoard[0][1] == theBoard[1][1]) && (theBoard[1][1] == theBoard[2][1]) && (theBoard[0][1] != null)){
     return theBoard[0][1]
   }
 
   //  | |*
   //  | |*
   //  | |*
-  if((theBoard[0][2] == theBoard[1][2]) && (theBoard[1][2] == theBoard[2][2])){
+  if((theBoard[0][2] == theBoard[1][2]) && (theBoard[1][2] == theBoard[2][2]) && (theBoard[0][2] != null)){
     return theBoard[0][2]
   }
 
   // *| |
   //  |*|
   //  | |*
-  if((theBoard[0][0] == theBoard[1][1]) && (theBoard[1][1] == theBoard[2][2])){
+  if((theBoard[0][0] == theBoard[1][1]) && (theBoard[1][1] == theBoard[2][2]) && (theBoard[0][0] != null)){
     return theBoard[0][0]
   }
 
   //  | |*
   //  |*|
   // *| |
-  if((theBoard[0][2] == theBoard[1][1]) && (theBoard[1][1] == theBoard[2][0])){
+  if((theBoard[0][2] == theBoard[1][1]) && (theBoard[1][1] == theBoard[2][0]) && (theBoard[0][2] != null)){
     return theBoard[0][2]
   }
 
@@ -399,6 +447,7 @@ function updateBoardGUI(){
 }
 
 function updateGUIWithEndState(endState){
+  gameIsOver = true
   switch (endState) {
     case 'O':
       // Computer wins
