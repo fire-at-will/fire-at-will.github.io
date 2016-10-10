@@ -98,7 +98,6 @@ function computerTurn(){
         var boardCopy = getBoardCopy(board)
         if(boardCopy[ii][jj] == null){
           boardCopy[ii][jj] = 'X'
-          console.log("Seeing if " + stringForBoard(boardCopy) + " will let X win.")
 
           if(isWinner(boardCopy) != null){
             // X is going to win if they were to play here. Let's take it.
@@ -120,7 +119,6 @@ function computerTurn(){
   // If it's the first turn and player played in a corner, play in center
   if(turnNumber == 1){
     if(board[0][0] == 'X' || board[0][2] == 'X' || board[2][0] == 'X' || board[2][2] == 'X'){
-      console.log("Other X World")
       board[1][1] = 'O'
       updateBoardGUI()
       turn = !turn;
@@ -128,8 +126,24 @@ function computerTurn(){
     }
 
     if(board[1][1] == 'X'){
-      console.log("X World")
-      board[0][0] = 'O'
+      var rand = Math.floor(Math.random() * 4)
+      switch (rand) {
+        case 0:
+          board[0][0] = 'O'
+          break;
+        case 1:
+          board[0][2] = 'O'
+          break;
+        case 2:
+          board[2][0] = 'O'
+        case 3:
+          board[2][2] = 'O'
+          break;
+        default:
+          board[0][0] = 'O'
+          break;
+      }
+
       updateBoardGUI()
       turn = !turn;
       return;
@@ -158,7 +172,6 @@ function computerTurn(){
   }
 
   // Now we have our potential choices. Let's evaluate our choices.
-  console.log("===Possible Moves===")
   for(var ii = 0; ii < moves.length; ii++){
     console.log("Evaluating " + stringForBoard(moves[ii]) + ": " + moveScores[ii])
   }
@@ -183,13 +196,11 @@ function computerTurn(){
 
   if(count > 1){
     var rand = Math.floor(Math.random() * count)
-    console.log("Rand " + rand)
     var temp = 0
     for(var ii = 0; ii < count; ii++){
       if(moveScores[ii] == maxScore){
         temp++
         if(temp == rand){
-          console.log("Setting index to " + ii)
           index = ii
         }
 
