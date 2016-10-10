@@ -136,6 +136,7 @@ function computerTurn(){
           break;
         case 2:
           board[2][0] = 'O'
+          break;
         case 3:
           board[2][2] = 'O'
           break;
