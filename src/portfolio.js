@@ -6,10 +6,14 @@ function onBodyLoad(){
 }
 
 function fadeInInfo(){
-    //$('#my-name').delay(2500).fadeIn(1000);
-    fadeIn("my-name");
+  setTimeout(function(){fadeIn("my-name");}, 2500);
+  setTimeout(function(){fadeIn("my-info");}, 3500);
     
-  //$('#my-info').delay(4000).fadeIn(1000);
+}
+
+function scrollPastFirstSection(){
+  console.log("Scroll");
+  document.getElementById('portfolio-section').scrollIntoView();
 }
 
 // Uses type it plugin to type "Hello, world.".
@@ -38,7 +42,6 @@ function addDynamicHeaderSizes(){
 }
 
 function fadeIn(elementName) {
-    console.log("Fade in " + elementName);
     // Get element
     var element = document.getElementById(elementName);
 
@@ -46,7 +49,6 @@ function fadeIn(elementName) {
     element.style.opacity = 0;
 
     var tick = function () {
-        console.log("Tick " + element.style.opacity);
         // Increment opacity
         element.style.opacity = +element.style.opacity + 0.01
 

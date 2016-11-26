@@ -14,22 +14,25 @@ Created: November 22, 2016
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Will Taylor</title>
 
+    <!-- ******************** Fonts ******************** -->
     <!-- Source Sans Pro font -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Bootstrap -->
+    <!-- ******************** Libraries ******************** -->
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- /Bootstrap -->
-
     <!-- Type it -->
     <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
 
+    <!-- ******************** Custom JS/CSS ******************** -->
     <!-- My CSS -->
     <link rel="stylesheet" href="css/portfolio.css">
-
     <!-- My JS -->
     <script src="src/portfolio.js"></script>
 
@@ -61,25 +64,37 @@ Created: November 22, 2016
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div style="background-color: #666A86; color: white;">
+    <div class="dark-blue-gray-background" id="first-section">
       <div class="container main-container">
         <!-- Centered Logo Image -->
         <div style="text-align: center;">
           <h1 id="hello-world"></h1>
 
+          <br>
+
           <h1 id="my-name">Will Taylor</h1>
-          <h1 id="my-info">Software Engineer | UX Designer | Tinkerer
+          <h1 id="my-info">Software Engineer | UX Designer | Mobile | Web</h1>
+
+          <p id="down-button" onclick="scrollPastFirstSection()"><i style="font-size: 4em;" class="material-icons">arrow_downward</i></p>
         </div>
       </div>
+      <br>
       <!-- End Main Container -->
     </div>
 
 
-    <div class="footer">
+    <div id="portfolio-section">
+      <div class="container">
+        <h2>Porfolio</h2>
+      </div>
+    </div>
+
+
+<!--     <div class="footer">
       <div class="container">
         <p class="footer-text">&copy; Scheduling Your Horizons 2016-2017 Texas Christian University, Computer Science Department</p>
       </div>
-    </div>
+    </div> -->
 
   </body>
 </html>

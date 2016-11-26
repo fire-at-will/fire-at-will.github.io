@@ -15,6 +15,44 @@
  font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
+/* Background styles */
+.dark-blue-gray-background{
+  background-color: #666A86; 
+  color: #F2F5EA;
+}
+
+.green-background{
+  background-color: #61988E;
+  color: #F2F5EA;
+}
+
+#first-section{
+  width: 100%;
+  top: 0px;
+  height: 93vh;
+  position: relative;
+}
+
+#down-button{
+  position: absolute;
+  top: 75vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+
 a{
   color: #8A2D71;
 }
@@ -82,7 +120,7 @@ a:hover{
 }
 
 #my-info{
-  display: none;
+  opacity: 0;
 }
 
 
