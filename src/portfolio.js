@@ -51,6 +51,20 @@ function checkIfInView(){
       $element.removeClass('bounceInRight');
     }
   });
+
+  $.each(selectors.get('.animate-fade-in-down'), function(){
+    var $element = $(this);
+    var elementHeight = $element.outerHeight();
+    var elementTopPosition = $element.offset().top;
+    var elementBottomPosition = (elementTopPosition + elementHeight);
+
+    //check to see if this current container is within viewport
+    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+      $element.addClass('fadeInDown');
+    } else {
+      $element.removeClass('fadeInDown');
+    }
+  });
 }
 
 function fadeInInfo(){
@@ -59,11 +73,24 @@ function fadeInInfo(){
     
 }
 
-function scrollPastFirstSection(){
-  //document.getElementById('portfolio-section').scrollIntoView();
+function scrollToHome(){
+  selectors.get('html, body').animate({
+        scrollTop: selectors.get('#home-section').offset().top
+    }, 2000);
+}
+
+function scrollToWork(){
   selectors.get('html, body').animate({
         scrollTop: selectors.get('#job-section').offset().top
-    }, 1500);
+    }, 2000);
+
+  setTimeout(function(){setNavBlack()}, 2200);
+}
+
+function scrollToWeb(){
+  selectors.get('html, body').animate({
+        scrollTop: selectors.get('#web-section').offset().top
+    }, 1800);
 }
 
 // Uses type it plugin to type "Hello, world.".
@@ -87,12 +114,35 @@ function configureNavBarColorChanging(){
   selectors.get(document).scroll(function() { 
   scroll_start = $(this).scrollTop();
   if(scroll_start > offset.top) {
-      selectors.get('#navbar').css('background-color', 'white');
-      selectors.get('#link1').css('color', '#000000');
+    setNavBlack();
    } else {
-      selectors.get('#navbar').css('background-color', 'transparent');
+    setNavTransparent();
    }
   });
+}
+
+function setNavTransparent() {
+  selectors.get('#navbar').css('background-color', 'transparent');
+  selectors.get('#name-nav').css('color', '#F2F5EA');
+  selectors.get('#home-nav').css('color', '#F2F5EA');
+  selectors.get('#work-nav').css('color', '#F2F5EA');
+  selectors.get('#web-nav').css('color', '#F2F5EA');
+  selectors.get('#mobile-nav').css('color', '#F2F5EA');
+  selectors.get('#tech-nav').css('color', '#F2F5EA');
+  selectors.get('#education-nav').css('color', '#F2F5EA');
+  selectors.get('#activities-nav').css('color', '#F2F5EA');
+}
+
+function setNavBlack(){
+  selectors.get('#navbar').css('background-color', 'white');
+  selectors.get('#name-nav').css('color', '#000000');
+  selectors.get('#home-nav').css('color', '#000000');
+  selectors.get('#work-nav').css('color', '#000000');
+  selectors.get('#web-nav').css('color', '#000000');
+  selectors.get('#mobile-nav').css('color', '#000000');
+  selectors.get('#tech-nav').css('color', '#000000');
+  selectors.get('#education-nav').css('color', '#000000');
+  selectors.get('#activities-nav').css('color', '#000000');
 }
 
 function changeNavbarTextColors(color){

@@ -47,7 +47,7 @@ Created: November 22, 2016
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand">Will Taylor</a>
+          <a class="navbar-brand" id="name-nav">Will Taylor</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,20 +55,20 @@ Created: November 22, 2016
 
           <ul class="nav navbar-nav navbar-right">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html" class="nav-link active-link">Home<span class="sr-only">(current)</span></a></li>
-              <li><a href="team.html" class="nav-link">Team</a></li>
-              <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-              <li><a href="wars.html" class="nav-link">WARs</a></li>
-              <li><a href="photos.html" class="nav-link">Photos</a></li>
-              <li><a href="deliverables.html" class="nav-link">Deliverables</a></li>
-              <li><a href="resources.html" class="nav-link">Resources</a></li>
+              <li class="active"><a class="nav-link active-link" onclick="scrollToHome();" id="home-nav">Home<span class="sr-only">(current)</span></a></li>
+              <li><a class="nav-link" onclick="scrollToWork()" id="work-nav">Work Experience</a></li>
+              <li><a class="nav-link" onclick="scrollToWeb()" id="web-nav">Web</a></li>
+              <li><a class="nav-link" id="mobile-nav">Mobile</a></li>
+              <li><a class="nav-link" id="tech-nav">Technical</a></li>
+              <li><a class="nav-link" id="education-nav">Education</a></li>
+              <li><a class="nav-link" id="activities-nav">Activities</a></li>
             </ul>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div id="first-section">
+    <div id="home-section">
       <div class="container">
         <!-- Centered Logo Image -->
         <div style="text-align: center;">
@@ -86,7 +86,7 @@ Created: November 22, 2016
 
           
 
-          <p id="down-button" onclick="scrollPastFirstSection()"><i style="font-size: 4em;" class="material-icons">arrow_downward</i></p>
+          <p id="down-button" onclick="scrollToWork()"><i style="font-size: 4em;" class="material-icons">arrow_downward</i></p>
         </div>
 
       </div>      
@@ -97,13 +97,20 @@ Created: November 22, 2016
     <div id="job-section">
 
       <div class="container">
-        <h2 id="job-section-title">Work Experience</h2>
-        <br>
+        <h1 class="section-header">Work Experience</h2>
 
         <!-- Atmos Energy Internship -->
         <div class="jumbotron job-jumbotron animated animate-from-right" id="atmos-job">
             <h3>Mobile Applications Developer, Atmos Energy</h3>
-            <p class="job-metadata">May - July 2016<br>Dallas, TX</p>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <p class="metadata">May - July 2016</p>
+              </div>
+              <div class="col-md-6">
+              <p class="metadata" style="text-align: right;">Dallas, TX</p>
+              </div>
+            </div>
 
             <!-- Roles -->
             <ul>
@@ -120,7 +127,15 @@ Created: November 22, 2016
             <!-- C Spire Internship -->
             <div class="jumbotron job-jumbotron animated animate-from-left" id="cspire-job">
                 <h3>Software Developer, C Spire</h3>
-                <p class="job-metadata">June - July 2015<br>Ridgeland, MS</p>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="metadata">June - July 2015</p>
+                  </div>
+                  <div class="col-md-6">
+                  <p class="metadata" style="text-align: right;">Ridgeland, MS</p>
+                  </div>
+                </div>
 
                 <!-- Roles -->
                 <ul>
@@ -137,7 +152,14 @@ Created: November 22, 2016
             <!-- TCU Internship -->
             <div class="jumbotron job-jumbotron animated animate-from-right" id="tcu-job">
                 <h3>Mobile Applications Developer, Texas Christian University</h3>
-                <p class="job-metadata">May - August 2014<br>Fort Worth, TX</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="metadata">May - August 2014</p>
+                  </div>
+                  <div class="col-md-6">
+                  <p class="metadata" style="text-align: right;">Fort Worth, TX</p>
+                  </div>
+                </div>
 
                 <!-- Roles -->
                 <ul>
@@ -145,18 +167,66 @@ Created: November 22, 2016
                     <li>Developed nearby and favorite deals sections to the Frogsaver app.</li>
                 </ul>
 
-                <a href="https://www.cspire.com/" target="_blank" class="hvr-underline-from-center-white">C Spire's Website</a>
+                <a href="http://www.tcu.edu/" target="_blank" class="hvr-underline-from-center-white">Texas Christian University's Website</a>
             </div>
 
           </div>
         </div>
-
-        
-
-        
       </div>
     </div>
 
+    <div id="web-section">
+      <div class="container">
+        <h1 class="section-header">Web</h1>
+
+        <div class="jumbotron portfolio-jumbotron animated animate-fade-in-down" id="scheduling-your-horizons-site">
+          <h3>Scheduling Your Horizons (Design/UI Lead)</h3>
+          <p class="metadata">August 2016 - May 2017</p>
+
+          <p class="portfolio-item-description">Scheduling Your Horizons was my senior design project at TCU. Our project provided an interface for students to register for <a href="https://txwes.edu/" class="hvr-underline-from-center-white">Texas Wesleyan University's</a> <a href="http://www.eyhn.org/" class="hvr-underline-from-center-white">Expanding Your Horizons</a> program. The system then scheduled the students for the EYH program.</p> 
+          <p class="portfolio-item-description">While on the project, I:</p>
+          <ul>
+            <li>Created the <a href="http://brazos.cs.tcu.edu/1617SYH/index.html" class="hvr-underline-from-center-white">Scheduling Your Horizons Description Page</a></li>
+            <li>Designed user interfaces using HTML5, CSS, JavaScript, and Bootstrap.</li>
+          </ul>
+
+          TODO: Screenshots
+          
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="tic-tac-toad-site">
+              <h3>Tic Tac Toad</h3>
+              <p class="metadata">Fall 2016</p>
+
+              <p class="portfolio-item-description">A website that lets you play tic tac toe against a pretty good AI! See if you can beat it! :)</p>
+
+              <a href="http://willtaylor.io/tictactoad.html" class="hvr-underline-from-center-white">Tic Tac Toad</a>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="pixel-sorting-site">
+              <h3>Pixel Sort</h3>
+              <p class="metadata">Summer 2016</p>
+
+              <p class="portfolio-item-description">A website that utilizes web workers and the HTML canvas API to sort the pixels of a user-provided image.</p>
+
+              <ul>
+                <li>Used web workers to perform computationally expensive sorting wihtout freezing the UI.</li>
+                <li>Implemented the pixel sort using the quick sort algorithm.</li>
+                <li>Utilized Google's Material Design Lite to implement the UI</li>
+              </ul>
+
+              <a href="http://willtaylor.io/pixelSort" class="hvr-underline-from-center-white">Pixel Sort Website</a>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
 
 <!--     <div class="footer">
       <div class="container">

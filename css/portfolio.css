@@ -46,7 +46,7 @@ li{
   color: white;
 }
 
-#first-section{
+#home-section{
   width: 100%;
   top: 0px;
 
@@ -68,7 +68,7 @@ li{
 }
 
 /*Down button in first section */
-#first-section #down-button{
+#home-section #down-button{
   position: absolute;
   left: 50%;
   right: 50%;
@@ -87,6 +87,10 @@ li{
   user-select: none;
 }
 
+.section-header{
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
 
 
 /* ------------------ Work Experience ------------------ */
@@ -95,7 +99,7 @@ li{
  *  Represents the time and location of the job
  */
 
-.job-metadata{
+.metadata{
   font-size: 1.15em !important;
   opacity: 0.75;
 }
@@ -109,9 +113,7 @@ li{
   color: #F2F5EA;
 }
 
-#job-section-title{
-  margin-top: 2em;
-}
+
 
 #atmos-job{
   background-color: #61988E;
@@ -127,6 +129,50 @@ li{
 }
 
 #tcu-job{
+  background-color: #6E8898;
+}
+
+/* ------------------ Portfolio ------------------ */
+.portfolio-jumbotron > a{
+  font-size: 1.2em;
+  color: #F2F5EA;
+}
+
+.portfolio-jumbotron > p > a{
+  /*font-size: 1.2em !important;*/
+  display: inline;
+  color: #F2F5EA;
+}
+
+.portfolio-jumbotron > ul > li > a{
+  /*font-size: 1.2em !important;*/
+  display: inline;
+  color: #F2F5EA;
+}
+
+.portfolio-item-description{
+  font-size: 1.2em !important;
+}
+
+#web-section{
+  background-color: #3C3C3B;
+  color: #F2F5EA;
+}
+
+#scheduling-your-horizons-site{
+  /*Color Gradients*/
+  background: #00A9A5; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #06D6A0, #00A9A5); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #06D6A0, #00A9A5); /* Standard syntax */
+}
+
+#pixel-sorting-site{
+  background-color: #E75A7C;
+}
+
+#tic-tac-toad-site{
   background-color: #6E8898;
 }
 
@@ -187,5 +233,5 @@ li{
 
 .footer-text{
   margin-top: 1.2em;
-  color: #F2F5EA;
+  color: #E75A7C;
 }
