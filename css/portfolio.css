@@ -68,6 +68,7 @@ a:hover{
 #first-section #down-button{
   position: absolute;
   left: 50%;
+  right: 50%;
   bottom: 0;
 
  /* Don't highlight text on highlight
