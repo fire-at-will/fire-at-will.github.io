@@ -30,9 +30,13 @@ Created: November 22, 2016
     <!-- Type it -->
     <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
 
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+
     <!-- ******************** Custom JS/CSS ******************** -->
     <!-- My CSS -->
     <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/effects.css">
     <!-- My JS -->
     <script src="src/portfolio.js"></script>
 
@@ -47,7 +51,7 @@ Created: November 22, 2016
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="navbar-links">
 
           <ul class="nav navbar-nav navbar-right">
             <ul class="nav navbar-nav">
@@ -64,7 +68,7 @@ Created: November 22, 2016
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="dark-blue-gray-background" id="first-section">
+    <div id="first-section">
       <div class="container main-container">
         <!-- Centered Logo Image -->
         <div style="text-align: center;">
@@ -77,15 +81,62 @@ Created: November 22, 2016
 
           <p id="down-button" onclick="scrollPastFirstSection()"><i style="font-size: 4em;" class="material-icons">arrow_downward</i></p>
         </div>
-      </div>
-      <br>
+
+      </div>      
       <!-- End Main Container -->
     </div>
 
 
-    <div id="portfolio-section">
+    <div id="job-section">
+
       <div class="container">
-        <h2>Porfolio</h2>
+        <h2 id="job-section-title">Work Experience</h2>
+        <br>
+
+        <!-- Atmos Energy Internship -->
+        <div class="jumbotron job-jumbotron animated animate-from-right" id="atmos-job">
+            <h3>Mobile Applications Developer, Atmos Energy</h3>
+            <p class="job-metadata">May - July 2016<br>Dallas, TX</p>
+
+            <!-- Roles -->
+            <ul>
+                <li>Consulted with Atmos Management to develop requirements for multiple iOS and Android apps.</li>
+                <li>Developed and maintained three native iOS and one native Android app to display real-time information to management.</li>
+                <li>Trained other developers in best practices for iOS and Android development through code walkthoughs and documentation.</li>
+            </ul>
+
+            <a href="http://www.atmosenergy.com/" target="_blank" class="hvr-underline-from-center-white">Atmos Energy's Website</a>
+        </div>
+
+        <!-- C Spire Internship -->
+        <div class="jumbotron job-jumbotron animated animate-from-left" id="cspire-job">
+            <h3>Software Developer, C Spire</h3>
+            <p class="job-metadata">June - July 2015<br>Ridgeland, MS</p>
+
+            <!-- Roles -->
+            <ul>
+                <li>Developed and proposed to senior management a prototype Android app to allow users to pay their bill on mobile devices.</li>
+                <li>Created an auto-aiming Lego robot turret that utilized face-recognition technology for the annual IT pumpkin carving contest.</li>
+                <li> Implemented the Netflix Archaius framework as a proof of concept Scala application</li>
+            </ul>
+
+            <a href="https://www.cspire.com/" target="_blank" class="hvr-underline-from-center-white">C Spire's Website</a>
+        </div>
+
+        <!-- TCU Internship -->
+        <div class="jumbotron job-jumbotron animated animate-from-right" id="tcu-job">
+            <h3>Mobile Applications Developer, Texas Christian University</h3>
+            <p class="job-metadata">May - August 2014<br>Fort Worth, TX</p>
+
+            <!-- Roles -->
+            <ul>
+                <li>Added new modules to the TCU Mobile Android app.</li>
+                <li>Developed nearby and favorite deals sections to the Frogsaver app.</li>
+            </ul>
+
+            <a href="https://www.cspire.com/" target="_blank" class="hvr-underline-from-center-white">C Spire's Website</a>
+        </div>
+
       </div>
     </div>
 
