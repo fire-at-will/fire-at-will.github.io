@@ -27,6 +27,11 @@ a:hover{
   text-decoration: none;
 }
 
+.vertically-center-children{
+  display: flex;
+  align-items: center;
+}
+
 /* ----- Highlight color ----- */
 ::selection {
   background: #9FB1BC; /* WebKit/Blink Browsers */
@@ -40,8 +45,10 @@ a:hover{
 #first-section{
   width: 100%;
   top: 0px;
-  height: 100vh;
-  position: relative;
+
+  min-height: 100%; /*Fallback for browsers that don't support vh unit */
+  min-height: 100vh;
+
   color: #F2F5EA;
 
   /*Color Gradients*/
@@ -52,16 +59,8 @@ a:hover{
   background: linear-gradient(to bottom right, #666A86, #8BE8CB); /* Standard syntax */
 }
 
-#first-section-info{
-  position: absolute;
-  display: table;
-  margin: 0 auto;
-
-  top: 50%;
-  left: 50%;
-  height: 30%;
-  width: 100%;
-  margin: -15% 0 0 -50%;
+#info-container{
+  min-height: 65vh;
 }
 
 /*Down button in first section */

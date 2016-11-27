@@ -63,7 +63,7 @@ function scrollPastFirstSection(){
   //document.getElementById('portfolio-section').scrollIntoView();
   selectors.get('html, body').animate({
         scrollTop: selectors.get('#job-section').offset().top
-    }, 2000);
+    }, 1500);
 }
 
 // Uses type it plugin to type "Hello, world.".
