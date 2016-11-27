@@ -57,6 +57,8 @@ a:hover{
   display: table;
   margin: 0 auto;
 
+  background-color: tomato;
+
   top: 50%;
   left: 50%;
   height: 30%;
@@ -152,9 +154,6 @@ a:hover{
   text-decoration: underline;
 }
 
-.main-container{
-  /*margin-top: 3.6em;*/
-}
 /* ----- End Navbar -----*/
 
 /* ----- Hello World -----*/
