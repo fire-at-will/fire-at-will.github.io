@@ -1,0 +1,178 @@
+/*
+* Site-wide CSS
+*
+* ------ COLORS ------
+* Gunmetal:           #2C363F
+* Dark Blue-Gray:     #666A86
+*
+* Purple:             4B3F72
+*
+* Light Slate Gray:   #6E8898 (Darker light blue)
+* Wild Blue Yonder:   #9FB1BC (Lighter light blue)
+*
+* Desaturated Cyan:   #61988E  (Green)
+* Dark Pink:          #E75A7C
+*
+* Isabelline:         #F2F5EA  (White)
+*/
+
+
+/* Set font for entire website to Product Sans */
+* {
+ font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+a:hover{
+  color: #9FB1BC;
+  text-decoration: none;
+}
+
+/* ----- Highlight color ----- */
+::selection {
+  background: #9FB1BC; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: #9FB1BC; /* Gecko Browsers */
+  color: white;
+}
+
+#first-section{
+  width: 100%;
+  top: 0px;
+  height: 50vh;
+  position: relative;
+  color: #F2F5EA;
+
+  /*Color Gradients*/
+  background: #666A86; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #6E8898, #9FB1BC); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #666A86, #8BE8CB); /* Standard syntax */
+}
+
+/*Down button in first section */
+#first-section #down-button{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+ /* Don't highlight text on highlight
+
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+/* ------------------ Work Experience ------------------ */
+
+/* 
+ *  Represents the time and location of the job
+ */
+
+.job-metadata{
+  font-size: 1.15em !important;
+  opacity: 0.75;
+}
+
+.job-jumbotron{  
+  color: #F2F5EA;
+}
+
+.job-jumbotron > a{
+  font-size: 1.2em;
+  color: #F2F5EA;
+}
+
+#job-section-title{
+  margin-top: 2em;
+}
+
+#atmos-job{
+  background-color: #61988E;
+}
+
+#cspire-job{
+  /*Color Gradients*/
+  background: #E75A7C; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #6E8898, #9FB1BC); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #99B2DD, #E75A7C); /* Standard syntax */
+}
+
+#tcu-job{
+  background-color: #6E8898;
+}
+
+/* Nav bar stuff */
+.navbar{
+  background-color: rgba(255, 255, 255, 0); /* Clear color*/
+}
+
+.navbar-brand{
+  font-size: 3em;
+  color: #F2F5EA;
+}
+
+.nav-link{
+  font-size: 115%;
+  color: #F2F5EA;
+}
+
+.navbar-fixed .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #F2F5EA;
+  background-color: rgba(255, 255, 255, 0); /* Clear color*/
+  text-decoration: underline;
+}
+
+.active-link{
+  color: #F2F5EA;
+  text-decoration: underline;
+}
+
+.main-container{
+  /*margin-top: 3.6em;*/
+}
+/* ----- End Navbar -----*/
+
+/* ----- Hello World -----*/
+#hello-world{
+  padding-top: 2em;
+  font-size: 2em;
+  visibility: hidden;
+}
+
+#my-name{
+  font-size: 4em;
+  opacity: 0;
+  
+}
+
+#my-info{
+  opacity: 0;
+}
+
+/* ----- Footer ----- */
+.footer{
+  background-color: #2C363F;
+  height: 3.5em;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text{
+  margin-top: 1.2em;
+  color: #F2F5EA;
+}
