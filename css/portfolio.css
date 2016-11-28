@@ -57,9 +57,9 @@ li{
 
   /*Color Gradients*/
   background: #666A86; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #6E8898, #9FB1BC); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(left top, #666A86, #8BE8CB); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #666A86, #8BE8CB); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #666A86, #8BE8CB); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #666A86, #8BE8CB); /* Standard syntax */
 }
 
@@ -113,8 +113,6 @@ li{
   color: #F2F5EA;
 }
 
-
-
 #atmos-job{
   background-color: #61988E;
 }
@@ -122,9 +120,9 @@ li{
 #cspire-job{
   /*Color Gradients*/
   background: #E75A7C; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #6E8898, #9FB1BC); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #6E8898, #9FB1BC); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(left top, #99B2DD, #E75A7C); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #99B2DD, #E75A7C); /* Standard syntax */
 }
 
@@ -174,6 +172,16 @@ li{
 
 #tic-tac-toad-site{
   background-color: #6E8898;
+}
+
+#old-site{
+  /*Color Gradients*/
+  background: #EE6C4D; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #F2A359, #EE6C4D); /* Standard syntax */
+}
 }
 
 /* Nav bar stuff */
