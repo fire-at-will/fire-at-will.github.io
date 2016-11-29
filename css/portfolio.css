@@ -90,6 +90,7 @@ li{
 .section-header{
   margin-top: 2em;
   margin-bottom: 1em;
+  color: #F2F5EA;
 }
 
 
@@ -194,15 +195,38 @@ li{
   color: #F2F5EA;
 
   /*Color Gradients*/
-  background: #27FB6B; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #14CC60, #27FB6B); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #14CC60, #27FB6B); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #14CC60, #27FB6B); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #14CC60, #27FB6B); /* Standard syntax */ 
+  background: #3581B8; /* For browsers that do not support gradients */
+
+}
+
+#snake{
+  background-color: #3C3C3B;
 }
 
 #goldie-app{
+  background-color: #00A9A5;
+  background: #00A9A5; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #06D6A0, #00A9A5); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #06D6A0, #00A9A5); /* Standard syntax */
+}
+
+#parking-gps-app{
   background-color: #F2F5EA;
+  color: black !important;
+}
+
+/* ------------------ Other Projects ------------------ */
+#other-projects-section{
+  color: #F2F5EA;
+
+  /*Color Gradients*/
+  background: #EE6C4D; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #F2A359, #EE6C4D); /* Standard syntax */
 }
 
 /* Nav bar stuff */

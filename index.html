@@ -1,289 +1,307 @@
-<!--
-Will Taylor Portfolio
-index.html
-
-Author: Will Taylor
-Created: November 22, 2016
--->
 <!DOCTYPE html>
+<!--
+   Will Taylor Portfolio
+   index.html
+   
+   Author: Will Taylor
+   Created: November 22, 2016
+   -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Will Taylor</title>
-
-    <!-- ******************** Fonts ******************** -->
-    <!-- Source Sans Pro font -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- ******************** Libraries ******************** -->
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- /Bootstrap -->
-    <!-- Type it -->
-    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
-
-    <!-- ******************** Custom JS/CSS ******************** -->
-    <!-- My CSS -->
-    <link rel="stylesheet" href="css/portfolio.css">
-    <link rel="stylesheet" href="css/effects.css">
-    <!-- My JS -->
-    <script src="src/portfolio.js"></script>
-
-  </head>
-  <body onload="onBodyLoad();">
-
-    <nav class="navbar navbar-fixed navbar-fixed-top" id="navbar">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" id="name-nav">Will Taylor</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-links">
-
-          <ul class="nav navbar-nav navbar-right">
-            <ul class="nav navbar-nav">
-              <li class="active"><a class="nav-link active-link" onclick="scrollToHome();" id="home-nav">Home<span class="sr-only">(current)</span></a></li>
-              <li><a class="nav-link" onclick="scrollToWork()" id="work-nav">Work Experience</a></li>
-              <li><a class="nav-link" onclick="scrollToWeb()" id="web-nav">Web</a></li>
-              <li><a class="nav-link" id="mobile-nav">Mobile</a></li>
-              <li><a class="nav-link" id="other-nav">Other Projects</a></li>
-              <li><a class="nav-link" id="education-nav">Education</a></li>
-              <li><a class="nav-link" id="activities-nav">Activities</a></li>
-            </ul>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <div id="home-section">
-      <div class="container">
-        <!-- Centered Logo Image -->
-        <div style="text-align: center;">
-          <h1 id="hello-world"></h1>
-
-          <!-- Vertically Center My Info -->
-          <div id="info-container" class="vertically-center-children">
-          <!-- Container to horizontally center my info -->
-            <div id="first-section-info" class="container">
-              <h1 id="my-name">Will Taylor</h1>
-              <h1 id="my-info">Software Engineer | UX Designer | Mobile | Web</h1>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <title>Will Taylor</title>
+      <!-- ******************** Fonts ******************** -->
+      <!-- Source Sans Pro font -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- ******************** Libraries ******************** -->
+      <!-- JQuery -->
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <!-- /Bootstrap -->
+      <!-- Type it -->
+      <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
+      <!-- Animate.css -->
+      <link rel="stylesheet" href="css/animate.css">
+      <!-- ******************** Custom JS/CSS ******************** -->
+      <!-- My CSS -->
+      <link rel="stylesheet" href="css/portfolio.css">
+      <link rel="stylesheet" href="css/effects.css">
+      <!-- My JS -->
+      <script src="src/portfolio.js"></script>
+   </head>
+   <body onload="onBodyLoad();">
+      <nav class="navbar navbar-fixed navbar-fixed-top" id="navbar">
+         <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+               <a class="navbar-brand" id="name-nav">Will Taylor</a>
             </div>
-          </div>
-        
-          <p id="down-button" onclick="scrollToWork()"><i style="font-size: 4em;" class="material-icons">arrow_downward</i></p>
-        </div>
-
-      </div>      
-      <!-- End Main Container -->
-    </div>
-
-    <div id="job-section">
-
-      <div class="container">
-        <h1 class="section-header">Work Experience</h2>
-
-        <!-- Atmos Energy Internship -->
-        <div class="jumbotron job-jumbotron animated animate-from-right" id="atmos-job">
-            <h3>Mobile Applications Developer, Atmos Energy</h3>
-            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-links">
+               <ul class="nav navbar-nav navbar-right">
+                  <ul class="nav navbar-nav">
+                     <li class="active"><a class="nav-link active-link" onclick="scrollToHome();" id="home-nav">Home<span class="sr-only">(current)</span></a></li>
+                     <li><a class="nav-link" onclick="scrollToWork()" id="work-nav">Work Experience</a></li>
+                     <li><a class="nav-link" onclick="scrollToWeb()" id="web-nav">Web</a></li>
+                     <li><a class="nav-link" onclick="scrollToMobile()" id="mobile-nav">Mobile</a></li>
+                     <li><a class="nav-link" onclick="scrollToOtherProjects();"id="other-nav">Other Projects</a></li>
+                     <li><a class="nav-link" id="education-nav">Education</a></li>
+                     <li><a class="nav-link" id="activities-nav">Activities</a></li>
+                  </ul>
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+         <!-- /.container-fluid -->
+      </nav>
+      <div id="home-section">
+         <div class="container">
+            <!-- Centered Logo Image -->
+            <div style="text-align: center;">
+               <h1 id="hello-world"></h1>
+               <!-- Vertically Center My Info -->
+               <div id="info-container" class="vertically-center-children">
+                  <!-- Container to horizontally center my info -->
+                  <div id="first-section-info" class="container">
+                     <h1 id="my-name">Will Taylor</h1>
+                     <h1 id="my-info">Software Engineer | UX Designer | Mobile | Web</h1>
+                  </div>
+               </div>
+               <p id="down-button" onclick="scrollToWork()"><i style="font-size: 4em;" class="material-icons">arrow_downward</i></p>
+            </div>
+         </div>
+         <!-- End Main Container -->
+      </div>
+      <div id="job-section">
+         <div class="container">
+            <h1 class="section-header" style="color: black !important;">Work Experience</h1>
+            <!-- Atmos Energy Internship -->
+            <div class="jumbotron job-jumbotron animated animate-from-right" id="atmos-job">
+               <h3>Mobile Applications Developer, Atmos Energy</h3>
+               <div class="row">
+                  <div class="col-md-6">
+                     <p class="metadata">May - July 2016</p>
+                  </div>
+                  <div class="col-md-6">
+                     <p class="metadata" style="text-align: right;">Dallas, TX</p>
+                  </div>
+               </div>
+               <!-- Roles -->
+               <ul>
+                  <li>Consulted with Atmos Management to develop requirements for multiple iOS and Android apps.</li>
+                  <li>Developed and maintained three native iOS and one native Android app to display real-time information to management.</li>
+                  <li>Trained other developers in best practices for iOS and Android development through code walkthoughs and documentation.</li>
+               </ul>
+               <a href="http://www.atmosenergy.com/" target="_blank" class="hvr-underline-from-center-white">Atmos Energy's Website</a>
+            </div>
             <div class="row">
-              <div class="col-md-6">
-                <p class="metadata">May - July 2016</p>
-              </div>
-              <div class="col-md-6">
-              <p class="metadata" style="text-align: right;">Dallas, TX</p>
-              </div>
+               <div class="col-md-6">
+                  <!-- C Spire Internship -->
+                  <div class="jumbotron job-jumbotron animated animate-from-left" id="cspire-job">
+                     <h3>Software Developer, C Spire</h3>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <p class="metadata">June - July 2015</p>
+                        </div>
+                        <div class="col-md-6">
+                           <p class="metadata" style="text-align: right;">Ridgeland, MS</p>
+                        </div>
+                     </div>
+                     <!-- Roles -->
+                     <ul>
+                        <li>Developed and proposed to senior management a prototype Android app to allow users to pay their bill on mobile devices.</li>
+                        <li>Created an auto-aiming Lego robot turret that utilized face-recognition technology for the annual IT pumpkin carving contest.</li>
+                        <li> Implemented the Netflix Archaius framework as a proof of concept Scala application</li>
+                     </ul>
+                     <a href="https://www.cspire.com/" target="_blank" class="hvr-underline-from-center-white">C Spire's Website</a>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <!-- TCU Internship -->
+                  <div class="jumbotron job-jumbotron animated animate-from-right" id="tcu-job">
+                     <h3>Mobile Applications Developer, Texas Christian University</h3>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <p class="metadata">May - August 2014</p>
+                        </div>
+                        <div class="col-md-6">
+                           <p class="metadata" style="text-align: right;">Fort Worth, TX</p>
+                        </div>
+                     </div>
+                     <!-- Roles -->
+                     <ul>
+                        <li>Added new modules to the TCU Mobile Android app.</li>
+                        <li>Developed nearby and favorite deals sections to the Frogsaver app.</li>
+                     </ul>
+                     <a href="http://www.tcu.edu/" target="_blank" class="hvr-underline-from-center-white">Texas Christian University's Website</a>
+                  </div>
+               </div>
             </div>
-
-            <!-- Roles -->
-            <ul>
-                <li>Consulted with Atmos Management to develop requirements for multiple iOS and Android apps.</li>
-                <li>Developed and maintained three native iOS and one native Android app to display real-time information to management.</li>
-                <li>Trained other developers in best practices for iOS and Android development through code walkthoughs and documentation.</li>
-            </ul>
-
-            <a href="http://www.atmosenergy.com/" target="_blank" class="hvr-underline-from-center-white">Atmos Energy's Website</a>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <!-- C Spire Internship -->
-            <div class="jumbotron job-jumbotron animated animate-from-left" id="cspire-job">
-                <h3>Software Developer, C Spire</h3>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <p class="metadata">June - July 2015</p>
-                  </div>
-                  <div class="col-md-6">
-                  <p class="metadata" style="text-align: right;">Ridgeland, MS</p>
-                  </div>
-                </div>
-
-                <!-- Roles -->
-                <ul>
-                    <li>Developed and proposed to senior management a prototype Android app to allow users to pay their bill on mobile devices.</li>
-                    <li>Created an auto-aiming Lego robot turret that utilized face-recognition technology for the annual IT pumpkin carving contest.</li>
-                    <li> Implemented the Netflix Archaius framework as a proof of concept Scala application</li>
-                </ul>
-
-                <a href="https://www.cspire.com/" target="_blank" class="hvr-underline-from-center-white">C Spire's Website</a>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <!-- TCU Internship -->
-            <div class="jumbotron job-jumbotron animated animate-from-right" id="tcu-job">
-                <h3>Mobile Applications Developer, Texas Christian University</h3>
-                <div class="row">
-                  <div class="col-md-6">
-                    <p class="metadata">May - August 2014</p>
-                  </div>
-                  <div class="col-md-6">
-                  <p class="metadata" style="text-align: right;">Fort Worth, TX</p>
-                  </div>
-                </div>
-
-                <!-- Roles -->
-                <ul>
-                    <li>Added new modules to the TCU Mobile Android app.</li>
-                    <li>Developed nearby and favorite deals sections to the Frogsaver app.</li>
-                </ul>
-
-                <a href="http://www.tcu.edu/" target="_blank" class="hvr-underline-from-center-white">Texas Christian University's Website</a>
-            </div>
-
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-
-    <div id="web-section">
-      <div class="container">
-        <h1 class="section-header">Web</h1>
-
-        <div class="jumbotron portfolio-jumbotron animated animate-fade-in-down" id="scheduling-your-horizons-site">
-          <h3>Scheduling Your Horizons (Design/UI Lead)</h3>
-          <p class="metadata">August 2016 - May 2017</p>
-
-          <p class="portfolio-item-description">Scheduling Your Horizons was my senior design project at TCU. Our project provided an interface for students to register for <a href="https://txwes.edu/" class="hvr-underline-from-center-white">Texas Wesleyan University's</a> <a href="http://www.eyhn.org/" class="hvr-underline-from-center-white">Expanding Your Horizons</a> program. The system then scheduled the students for the EYH program.</p> 
-          <p class="portfolio-item-description">While on the project, I:</p>
-          <ul>
-            <li>Created the <a href="http://brazos.cs.tcu.edu/1617SYH/index.html" class="hvr-underline-from-center-white">Scheduling Your Horizons Description Page</a></li>
-            <li>Designed user interfaces using HTML5, CSS, JavaScript, and Bootstrap.</li>
-          </ul>
-
-          TODO: Screenshots
-          
-        </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="tic-tac-toad-site">
-              <h3>Tic Tac Toad</h3>
-              <p class="metadata">Fall 2016</p>
-
-              <p class="portfolio-item-description">A website that lets you play tic tac toe against a pretty good AI! See if you can beat it! :)</p>
-
-              <a href="http://willtaylor.io/tictactoad.html" class="hvr-underline-from-center-white">Tic Tac Toad</a>
+      <div id="web-section">
+         <div class="container">
+            <h1 class="section-header">Web</h1>
+            <div class="jumbotron portfolio-jumbotron animated animate-fade-in-down" id="scheduling-your-horizons-site">
+               <h3>Scheduling Your Horizons (Design/UI Lead)</h3>
+               <p class="metadata">August 2016 - May 2017</p>
+               <p class="portfolio-item-description">Scheduling Your Horizons was my senior design project at TCU. Our project provided an interface for students to register for <a href="https://txwes.edu/" class="hvr-underline-from-center-white">Texas Wesleyan University's</a> <a href="http://www.eyhn.org/" class="hvr-underline-from-center-white">Expanding Your Horizons</a> program. The system then scheduled the students for the EYH program.</p>
+               <p class="portfolio-item-description">While on the project, I:</p>
+               <ul>
+                  <li>Created the <a href="http://brazos.cs.tcu.edu/1617SYH/index.html" class="hvr-underline-from-center-white">Scheduling Your Horizons Description Page</a></li>
+                  <li>Designed user interfaces using HTML5, CSS, JavaScript, and Bootstrap.</li>
+               </ul>
+               TODO: Screenshots
             </div>
-          </div>
-
-          <div class="col-md-8">
-            <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="pixel-sorting-site">
-              <h3>Pixel Sort</h3>
-              <p class="metadata">Summer 2016</p>
-
-              <p class="portfolio-item-description">A website that utilizes web workers and the HTML canvas API to sort the pixels of a user-provided image.</p>
-
-              <ul>
-                <li>Used web workers to perform computationally expensive sorting wihtout freezing the UI.</li>
-                <li>Implemented the pixel sort using the quick sort algorithm.</li>
-                <li>Utilized Google's Material Design Lite to implement the UI</li>
-              </ul>
-
-              <a href="http://willtaylor.io/pixelSort" class="hvr-underline-from-center-white">Pixel Sort Website</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-8">
-            <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="old-site">
-              <h3>Portfolio Website Version 1.0</h3>
-              <p class="metadata">Summer 2015</p>
-
-              <p class="portfolio-item-description">First version of my portfolio website.</p>
-
-              <ul>
-                <li>Coded the website using HTML5, CSS, JavaScript, and JQuery.</li>
-                <li>Used Google's Material Design Lite Framework for website styling.</li>
-              </ul>
-
-              <a href="http://willtaylor.io/oldWebsite/index.html" class="hvr-underline-from-center-white">Portfolio Website Version 1.0</a>              
-            </div>
-          </div>
-        </div>
-        
-
-      </div>
-    </div>
-
-    <div id="mobile-section">
-      <div class="container">
-        <h1 class="section-header">Mobile</h1>
-
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="jumbotron" id="goldie-app">
-
-              <div class="row">
-                <div class="col-md-3 vertically-center-children">
-                  <img src="assets/icons/goldie.png"></img>
-                </div>
-                <div class="col-md-9" style="background-color: tomato;">
-                  <h3 style="color: black;">Goldie</h3>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <p class="metadata-light">iOS Game</p>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="metadata-light">Released: March 1st, 2015</p>
-                    </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="tic-tac-toad-site">
+                     <h3>Tic Tac Toad</h3>
+                     <p class="metadata">Fall 2016</p>
+                     <p class="portfolio-item-description">A website that lets you play tic tac toe against a pretty good AI! See if you can beat it! :)</p>
+                     <a href="http://willtaylor.io/tictactoad.html" class="hvr-underline-from-center-white">Tic Tac Toad</a>
                   </div>
-                  
-                </div>
-              </div>
-
+               </div>
+               <div class="col-md-8">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="pixel-sorting-site">
+                     <h3>Pixel Sort</h3>
+                     <p class="metadata">Summer 2016</p>
+                     <p class="portfolio-item-description">A website that utilizes web workers and the HTML canvas API to sort the pixels of a user-provided image.</p>
+                     <ul>
+                        <li>Used web workers to perform computationally expensive sorting wihtout freezing the UI.</li>
+                        <li>Implemented the pixel sort using the quick sort algorithm.</li>
+                        <li>Utilized Google's Material Design Lite to implement the UI</li>
+                     </ul>
+                     <a href="http://willtaylor.io/pixelSort" class="hvr-underline-from-center-white">Pixel Sort Website</a>
+                  </div>
+               </div>
             </div>
-          </div>
-
-          <div class="col-md-6">
-          </div>
-        </div>
-
-      </div> 
-    </div>
-
-<!--     <div class="footer">
-      <div class="container">
-        <p class="footer-text">&copy; Scheduling Your Horizons 2016-2017 Texas Christian University, Computer Science Department</p>
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="old-site">
+                     <h3>Portfolio Website Version 1.0</h3>
+                     <p class="metadata">Summer 2015</p>
+                     <p class="portfolio-item-description">First version of my portfolio website.</p>
+                     <ul>
+                        <li>Coded the website using HTML5, CSS, JavaScript, and JQuery.</li>
+                        <li>Used Google's Material Design Lite Framework for website styling.</li>
+                     </ul>
+                     <a href="http://willtaylor.io/oldWebsite/index.html" class="hvr-underline-from-center-white">Portfolio Website Version 1.0</a>              
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-    </div> -->
+      <div id="mobile-section">
+         <div class="container">
+            <h1 class="section-header">Mobile</h1>
+            <!-- Goldie App -->
+            <div class="row">
+               <div class="col-md-9">
+                  <div class="jumbotron portfolio-jumbotron animated animate-fade-in-down" id="goldie-app">
+                     <div class="row">
+                        <div class="col-md-3 vertically-center-children">
+                           <img src="assets/icons/goldie.png" alt="Goldie">
+                        </div>
+                        <div class="col-md-9">
+                           <h3 >Goldie</h3>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <p class="metadata">iOS Game</p>
+                              </div>
+                              <div class="col-md-6">
+                                 <p class="metadata">March 1st, 2015</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <ul>
+                        <li>Goldie is a 2D iPhone game where the player flies across the screen to collect as many cheeseburgers as possible before hitting the ground.</li>
+                        <li>Coded the game in Swift and used the SpriteKit framework.</li>
+                        <li>Created graphical and audio assets.</li>
+                     </ul>
+                     <a href="https://itunes.apple.com/us/app/goldie/id969863651?mt=8" target="_blank" style="font-size: 14px;">Click to show Goldie in the Apple App Store</a>
+                  </div>
+               </div>
+            </div>
 
-  </body>
+            <!-- Parking GPS App -->
+            <div class="row">
+               <div class="col-md-3"></div>
+               <div class="col-md-9">
+                  <div class="jumbotron animated animate-fade-in-right" id="parking-gps-app">
+                     <div class="row">
+                        <div class="col-md-3 vertically-center-children">
+                           <img src="assets/icons/parking_gps.png" alt="Parking GPS">
+                        </div>
+                        <div class="col-md-9">
+                           <h3>Parking GPS</h3>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <p class="metadata">iOS Utility</p>
+                              </div>
+                              <div class="col-md-6">
+                                 <p class="metadata">March 30th, 2015</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <ul>
+                        <li>Parking GPS lets the user keep track of where they last parked their car with an easy to use interface.</li>
+                        <li>Provides user with walking directions to their car from their current location.</li>
+                        <li>App coded in Swift.</li>
+                        <li>Utilized both the Core Data and MapKit frameworks within the app.</li>
+                     </ul>
+                     <a href="https://itunes.apple.com/us/app/parking-gps/id978921829?ls=1&mt=8" target="_blank" style="font-size: 14px;">Click to show Parking GPS in the Apple App Store</a>
+                  </div>
+               </div>
+            </div>
+
+
+         </div>
+      </div>
+
+      <div id="other-projects-section">
+         <div class="container">
+            <h1 class="section-header">Other Projects</h1>
+
+            <div class="row">
+            <div class="col-md-8">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="pixel-sorting-site">
+                     <h3>BlueShell</h3>
+                     <p class="metadata">Spring 2016</p>
+                     <p class="portfolio-item-description">A Unix shell application developed in C++.</p>
+                     <ul>
+                        <li>New programs are executing by first forking a child process and then reaping the child process once execution has completed.</li>
+                        <li>I/O redirection and piping were implemented using the dup2 and pipe syscalls.</li>
+                        <li>Several internal commands were implemented, including a history, alarm, and cd funtions.</li>
+                     </ul>
+                     <a href="https://github.com/fire-at-will/BlueShell">Blueshell on GitHub</a>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="snake">
+                     <h3>Snake</h3>
+                     <p class="metadata">January 2015</p>
+                     <p class="portfolio-item-description">The game of Snake written in Java.</p>
+                     <a href="https://github.com/fire-at-will/Java_Snake">Snake on GitHub</a>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </div>
+      <!--     <div class="footer">
+         <div class="container">
+           <p class="footer-text">&copy; Scheduling Your Horizons 2016-2017 Texas Christian University, Computer Science Department</p>
+         </div>
+         </div> -->
+   </body>
 </html>

@@ -65,12 +65,25 @@ function checkIfInView(){
       $element.removeClass('fadeInDown');
     }
   });
+
+  $.each(selectors.get('.animate-fade-in-right'), function(){
+    var $element = $(this);
+    var elementHeight = $element.outerHeight();
+    var elementTopPosition = $element.offset().top;
+    var elementBottomPosition = (elementTopPosition + elementHeight);
+
+    //check to see if this current container is within viewport
+    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+      $element.addClass('fadeInRight');
+    } else {
+      $element.removeClass('fadeInRight');
+    }
+  });
 }
 
 function fadeInInfo(){
   setTimeout(function(){fadeIn("my-name");}, 2200);
   setTimeout(function(){fadeIn("my-info");}, 3500);
-    
 }
 
 function scrollToHome(){
@@ -93,6 +106,20 @@ function scrollToWeb(){
     }, 1800);
 
   setTimeout(function(){setNavWebColors()}, 2200);
+}
+
+function scrollToMobile(){
+  selectors.get('html, body').animate({
+        scrollTop: selectors.get('#mobile-section').offset().top
+    }, 1800);
+
+  setTimeout(function(){setNavWebColors()}, 2200);
+}
+
+function scrollToOtherProjects(){
+  selectors.get('html, body').animate({
+        scrollTop: selectors.get('#other-projects-section').offset().top
+    }, 2000);
 }
 
 // Uses type it plugin to type "Hello, world.".
