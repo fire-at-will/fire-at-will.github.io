@@ -79,8 +79,23 @@ function checkIfInView(){
       $element.removeClass('fadeInRight');
     }
   });
+
+  $.each(selectors.get('.animate-fade-in'), function(){
+    var $element = $(this);
+    var elementHeight = $element.outerHeight();
+    var elementTopPosition = $element.offset().top;
+    var elementBottomPosition = (elementTopPosition + elementHeight);
+
+    //check to see if this current container is within viewport
+    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+      $element.addClass('fadeIn');
+    } else {
+      $element.removeClass('fadeIn');
+    }
+  });
 }
 
+// ------------------- Scroll Functions ---------------------
 function fadeInInfo(){
   setTimeout(function(){fadeIn("my-name");}, 2200);
   setTimeout(function(){fadeIn("my-info");}, 3500);
@@ -113,12 +128,28 @@ function scrollToMobile(){
         scrollTop: selectors.get('#mobile-section').offset().top
     }, 1800);
 
-  setTimeout(function(){setNavWebColors()}, 2200);
+  setTimeout(function(){setNavMobileColors()}, 2000);
 }
 
 function scrollToOtherProjects(){
   selectors.get('html, body').animate({
         scrollTop: selectors.get('#other-projects-section').offset().top
+    }, 1900);
+
+  setTimeout(function(){setNavTransparent()}, 1900);
+}
+
+function scrollToEducation(){
+  selectors.get('html, body').animate({
+        scrollTop: selectors.get('#education-section').offset().top
+    }, 1900);
+
+  setTimeout(function(){setNavEducationColors()}, 1900);
+}
+
+function scrollToActivities(){
+  selectors.get('html, body').animate({
+        scrollTop: selectors.get('#activities-section').offset().top
     }, 2000);
 }
 
@@ -136,7 +167,8 @@ function typeHelloWorld(){
 }
 
 function configureNavBarColorChanging(){
-  // Work Experience section color change
+  // Nav bar color change
+
   var scroll_start = 0;
   var startchange = selectors.get('#job-section');
   var jobOffset = startchange.offset();
@@ -144,12 +176,30 @@ function configureNavBarColorChanging(){
   startchange = selectors.get('#web-section');
   var webOffset = startchange.offset();
 
+  startchange = selectors.get('#mobile-section');
+  var mobileOffset = startchange.offset();
+
+  startchange = selectors.get('#other-projects-section');
+  var otherOffset = startchange.offset();
+
+  startchange = selectors.get('#education-section');
+  var educationOffset = startchange.offset();
+
+  startchange = selectors.get('#education-section');
+  var activitiesOffset = startchange.offset();
+
   selectors.get(document).scroll(function() { 
     scroll_start = $(this).scrollTop();
     if(scroll_start > jobOffset.top && scroll_start < webOffset.top) {
       setNavBlack();
-    } else if(scroll_start > webOffset.top){
+    } else if(scroll_start > webOffset.top  && scroll_start < mobileOffset.top){
       setNavWebColors();
+    } else if(scroll_start > mobileOffset.top && scroll_start < otherOffset.top){
+      setNavMobileColors();
+    } else if(scroll_start > otherOffset.top && scroll_start < educationOffset.top){
+      setNavTransparent();
+    } else if(scroll_start > educationOffset.top && scroll_start < activitiesOffset.top){
+      setNavBlack();
     } else {
       setNavTransparent();
     }
@@ -159,44 +209,38 @@ function configureNavBarColorChanging(){
 
 function setNavTransparent() {
   selectors.get('#navbar').css('background-color', 'transparent');
-  selectors.get('#name-nav').css('color', '#F2F5EA');
-  selectors.get('#home-nav').css('color', '#F2F5EA');
-  selectors.get('#work-nav').css('color', '#F2F5EA');
-  selectors.get('#web-nav').css('color', '#F2F5EA');
-  selectors.get('#mobile-nav').css('color', '#F2F5EA');
-  selectors.get('#other-nav').css('color', '#F2F5EA');
-  selectors.get('#education-nav').css('color', '#F2F5EA');
-  selectors.get('#activities-nav').css('color', '#F2F5EA');
+  changeNavbarTextColors('#F2F5EA');
 }
 
 function setNavBlack(){
   selectors.get('#navbar').css('background-color', 'white');
-  selectors.get('#name-nav').css('color', '#000000');
-  selectors.get('#home-nav').css('color', '#000000');
-  selectors.get('#work-nav').css('color', '#000000');
-  selectors.get('#web-nav').css('color', '#000000');
-  selectors.get('#mobile-nav').css('color', '#000000');
-  selectors.get('#other-nav').css('color', '#000000');
-  selectors.get('#education-nav').css('color', '#000000');
-  selectors.get('#activities-nav').css('color', '#000000');
+  changeNavbarTextColors('#000000');
 }
 
 function setNavWebColors(){
   selectors.get('#navbar').css('background-color', '#3C3C3B');
-  selectors.get('#name-nav').css('color', '#F2F5EA');
-  selectors.get('#home-nav').css('color', '#F2F5EA');
-  selectors.get('#work-nav').css('color', '#F2F5EA');
-  selectors.get('#web-nav').css('color', '#F2F5EA');
-  selectors.get('#mobile-nav').css('color', '#F2F5EA');
-  selectors.get('#other-nav').css('color', '#F2F5EA');
-  selectors.get('#education-nav').css('color', '#F2F5EA');
-  selectors.get('#activities-nav').css('color', '#F2F5EA');
+  changeNavbarTextColors('#F2F5EA');
+}
+
+function setNavMobileColors(){
+  selectors.get('#navbar').css('background-color', '#3581B8');
+  changeNavbarTextColors('#F2F5EA');
+}
+
+function setNavEducationColors(){
+  selectors.get('#navbar').css('background-color', '#3C3C3B');
+  changeNavbarTextColors('#F2F5EA');
 }
 
 function changeNavbarTextColors(color){
-  // ******* TODO ********
-  // For each piece of text,
-  // changeDivColor("#name", "#color")
+  selectors.get('#name-nav').css('color', color);
+  selectors.get('#home-nav').css('color', color);
+  selectors.get('#work-nav').css('color', color);
+  selectors.get('#web-nav').css('color', color);
+  selectors.get('#mobile-nav').css('color', color);
+  selectors.get('#other-nav').css('color', color);
+  selectors.get('#education-nav').css('color', color);
+  selectors.get('#activities-nav').css('color', color);
 }
 
 function changeDivColor(divName, color){

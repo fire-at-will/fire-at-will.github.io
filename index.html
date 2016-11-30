@@ -48,12 +48,12 @@
                <ul class="nav navbar-nav navbar-right">
                   <ul class="nav navbar-nav">
                      <li class="active"><a class="nav-link active-link" onclick="scrollToHome();" id="home-nav">Home<span class="sr-only">(current)</span></a></li>
-                     <li><a class="nav-link" onclick="scrollToWork()" id="work-nav">Work Experience</a></li>
-                     <li><a class="nav-link" onclick="scrollToWeb()" id="web-nav">Web</a></li>
-                     <li><a class="nav-link" onclick="scrollToMobile()" id="mobile-nav">Mobile</a></li>
+                     <li><a class="nav-link" onclick="scrollToWork();" id="work-nav">Work Experience</a></li>
+                     <li><a class="nav-link" onclick="scrollToWeb();" id="web-nav">Web</a></li>
+                     <li><a class="nav-link" onclick="scrollToMobile();" id="mobile-nav">Mobile</a></li>
                      <li><a class="nav-link" onclick="scrollToOtherProjects();"id="other-nav">Other Projects</a></li>
-                     <li><a class="nav-link" id="education-nav">Education</a></li>
-                     <li><a class="nav-link" id="activities-nav">Activities</a></li>
+                     <li><a class="nav-link" onclick="scrollToEducation();" id="education-nav">Education</a></li>
+                     <li><a class="nav-link" onclick="scrollToActivities()" id="activities-nav">Activities</a></li>
                   </ul>
                </ul>
             </div>
@@ -74,7 +74,7 @@
                      <h1 id="my-info">Software Engineer | UX Designer | Mobile | Web</h1>
                   </div>
                </div>
-               <p id="down-button" onclick="scrollToWork()"><i style="font-size: 4em;" class="material-icons">arrow_downward</i></p>
+               <p id="down-button" onclick="scrollToWork()"><i style="font-size: 4em;" class="material-icons text-center">arrow_downward</i></p>
             </div>
          </div>
          <!-- End Main Container -->
@@ -158,7 +158,6 @@
                   <li>Created the <a href="http://brazos.cs.tcu.edu/1617SYH/index.html" class="hvr-underline-from-center-white">Scheduling Your Horizons Description Page</a></li>
                   <li>Designed user interfaces using HTML5, CSS, JavaScript, and Bootstrap.</li>
                </ul>
-               TODO: Screenshots
             </div>
             <div class="row">
                <div class="col-md-4">
@@ -227,7 +226,7 @@
                         <li>Coded the game in Swift and used the SpriteKit framework.</li>
                         <li>Created graphical and audio assets.</li>
                      </ul>
-                     <a href="https://itunes.apple.com/us/app/goldie/id969863651?mt=8" target="_blank" style="font-size: 14px;">Click to show Goldie in the Apple App Store</a>
+                     <a href="https://itunes.apple.com/us/app/goldie/id969863651?mt=8" target="_blank" style="font-size: 14px;">Goldie on the Apple App Store</a>
                   </div>
                </div>
             </div>
@@ -259,7 +258,7 @@
                         <li>App coded in Swift.</li>
                         <li>Utilized both the Core Data and MapKit frameworks within the app.</li>
                      </ul>
-                     <a href="https://itunes.apple.com/us/app/parking-gps/id978921829?ls=1&mt=8" target="_blank" style="font-size: 14px;">Click to show Parking GPS in the Apple App Store</a>
+                     <a href="https://itunes.apple.com/us/app/parking-gps/id978921829?ls=1&mt=8" target="_blank" style="font-size: 14px;">Parking GPS on the Apple App Store</a>
                   </div>
                </div>
             </div>
@@ -298,10 +297,97 @@
             </div>
          </div>
       </div>
-      <!--     <div class="footer">
+
+      <div id="education-section">
          <div class="container">
-           <p class="footer-text">&copy; Scheduling Your Horizons 2016-2017 Texas Christian University, Computer Science Department</p>
+            <h1 class="section-header">Education</h1>
+            <div class="jumbotron portfolio-jumbotron animated animate-fade-in" id="tcu-education">
+               <h3>Texas Christian University</h3>
+               <img src="assets/tcu.jpg" alt="TCU" id="tcu-image">
+               <p class="metadata">Computer Science Major, Business Minor<br>Class of 2017</p>
+               <ul>
+                  <li>Computer Science GPA: 3.27</li>
+                  <li>Overall GPA: 3.05</li>
+               </ul>
+            </div>
          </div>
-         </div> -->
+      </div>
+
+      <div id="activities-section">
+         <div class="container">
+            <h1 class="section-header-dark">Activities and Honors</h1>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="computer-science-society">
+                     <h3>TCU Computer Science Society</h3>
+                     <p class="metadata">May 2015 - May 2017</p>
+                     <ul>
+                        <li>Secretary</li>
+                        <li>Treasurer</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="col-md-4">
+                  <div class="jumbotron portfolio-jumbotron animated animate-fade-in" id="upsilon-pi-epsilon">
+                     <h3>Upsilon Pi Epsilon</h3>
+                     <p class="metadata">April 2016 - Present</p>
+                     <ul>
+                        <li>Computer science honor society</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="col-md-4">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="marching-band">
+                     <h3>TCU Marching Band</h3>
+                     <p class="metadata">August 2013 - January 2017</p>
+                     <ul>
+                        <li>Trumpet player</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-2"></div>
+
+               <div class="col-md-4">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="help-desk">
+                     <h3>TCU Computer Science Help Desk</h3>
+                     <p class="metadata">January 2016 - May 2016</p>
+                     <ul>
+                        <li>Mentor</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="col-md-4">
+                  <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="eagle-scout">
+                     <h3>Eagle Scout</h3>
+                     <p class="metadata">2009</p>
+                  </div>
+               </div>
+
+               <div class="col-md-2"></div>
+            </div>
+            
+         </div>
+      </div>
+      <div class="footer">
+         <div class="container">
+           
+
+           <h3>Contact:</h3>
+           <ul>
+            <li>Github: <a href="https://github.com/fire-at-will" target="_blank" align="center">Will Taylor on GitHub</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/pub/will-taylor/101/955/5ab" target="_blank" align="center">Will Taylor on LinkedIn</a>
+            <li>Email: will.taylor@tcu.edu</li>
+           </ul>
+
+          <p class="footer-text">Want a PDF version of my resume? <a href="assets/docs/resume.pdf">Click Here!</a></p>
+
+         </div>
+      </div>
    </body>
 </html>

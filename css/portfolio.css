@@ -69,9 +69,6 @@ li{
 
 /*Down button in first section */
 #home-section #down-button{
-  position: absolute;
-  left: 50%;
-  right: 50%;
   bottom: 0;
 
  /* Don't highlight text on highlight
@@ -91,6 +88,12 @@ li{
   margin-top: 2em;
   margin-bottom: 1em;
   color: #F2F5EA;
+}
+
+.section-header-dark{
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: black;
 }
 
 
@@ -193,10 +196,7 @@ li{
 /* ------------------ Mobile ------------------ */
 #mobile-section{
   color: #F2F5EA;
-
-  /*Color Gradients*/
-  background: #3581B8; /* For browsers that do not support gradients */
-
+  background: #3581B8;
 }
 
 #snake{
@@ -227,6 +227,69 @@ li{
   background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #F2A359, #EE6C4D); /* Standard syntax */
+}
+
+/* ------------------ Education ------------------ */
+#education-section{
+  background: #3C3C3B; 
+
+}
+
+#tcu-education{
+  color: #F2F5EA;
+
+  background: #E75A7C; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #99B2DD, #E75A7C); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #99B2DD, #E75A7C); /* Standard syntax */
+}
+
+#tcu-image{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+}
+
+/* ------------------ Activities ------------------ */
+#activities-section{
+  background-color: white;
+  color: black;
+}
+
+#computer-science-society{
+  color: #F2F5EA;
+  background: #3581B8; 
+}
+
+#upsilon-pi-epsilon{
+  color: #F2F5EA;
+
+  /*Color Gradients*/
+  background: #EE6C4D; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #F2A359, #EE6C4D); /* Standard syntax */
+}
+
+#marching-band{
+  background-color: #61988E;
+  color: #F2F5EA;
+}
+
+#help-desk{
+  background-color: #3C3C3B;
+  color: #F2F5EA;
+}
+
+#eagle-scout{
+  background-color: #E75A7C;
+  color: #F2F5EA;
+
 }
 
 /* Nav bar stuff */
@@ -267,7 +330,6 @@ li{
 #my-name{
   font-size: 5em;
   opacity: 0;
-  
 }
 
 #my-info{
@@ -276,15 +338,12 @@ li{
 
 /* ----- Footer ----- */
 .footer{
-  background-color: #2C363F;
-  height: 3.5em;
-  text-align: center;
-  position: fixed;
+  background-color: #3C3C3B;
+  color: #F2F5EA;
   bottom: 0;
   width: 100%;
 }
 
 .footer-text{
-  margin-top: 1.2em;
-  color: #E75A7C;
+  margin-top: 1.5em;
 }
