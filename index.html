@@ -32,34 +32,27 @@
       <!-- ******************** Custom JS/CSS ******************** -->
       <!-- My CSS -->
       <link rel="stylesheet" href="css/portfolio.css">
-      <link rel="stylesheet" href="css/effects.css">
       <!-- My JS -->
       <script src="src/portfolio.js"></script>
    </head>
-   <body onload="onBodyLoad();">
-      <nav class="navbar navbar-fixed navbar-fixed-top" id="navbar">
+   <body onload="onBodyLoad();" data-spy="scroll" data-target="#navbar">
+      <nav class="navbar navbar-fixed-top" id="navbar">
          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-               <a class="navbar-brand" id="name-nav">Will Taylor</a>
+               <p class="navbar-brand" id="name-nav">Will Taylor</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-links">
-               <ul class="nav navbar-nav navbar-right">
-                  <ul class="nav navbar-nav">
-                     <li class="active"><a class="nav-link active-link" onclick="scrollToHome();" id="home-nav">Home<span class="sr-only">(current)</span></a></li>
-                     <li><a class="nav-link" onclick="scrollToWork();" id="work-nav">Work Experience</a></li>
-                     <li><a class="nav-link" onclick="scrollToWeb();" id="web-nav">Web</a></li>
-                     <li><a class="nav-link" onclick="scrollToMobile();" id="mobile-nav">Mobile</a></li>
-                     <li><a class="nav-link" onclick="scrollToOtherProjects();"id="other-nav">Other Projects</a></li>
-                     <li><a class="nav-link" onclick="scrollToEducation();" id="education-nav">Education</a></li>
-                     <li><a class="nav-link" onclick="scrollToActivities()" id="activities-nav">Activities</a></li>
-                  </ul>
+            <div class="collapse navbar-collapse navbar-right" id="navbar-links">
+               <ul class="nav navbar-nav">
+                  <li><a class="nav-link" href="#home-section" onclick="scrollToHome();" id="home-nav">Home</a></li>
+                  <li><a class="nav-link" href="#job-section" onclick="scrollToWork();" id="work-nav">Work Experience</a></li>
+                  <li><a class="nav-link" href="#web-section" onclick="scrollToWeb();" id="web-nav">Web</a></li>
+                  <li><a class="nav-link" href="#mobile-section" onclick="scrollToMobile();" id="mobile-nav">Mobile</a></li>
+                  <li><a class="nav-link" href="#other-projects-section" onclick="scrollToOtherProjects();"id="other-nav">Other Projects</a></li>
+                  <li><a class="nav-link" href="#education-section" onclick="scrollToEducation();" id="education-nav">Education</a></li>
+                  <li><a class="nav-link" href="#activities-section" onclick="scrollToActivities()" id="activities-nav">Activities</a></li>
                </ul>
             </div>
-            <!-- /.navbar-collapse -->
          </div>
-         <!-- /.container-fluid -->
       </nav>
       <div id="home-section">
          <div class="container">
@@ -174,7 +167,7 @@
                      <p class="metadata">Summer 2016</p>
                      <p class="portfolio-item-description">A website that utilizes web workers and the HTML canvas API to sort the pixels of a user-provided image.</p>
                      <ul>
-                        <li>Used web workers to perform computationally expensive sorting wihtout freezing the UI.</li>
+                        <li>Utilized web workers to perform computationally expensive sorting wihtout freezing the UI.</li>
                         <li>Implemented the pixel sort using the quick sort algorithm.</li>
                         <li>Utilized Google's Material Design Lite to implement the UI</li>
                      </ul>
@@ -230,7 +223,6 @@
                   </div>
                </div>
             </div>
-
             <!-- Parking GPS App -->
             <div class="row">
                <div class="col-md-3"></div>
@@ -262,17 +254,13 @@
                   </div>
                </div>
             </div>
-
-
          </div>
       </div>
-
       <div id="other-projects-section">
          <div class="container">
             <h1 class="section-header">Other Projects</h1>
-
             <div class="row">
-            <div class="col-md-8">
+               <div class="col-md-8">
                   <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="pixel-sorting-site">
                      <h3>BlueShell</h3>
                      <p class="metadata">Spring 2016</p>
@@ -293,11 +281,9 @@
                      <a href="https://github.com/fire-at-will/Java_Snake">Snake on GitHub</a>
                   </div>
                </div>
-               
             </div>
          </div>
       </div>
-
       <div id="education-section">
          <div class="container">
             <h1 class="section-header">Education</h1>
@@ -312,7 +298,6 @@
             </div>
          </div>
       </div>
-
       <div id="activities-section">
          <div class="container">
             <h1 class="section-header-dark">Activities and Honors</h1>
@@ -327,7 +312,6 @@
                      </ul>
                   </div>
                </div>
-
                <div class="col-md-4">
                   <div class="jumbotron portfolio-jumbotron animated animate-fade-in" id="upsilon-pi-epsilon">
                      <h3>Upsilon Pi Epsilon</h3>
@@ -337,7 +321,6 @@
                      </ul>
                   </div>
                </div>
-
                <div class="col-md-4">
                   <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="marching-band">
                      <h3>TCU Marching Band</h3>
@@ -348,10 +331,8 @@
                   </div>
                </div>
             </div>
-
             <div class="row">
                <div class="col-md-2"></div>
-
                <div class="col-md-4">
                   <div class="jumbotron portfolio-jumbotron animated animate-from-left" id="help-desk">
                      <h3>TCU Computer Science Help Desk</h3>
@@ -361,32 +342,25 @@
                      </ul>
                   </div>
                </div>
-
                <div class="col-md-4">
                   <div class="jumbotron portfolio-jumbotron animated animate-from-right" id="eagle-scout">
                      <h3>Eagle Scout</h3>
                      <p class="metadata">2009</p>
                   </div>
                </div>
-
                <div class="col-md-2"></div>
             </div>
-            
          </div>
       </div>
       <div class="footer">
          <div class="container">
-           
-
-           <h3>Contact:</h3>
-           <ul>
-            <li>Github: <a href="https://github.com/fire-at-will" target="_blank" align="center">Will Taylor on GitHub</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/pub/will-taylor/101/955/5ab" target="_blank" align="center">Will Taylor on LinkedIn</a>
-            <li>Email: will.taylor@tcu.edu</li>
-           </ul>
-
-          <p class="footer-text">Want a PDF version of my resume? <a href="assets/docs/resume.pdf">Click Here!</a></p>
-
+            <h3>Contact:</h3>
+            <ul>
+               <li>Github: <a href="https://github.com/fire-at-will" target="_blank" align="center">Will Taylor on GitHub</a></li>
+               <li>LinkedIn: <a href="https://www.linkedin.com/pub/will-taylor/101/955/5ab" target="_blank" align="center">Will Taylor on LinkedIn</a>
+               <li>Email: will.taylor@tcu.edu</li>
+            </ul>
+            <p class="footer-text">Want a PDF version of my resume? <a href="assets/docs/resume.pdf">Click Here!</a></p>
          </div>
       </div>
    </body>

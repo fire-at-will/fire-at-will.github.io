@@ -15,335 +15,380 @@
 *
 * Isabelline:         #F2F5EA  (White)
 */
-
-
 /* Set font for entire website to Product Sans */
+
 * {
- font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
 }
-
-a:hover{
-  color: #9FB1BC;
-  text-decoration: none;
+a:hover {
+    color: #9FB1BC;
+    text-decoration: none;
 }
-
-li{
-  font-size: 1.2em;
+body {
+    position: relative;
 }
-
-.vertically-center-children{
-  display: flex;
-  align-items: center;
+li {
+    font-size: 1.2em;
 }
-
+.vertically-center-children {
+    display: flex;
+    align-items: center;
+}
 /* ----- Highlight color ----- */
+
 ::selection {
-  background: #9FB1BC; /* WebKit/Blink Browsers */
-  color: white;
+    background: #9FB1BC;
+    /* WebKit/Blink Browsers */
+    
+    color: white;
 }
 ::-moz-selection {
-  background: #9FB1BC; /* Gecko Browsers */
-  color: white;
+    background: #9FB1BC;
+    /* Gecko Browsers */
+    
+    color: white;
 }
+/* ------------------ Home Section ------------------ */
 
-#home-section{
-  width: 100%;
-  top: 0px;
-
-  min-height: 100%; /*Fallback for browsers that don't support vh unit */
-  min-height: 100vh;
-
-  color: #F2F5EA;
-
-  /*Color Gradients*/
-  background: #666A86; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #666A86, #8BE8CB); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #666A86, #8BE8CB); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #666A86, #8BE8CB); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #666A86, #8BE8CB); /* Standard syntax */
+#home-section {
+    width: 100%;
+    top: 0px;
+    min-height: 100%;
+    /*Fallback for browsers that don't support vh unit */
+    
+    min-height: 100vh;
+    color: #F2F5EA;
+    /*Color Gradients*/
+    
+    background: #666A86;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #666A86, #8BE8CB);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #666A86, #8BE8CB);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #666A86, #8BE8CB);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #666A86, #8BE8CB);
+    /* Standard syntax */
 }
+/* ----- Hello World -----*/
 
-#info-container{
-  min-height: 65vh;
+#hello-world {
+    padding-top: 2em;
+    font-size: 2.5em;
+    visibility: hidden;
 }
-
+#my-name {
+    font-size: 5em;
+    opacity: 0;
+}
+#my-info {
+    opacity: 0;
+}
+#info-container {
+    min-height: 65vh;
+}
 /*Down button in first section */
-#home-section #down-button{
-  bottom: 0;
 
- /* Don't highlight text on highlight
+#home-section #down-button {
+    bottom: 0;
+    /* Don't highlight text on highlight
 
     Introduced in IE 10.
     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
   */
-  
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
-.section-header{
-  margin-top: 2em;
-  margin-bottom: 1em;
-  color: #F2F5EA;
+.section-header {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: #F2F5EA;
 }
-
-.section-header-dark{
-  margin-top: 2em;
-  margin-bottom: 1em;
-  color: black;
+.section-header-dark {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: black;
 }
-
-
-/* ------------------ Work Experience ------------------ */
-
+/* ------------------ Job Section ------------------ */
 /* 
  *  Represents the time and location of the job
  */
 
-.metadata{
-  font-size: 1.15em !important;
-  opacity: 0.75;
+.metadata {
+    font-size: 1.15em !important;
+    opacity: 0.75;
 }
-
-.metadata-light{
-  font-size: 1.15em !important;
-  opacity: 0.75;
-  color: black;
+.metadata-light {
+    font-size: 1.15em !important;
+    opacity: 0.75;
+    color: black;
 }
-
-.job-jumbotron{  
-  color: #F2F5EA;
+.job-jumbotron {
+    color: #F2F5EA;
 }
-
-.job-jumbotron > a{
-  font-size: 1.2em;
-  color: #F2F5EA;
+.job-jumbotron > a {
+    font-size: 1.2em;
+    color: #F2F5EA;
 }
-
-#atmos-job{
-  background-color: #61988E;
+#atmos-job {
+    background-color: #61988E;
 }
-
-#cspire-job{
-  /*Color Gradients*/
-  background: #E75A7C; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #99B2DD, #E75A7C); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #99B2DD, #E75A7C); /* Standard syntax */
+#cspire-job {
+    /*Color Gradients*/
+    
+    background: #E75A7C;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #99B2DD, #E75A7C);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #99B2DD, #E75A7C);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #99B2DD, #E75A7C);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #99B2DD, #E75A7C);
+    /* Standard syntax */
 }
-
-#tcu-job{
-  background-color: #6E8898;
+#tcu-job {
+    background-color: #6E8898;
 }
-
 /* ------------------ Web ------------------ */
-.portfolio-jumbotron > a{
-  font-size: 1.2em;
-  color: #F2F5EA;
-}
 
-.portfolio-jumbotron > p > a{
-  /*font-size: 1.2em !important;*/
-  display: inline;
-  color: #F2F5EA;
+.portfolio-jumbotron > a {
+    font-size: 1.2em;
+    color: #F2F5EA;
 }
-
-.portfolio-jumbotron > ul > li > a{
-  /*font-size: 1.2em !important;*/
-  display: inline;
-  color: #F2F5EA;
+.portfolio-jumbotron > p > a {
+    /*font-size: 1.2em !important;*/
+    
+    display: inline;
+    color: #F2F5EA;
 }
-
-.portfolio-item-description{
-  font-size: 1.2em !important;
+.portfolio-jumbotron > ul > li > a {
+    /*font-size: 1.2em !important;*/
+    
+    display: inline;
+    color: #F2F5EA;
 }
-
-#web-section{
-  background-color: #3C3C3B;
-  color: #F2F5EA;
+.portfolio-item-description {
+    font-size: 1.2em !important;
 }
-
-#scheduling-your-horizons-site{
-  /*Color Gradients*/
-  background: #00A9A5; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #06D6A0, #00A9A5); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #06D6A0, #00A9A5); /* Standard syntax */
+#web-section {
+    background-color: #3C3C3B;
+    color: #F2F5EA;
 }
-
-#pixel-sorting-site{
-  background-color: #E75A7C;
+#scheduling-your-horizons-site {
+    /*Color Gradients*/
+    
+    background: #00A9A5;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #06D6A0, #00A9A5);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #06D6A0, #00A9A5);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #06D6A0, #00A9A5);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #06D6A0, #00A9A5);
+    /* Standard syntax */
 }
-
-#tic-tac-toad-site{
-  background-color: #6E8898;
+#pixel-sorting-site {
+    background-color: #E75A7C;
 }
-
-#old-site{
-  /*Color Gradients*/
-  background: #EE6C4D; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #F2A359, #EE6C4D); /* Standard syntax */
+#tic-tac-toad-site {
+    background-color: #6E8898;
 }
-
+#old-site {
+    /*Color Gradients*/
+    
+    background: #EE6C4D;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #F2A359, #EE6C4D);
+    /* Standard syntax */
+}
 /* ------------------ Mobile ------------------ */
-#mobile-section{
-  color: #F2F5EA;
-  background: #3581B8;
-}
 
-#snake{
-  background-color: #3C3C3B;
+#mobile-section {
+    color: #F2F5EA;
+    background: #3581B8;
 }
-
-#goldie-app{
-  background-color: #00A9A5;
-  background: #00A9A5; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #06D6A0, #00A9A5); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #06D6A0, #00A9A5); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #06D6A0, #00A9A5); /* Standard syntax */
+#snake {
+    background-color: #3C3C3B;
 }
-
-#parking-gps-app{
-  background-color: #F2F5EA;
-  color: black !important;
+#goldie-app {
+    background-color: #00A9A5;
+    background: #00A9A5;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #06D6A0, #00A9A5);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #06D6A0, #00A9A5);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #06D6A0, #00A9A5);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #06D6A0, #00A9A5);
+    /* Standard syntax */
 }
-
+#parking-gps-app {
+    background-color: #F2F5EA;
+    color: black !important;
+}
 /* ------------------ Other Projects ------------------ */
-#other-projects-section{
-  color: #F2F5EA;
 
-  /*Color Gradients*/
-  background: #EE6C4D; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #F2A359, #EE6C4D); /* Standard syntax */
+#other-projects-section {
+    color: #F2F5EA;
+    /*Color Gradients*/
+    
+    background: #EE6C4D;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #F2A359, #EE6C4D);
+    /* Standard syntax */
 }
-
 /* ------------------ Education ------------------ */
-#education-section{
-  background: #3C3C3B; 
 
+#education-section {
+    background: #3C3C3B;
 }
-
-#tcu-education{
-  color: #F2F5EA;
-
-  background: #E75A7C; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #99B2DD, #E75A7C); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #99B2DD, #E75A7C); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #99B2DD, #E75A7C); /* Standard syntax */
+#tcu-education {
+    color: #F2F5EA;
+    background: #E75A7C;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #99B2DD, #E75A7C);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #99B2DD, #E75A7C);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #99B2DD, #E75A7C);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #99B2DD, #E75A7C);
+    /* Standard syntax */
 }
-
-#tcu-image{
-  margin-top: 1em;
-  margin-bottom: 1em;
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 1em;
+#tcu-image {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
 }
-
 /* ------------------ Activities ------------------ */
-#activities-section{
-  background-color: white;
-  color: black;
+
+#activities-section {
+    background-color: white;
+    color: black;
 }
-
-#computer-science-society{
-  color: #F2F5EA;
-  background: #3581B8; 
+#computer-science-society {
+    color: #F2F5EA;
+    background: #3581B8;
 }
-
-#upsilon-pi-epsilon{
-  color: #F2F5EA;
-
-  /*Color Gradients*/
-  background: #EE6C4D; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #F2A359, #EE6C4D); /* Standard syntax */
+#upsilon-pi-epsilon {
+    color: #F2F5EA;
+    /*Color Gradients*/
+    
+    background: #EE6C4D;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #F2A359, #EE6C4D);
+    /* Standard syntax */
 }
-
-#marching-band{
-  background-color: #61988E;
-  color: #F2F5EA;
+#marching-band {
+    background-color: #61988E;
+    color: #F2F5EA;
 }
-
-#help-desk{
-  background-color: #3C3C3B;
-  color: #F2F5EA;
+#help-desk {
+    background-color: #3C3C3B;
+    color: #F2F5EA;
 }
-
-#eagle-scout{
-  background-color: #E75A7C;
-  color: #F2F5EA;
-
+#eagle-scout {
+    background-color: #E75A7C;
+    color: #F2F5EA;
 }
+/* ------------------ Nav bar stuff ------------------ */
 
-/* Nav bar stuff */
-.navbar{
-  background-color: rgba(255, 255, 255, 0); /* Clear color*/
+.navbar {
+    background-color: rgba(255, 255, 255, 0);
 }
-
-.navbar-brand{
-  font-size: 3em;
-  color: #F2F5EA;
+.navbar-brand {
+    font-size: 3em;
+    color: #F2F5EA;
 }
-
-.nav-link{
-  font-size: 115%;
-  color: #F2F5EA;
+.nav-link {
+    font-size: 115%;
+    color: #F2F5EA;
 }
-
-.navbar-fixed .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #F2F5EA;
-  background-color: rgba(255, 255, 255, 0); /* Clear color*/
-  text-decoration: underline;
+.nav .active {
+    color: #F2F5EA;
+    text-decoration: underline;
 }
-
-.active-link{
-  color: #F2F5EA;
-  text-decoration: underline;
+.navbar-fixed-top .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #F2F5EA;
+    background-color: rgba(255, 255, 255, 0);
+    /* Clear color */
+    
+    text-decoration: underline;
 }
-
+#name-nav {
+    font-size: 2.5em !important;
+}
 /* ----- End Navbar -----*/
-
-/* ----- Hello World -----*/
-#hello-world{
-  padding-top: 2em;
-  font-size: 2.5em;
-  visibility: hidden;
-}
-
-#my-name{
-  font-size: 5em;
-  opacity: 0;
-}
-
-#my-info{
-  opacity: 0;
-}
-
 /* ----- Footer ----- */
-.footer{
-  background-color: #3C3C3B;
-  color: #F2F5EA;
-  bottom: 0;
-  width: 100%;
-}
 
-.footer-text{
-  margin-top: 1.5em;
+.footer {
+    background-color: #3C3C3B;
+    color: #F2F5EA;
+    bottom: 0;
+    width: 100%;
+}
+.footer-text {
+    margin-top: 1.5em;
 }

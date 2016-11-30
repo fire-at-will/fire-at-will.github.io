@@ -136,7 +136,7 @@ function scrollToOtherProjects(){
         scrollTop: selectors.get('#other-projects-section').offset().top
     }, 1900);
 
-  setTimeout(function(){setNavTransparent()}, 1900);
+  setTimeout(function(){setNavOtherProjects()}, 1900);
 }
 
 function scrollToEducation(){
@@ -169,6 +169,8 @@ function typeHelloWorld(){
 function configureNavBarColorChanging(){
   // Nav bar color change
 
+  let navHeight = selectors.get("#navbar").height();
+
   var scroll_start = 0;
   var startchange = selectors.get('#job-section');
   var jobOffset = startchange.offset();
@@ -185,11 +187,11 @@ function configureNavBarColorChanging(){
   startchange = selectors.get('#education-section');
   var educationOffset = startchange.offset();
 
-  startchange = selectors.get('#education-section');
+  startchange = selectors.get('#activities-section');
   var activitiesOffset = startchange.offset();
 
   selectors.get(document).scroll(function() { 
-    scroll_start = $(this).scrollTop();
+    scroll_start = $(this).scrollTop() + navHeight;
     if(scroll_start > jobOffset.top && scroll_start < webOffset.top) {
       setNavBlack();
     } else if(scroll_start > webOffset.top  && scroll_start < mobileOffset.top){
@@ -197,11 +199,15 @@ function configureNavBarColorChanging(){
     } else if(scroll_start > mobileOffset.top && scroll_start < otherOffset.top){
       setNavMobileColors();
     } else if(scroll_start > otherOffset.top && scroll_start < educationOffset.top){
-      setNavTransparent();
+      setNavOtherProjects();
     } else if(scroll_start > educationOffset.top && scroll_start < activitiesOffset.top){
+      setNavWebColors();
+    }else if(scroll_start > activitiesOffset){
       setNavBlack();
-    } else {
+    } else if(scroll_start < jobOffset.top){
       setNavTransparent();
+    } else {
+      setNavBlack();
     }
 
   });
@@ -224,6 +230,12 @@ function setNavWebColors(){
 
 function setNavMobileColors(){
   selectors.get('#navbar').css('background-color', '#3581B8');
+  changeNavbarTextColors('#F2F5EA');
+}
+
+function setNavOtherProjects(){
+  
+  selectors.get('#navbar').css('background-color', '#F2A359');
   changeNavbarTextColors('#F2F5EA');
 }
 
