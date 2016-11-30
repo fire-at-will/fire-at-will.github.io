@@ -281,6 +281,12 @@ li {
     background: linear-gradient(to bottom right, #F2A359, #EE6C4D);
     /* Standard syntax */
 }
+
+#blue-shell{
+  color: #F2F5EA;
+  background: #3581B8;
+}
+
 /* ------------------ Education ------------------ */
 
 #education-section {
