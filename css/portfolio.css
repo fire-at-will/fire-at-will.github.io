@@ -316,6 +316,7 @@ li {
     margin-left: auto;
     margin-right: auto;
     border-radius: 1em;
+    max-width:100%;
 }
 /* ------------------ Activities ------------------ */
 
