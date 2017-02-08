@@ -4,7 +4,7 @@ var SORT_BY_CIRCLES = false;
 var SORT_INTERVAL = 200;
 var RANDOM_INTERVAL = true;
 
-var sortName = ""
+var sortName = "";
 
 var sortButton      = document.getElementById('sort-button');
 var resetButton     = document.getElementById('reset-button');
@@ -30,11 +30,9 @@ $("#instructionsLink").click(function() {
   $(".mdl-layout").animate({scrollTop: Math.floor($("#instructions").offset().top) - 20}, 1000, "swing");
 });
 
-var canvas = document.createElement('canvas')
-var canvasDiv = document.getElementById('canvasDiv');
+var canvas = document.createElement('canvas');
 
 var image = new Image();
-var img = new Image();
 var imageData;
 var originalImageData;
 
@@ -42,7 +40,7 @@ var ctx = canvas.getContext('2d');
 
 function drawImage(imageData){
   ctx.putImageData(imageData, 0, 0);
-  imageItem.src = canvas.toDataURL()
+  imageItem.src = canvas.toDataURL();
   progressBar.className = "mdl-progress mdl-js-progress"
 }
 
@@ -60,49 +58,47 @@ function handleImage(e){
        img.onload = function() {
 
           // Set width and height
-          canvas.width = img.width
-          canvas.height = img.height
+          canvas.width = img.width;
+          canvas.height = img.height;
 
           // Draw to canvas
-          ctx.drawImage(img, 0, 0)
+          ctx.drawImage(img, 0, 0);
 
           // Put canvas onto img
-          imageItem.src = canvas.toDataURL()
+          imageItem.src = canvas.toDataURL();
 
           // Enable Sort button
-          sortButton.removeAttribute("disabled")
+          sortButton.removeAttribute("disabled");
 
           // Enable download button
-          downloadButton.removeAttribute("disabled")
-          image = img
+          downloadButton.removeAttribute("disabled");
+          image = img;
           // Get image data
           var tempCanvas = document.createElement('canvas');   // Create new canvas in memory. Otherwise we get the downsized image.
-          var context = tempCanvas.getContext('2d');
 
           originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
        };
        img.src = e.target.result;
 
     };
-    imageItem.src = e.target.files[0]
+    imageItem.src = e.target.files[0];
     fileReader.readAsDataURL(e.target.files[0] );
 }
 
 function sortImage(){
-  sortButton.setAttribute('disabled', 'disabled')
+  sortButton.setAttribute('disabled', 'disabled');
   progressBar.MaterialProgress.setProgress(100);
-  progressBar.className = "mdl-progress mdl-js-progress mdl-progress__indeterminate"
+  progressBar.className = "mdl-progress mdl-js-progress mdl-progress__indeterminate";
   getSettingValues();
 
   // Display progress div
   var progressDiv = document.getElementById('progressDiv');
-  progressDiv.style.display = 'block'
+  progressDiv.style.display = 'block';
 
   if (window.Worker) {
 
     // Get image data
     var tempCanvas = document.createElement('canvas');   // Create new canvas in memory. Otherwise we get the downsized image.
-    var context = tempCanvas.getContext('2d');
 
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
@@ -136,9 +132,9 @@ function sortImage(){
 function getSettingValues(){
 
   // Clear values
-  SORT_BY_ROWS      = false
-  SORT_BY_COLUMNS   = false
-  SORT_BY_CIRCLES   = false
+  SORT_BY_ROWS      = false;
+  SORT_BY_COLUMNS   = false;
+  SORT_BY_CIRCLES   = false;
 
   // Get sort by setting
   var selectedVal = "";
@@ -146,20 +142,20 @@ function getSettingValues(){
   if (selected.length > 0) {
       selectedVal = selected.val();
   }
-  selectedVal = parseInt(selectedVal)
+  selectedVal = parseInt(selectedVal);
 
   switch (selectedVal) {
     case 1:
-      SORT_BY_ROWS = true
-      sortName = "row"
+      SORT_BY_ROWS = true;
+      sortName = "row";
       break;
     case 2:
-      SORT_BY_COLUMNS = true
-      sortName = "column"
+      SORT_BY_COLUMNS = true;
+      sortName = "column";
       break;
     case 3:
-      SORT_BY_CIRCLES = true
-      sortName = "circle"
+      SORT_BY_CIRCLES = true;
+      sortName = "circle";
       break;
     default:
       break;
