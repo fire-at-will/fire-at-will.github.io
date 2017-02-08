@@ -6,8 +6,6 @@ function generateMandelbrot(){
 	height 		= window.innerHeight;
 	width		= window.innerWidth;
 
-	console.log(palatteMode);
-
 	// For each row...
 	for(var y = 0; y < height; y++){
 
@@ -69,7 +67,6 @@ function mapToImaginary(y){
 	var range = maxI - minI;
 	return y * (range / height) + minI;
 }
-
 
 function mapScreenPixelsToCoordinatePlane(pixel, maxPixel, planeMin, planeMax){
 	var range = planeMax - planeMin;
