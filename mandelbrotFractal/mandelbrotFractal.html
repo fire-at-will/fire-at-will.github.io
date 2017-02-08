@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Fractal Generator</title>
+
+    <!-- Source Sans Pro font -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    <!-- ******************** Libraries ******************** -->
+    <!-- JQuery -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script>
+    <!-- /Bootstrap -->
+
+    <link rel='stylesheet' href='css/fractal.css'>
+    <script src='js/color.js'></script>
+    <script src='js/canvasIO.js'></script>
+    <script src='js/mandelbrot.js'></script>
+    <script src='js/util.js'></script>
+    <script src='js/controls.js'></script>
+  </head>
+
+  <body onload='onLoad();'>
+    <div id='screen'>
+      <div id='control-panel'>
+        <div id='container'>
+          <h3 id='title'>Mandelbrot Fractal Generator</h3>
+            <p>Click to zoom in, shift + click to zoom out!</p>
+          <div class='collapse' id='settings-panel'>
+
+            <div class='row'>
+              <div class='col-md-6'>
+
+
+                <button type='button' id='palatte-dropdown' class='btn btn-default' data-container='body'
+                  data-html='true'
+                  data-toggle='popover' data-placement='right'
+                  data-content="
+                          <div class='row'>
+                    <div class='col-md-4'>
+                      <h4>Bordered Coloring</h4>
+                      <div id='constcon-options-form' class='form-horizontal btn-group'>
+                         <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Blue' value='Blue'> Blue  <br>
+                         <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Red' value='Red'> Red  <br>
+                         <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Green' value='Green'> Green <br>
+                         <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Purple' value='Purple'> Purple <br>
+                         <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Bob-Marley' value='Bob Marley'> Bob Marley <br>
+                      </div>
+                    </div>
+                    <div class='col-md-4'>
+                      <h4>Smooth Coloring</h4>
+                      <div id='constcon-options-form' class='form-horizontal btn-group'>
+                        <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Smooth-Blue' checked='checked' value='Smooth Blue'> Smooth Blue  <br>
+                        <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Smooth-Red' value='Smooth Red'> Smooth Red  <br>
+                        <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Smooth-Grayscale' value='Smooth Grayscale'> Smooth Grayscale <br>
+                        <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Red-on-Black' value='Red on Black'> Red on Black <br>
+                        <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='White-on-Black' value='White on Black'> White on Black <br>
+                        <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='White-on-Sky-Blue' value='White on Sky Blue'> White on Sky Blue <br>
+                        <input type='radio' name='palatte' onclick='getSelectedPalatteMode();' id='Experimental' value='Experimental'> Experimental  <br>
+                      </div>
+                    </div>
+                    <div class='col-md-4'></div>
+                  </div>
+                  "
+                  data-original-title='Color Palette'>Color Palette
+                </button>
+                <!-- End Color Palatte -->
+              </div>
+
+              <div class='col-md-6'>
+                <div class='form-check'>
+                  <label class='form-check-label'>
+                    <input type='checkbox' id='auto-increment-iteration-toggle' class='form-check-input' checked>
+                    Auto-increment Iteration Count
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class='form-group row btn-row'>
+              <div class='col-md-6'>
+                Iteration Count
+              </div>
+              <div class='col-md-6'>
+                <input class='form-control' type='number' value='100' id='iteration-input'>
+              </div>
+            </div>
+
+            <div class='row btn-row'>
+              <div class='col-md-6'>
+                <button id='redraw-button' type='button' class='btn btn-secondary btn-sm' onClick='redraw();'>Redraw</button>
+              </div>
+            </div>
+
+            <div class='row btn-row'>
+              <div class='col-md-6'>
+                <button id='png-button' type='button' class='btn btn-secondary btn-sm' onClick='showPNG();'>Download PNG</button>
+              </div>
+            </div>
+            
+          </div>
+
+          <a data-toggle='collapse' href='#settings-panel' aria-expanded='false' aria-controls='collapseExample' onclick="settingsToggleClicked()" id="showSettingsToggle">Show Settings</a>
+          <br>
+            <a onclick="scrollToAbout()" id="showAbout">How to Use</a>
+
+        </div>
+      </div>
+      <canvas id='fractalCanvas' class='canvas'></canvas>
+      <div class='container' style='margin-top: 1em;'>
+        
+      </div>
+    </div>
+
+  <div class="container" id="aboutSection">
+      <h3>Controls and Settings</h3>
+
+      <div class="well">
+          <table class="table">
+              <thead>
+              <tr>
+                  <th>Input</th>
+                  <th>Result</code></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>Click</td>
+                  <td>Zooms in on the area that you clicked.</td>
+              </tr>
+              <tr>
+                  <td>Shift + Click</td>
+                  <td>Zooms out from the area you clicked.</td>
+              </tr>
+              <tr>
+                  <td>Color Palette</td>
+                  <td>Select a coloring mode to use.</td>
+              </tr>
+              <tr>
+                  <td>Iteration Count</td>
+                  <td>See below for more information. In general, you want this number to be higher as you zoom
+                  in more. Play around with it and see what happens!</td>
+              </tr>
+              <tr>
+                  <td>Auto-Incerment Iteration Count</td>
+                  <td>Automatically increases the iteration count by 25 each time you zoom in.</td>
+              </tr>
+              <tr>
+                  <td>Redraw</td>
+                  <td>Redraws the current view of the fractal. Useful if your windows gets resized!</td>
+              </tr>
+              <tr>
+                  <td>Download as PNG</td>
+                  <td>Creates a PNG image from the current fractal. Share it with your friends or use it as
+                  a new wallpaper! :)</td>
+              </tr>
+
+              </tbody>
+          </table>
+      </div>
+
+      <p>In order to fully explain how some of these settings work, we first need to take a step back and understand
+          some of the theory behind the Mandelbrot fractal! Here we go...</p>
+
+      <h3>About the Mandelbrot Fractal</h3>
+
+      <p>According to <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">Wikipedia</a>, the Mandelbrot set is
+        defined as "the set of complex numbers c for which the function <code>&#402;<sub><var>c</var></sub>(<var>z</var>) = <var>z</var><sup>2</sup> + <var>c</var></code> does not
+          diverge when iterated from z = 0".
+      </p>
+
+      <p>What does this mean for us? Well, we can map the values of z and c to the standard Cartesian plane,
+      giving us a graph that represents the Mandelbrot fractal. A set of coordinates is said to be contained
+      inside the Mandelbrot set if when you repeatedly apply the function
+          <code>&#402;<sub><var>c</var></sub>(<var>z</var>) = <var>z</var><sup>2</sup> + <var>c</var></code>
+      to the coordinates, the value of the function never grows larger than 2. For example, let's consider
+      the coordinates <code><var>z</var> = 0</code> and <code><var>c</var> = -1</code>:</p>
+
+      <div class="well">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Value of z</code></th>
+                      <th>Value of c</code></th>
+                      <th>&#402;<sub>c</sub>(z) = z<sup>2</sup> + c</th>
+                      <th>New Value of z</th>
+                  </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>0</td>
+                  <td>-1</td>
+                  <td>z = 0 - 1</td>
+                  <td>-1</td>
+              </tr>
+              <tr>
+                  <td>-1</td>
+                  <td>-1</td>
+                  <td>z = 1 - 1</td>
+                  <td>0</td>
+              </tr>
+              <tr>
+                  <td>0</td>
+                  <td>-1</td>
+                  <td>z = 0 - 1</td>
+                  <td>-1</td>
+              </tr>
+              <tr>
+                  <td>-1</td>
+                  <td>-1</td>
+                  <td>z = 1 - 1</td>
+                  <td>0</td>
+              </tr>
+
+              </tbody>
+          </table>
+      </div>
+      <p>As shown above, the value of <code><var>z</var></code> for the coordinates
+          <code><var>z</var> = 0</code> and <code><var>c</var> = -1</code> oscillates between
+          0 and -1, and thus never becomes greater than 2. Therefore, we say that the coordinates
+          <code><var>z</var> = 0</code> and <code><var>c</var> = -1</code> are contained within
+      the Mandelbrot set. Typically, these coordinates are colored black.</p>
+
+      <p>We've talked about what it takes to be inside the Mandelbrot set, but what about the coordinates
+          not contained in the set? These coordinates' z value eventually grow larger than 2. The number
+      of times we run a set of coordinates through the Mandelbrot equation is defined as the number of
+      <i>iterations</i> used. Let's consider the coordinates <code><var>z</var> = 0</code> and <code><var>c</var> = 1</code>:</p>
+
+      <div class="well">
+          <table class="table">
+              <thead>
+              <tr>
+                  <th>Value of z</code></th>
+                  <th>Value of c</code></th>
+                  <th>&#402;<sub>c</sub>(z) = z<sup>2</sup> + c</th>
+                  <th>New Value of z</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>z = 0 + 1</td>
+                  <td>1</td>
+              </tr>
+              <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>z = 1 + 1</td>
+                  <td>2</td>
+              </tr>
+              <tr>
+                  <td>2</td>
+                  <td>1</td>
+                  <td>z = 4 + 1</td>
+                  <td>5</td>
+              </tr>
+              <tr>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>z = 25 + 1</td>
+                  <td>26</td>
+              </tr>
+              <tr>
+                  <td>26</td>
+                  <td>1</td>
+                  <td>z = 676 + 1</td>
+                  <td>677</td>
+              </tr>
+
+              </tbody>
+          </table>
+      </div>
+
+      <p>These coordinates' <code><var>z</var></code> value grows larger than 2 after 3 iterations. So, if we
+      were to consider all 5 of the iterations shown, the coordiates <code><var>z</var> = 0</code> and <code><var>c</var> = 1</code>
+      would not be a part of the Mandelbrot set. However, if we only consider the first 2 iterations, this pair
+      of coordinates' <code><var>z</var></code> value never grows larger than 2, and thus is contained
+      in the Mandelbrot set. It's all about perspective!</p>
+
+      <p>To achieve the impressive colors seen above, we assign a certain color to each set of coordinates
+      that take a similar number of iterations to leave the Mandelbrot set. So, for example, we could color
+      all coordinates in the set black, the coordinates that take between 0 and 5 iterations green,
+          the coordinates that take between 5 and 10 iterations blue, and so on.</p>
+  </div>
+
+    <footer class="footer">
+        <div class="container" style="color: white;">
+            <h4>Website created by <a href="http://willtaylor.io/">Will Taylor</a>.</h4>
+        </div>
+    </footer>
+
+  </body>
+</html>
