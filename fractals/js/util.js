@@ -65,16 +65,28 @@ function onMouseDown(e){
 
 		var zoom = 1 - zoomRate;
 
-		minR = centerX - ((rRange / 2) * zoom);
-		maxR = centerX + ((rRange / 2) * zoom);
+		//minR = centerX - ((rRange / 2) * zoom);
+		minR = safeFloatSub(centerX, ((rRange / 2) * zoom));
+		//maxR = centerX + ((rRange / 2) * zoom);
+		maxR = safeFloatAdd(centerX, ((rRange / 2) * zoom));
 
-		minI = centerY - ((iRange / 2) * zoom);
-		maxI = centerY + ((iRange / 2) * zoom);
+		//minI = centerY - ((iRange / 2) * zoom);
+		minI = safeFloatSub(centerY, ((iRange / 2) * zoom));
+		//maxI = centerY + ((iRange / 2) * zoom);
+		maxI = safeFloatAdd(centerY, ((iRange / 2) * zoom));
 	}
 
 	// Now that we've adjusted our parameters, let's redraw the fractal.
 	generateMandelbrot();
 
+}
+
+function safeFloatAdd(x, y){
+    return (x * 10 + y * 10) / 10;
+}
+
+function safeFloatSub(x, y){
+	return (x * 10 - y * 10) / 10;
 }
 
 
@@ -126,6 +138,7 @@ function adjustToScreenAspectRatio(){
 	minR = -0.4 - rDistance;
 	maxR = -0.4 + rDistance;
 }
+
 
 // Absolute value
 function abs(value){

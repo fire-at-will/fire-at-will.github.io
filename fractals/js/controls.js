@@ -8,6 +8,8 @@ var zoomRate = .60;
 
 var maxIterations = 100;
 
+var numberOfWorkers = 2;
+
 var fullscreen = false;
 var autoIncrementIterations = true;
 var palatteMode = 'smooth';
@@ -19,9 +21,6 @@ var smoothColors = ['Smooth Blue', 'Smooth Red', 'White on Black', 'Smooth Grays
 var height;
 var width; 
 
-// Web worker to execute fractal rendering code
-var fractalWorker;
-
 function onLoad(){
 
 	height 		= window.innerHeight;
@@ -29,12 +28,14 @@ function onLoad(){
 
 	initCanvas(width, height);
 
-	generateSmoothColorPalatte('Smooth Blue');
-
 	$('#iteration-input').change(function(){
 		maxIterations = parseInt($('#iteration-input').val());
 		generateMandelbrot();
 	});
+
+    $('#thread-input').change(function(){
+        numberOfWorkers = parseInt($('#thread-input').val());
+    });
 
 	$('[data-toggle=popover]').popover({ trigger: 'manual' , html: true, animation:false})
 	.on('mouseenter', function () {
@@ -75,7 +76,6 @@ function setCorrectPalatteToggle(){
     document.getElementById("Bob-Marley").checked = false;
 
     var checkedId = pattern.replace(/ /g, '-');
-    console.log(checkedId);
     document.getElementById(checkedId).checked = true;
 
 
@@ -90,32 +90,12 @@ function scrollToAbout(){
 function settingsToggleClicked(){
     // Toggle between show/hide settings text
 	var currentText = document.getElementById("showSettingsToggle").innerHTML;
-	console.log(currentText);
 	if(currentText == "Show Settings"){
         document.getElementById("showSettingsToggle").innerHTML = "Hide Settings";
     } else {
         document.getElementById("showSettingsToggle").innerHTML = "Show Settings";
     }
 }
-
-// function renderFractal() {
-//     if(typeof(Worker) !== 'undefined') {
-//         if(typeof(fractalWorker) == 'undefined') {
-//             fractalWorker = new Worker('js/mandelbrot.js');
-//         }
-//         fractalWorker.onmessage = function(event) {
-//             document.getElementById('result').innerHTML = event.data;
-//         };
-//     } else {
-//         // document.getElementById('result').innerHTML = 'Sorry! No Web Worker support.';\
-//         console.log('No web worker support.');
-//     }
-// }
-//
-// function stopWorker() {
-//     fractalWorker.terminate();
-//     fractalWorker = undefined;
-// }
 
 function getSelectedPalatteMode(){
 
