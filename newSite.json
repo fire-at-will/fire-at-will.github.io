@@ -1,0 +1,47 @@
+{
+    "enableMultiSite": false, 
+    "analyticsKey" : "safetyAndroid.html",
+    "analyticsAppName" : "RulesTTs",
+    "versionControlUrl" : "http://www.bnsf.com/bnsf.was7/versioncontrol/Main?name=randtts&platform=android&version=",
+
+    "refreshrate": 120, 
+    "libDescForMandatedNotif": "(Mandated Notifications)",
+    "enableLibrarySubscriptions" : true,
+    "analyticsBaseUrl" : "http://www.bnsf.com/m/mobiledocs/",
+    "authUrl" : "https://depot.bnsf.com",
+    "StsUrl"  : "https://bnsfrailway.sharepoint.com",
+
+    "excludeLibraries" : [
+        "Style Library",
+        "Site Assets",
+        "Form Templates"
+    ],
+    "fileTypes" : [
+        "txt",
+        "rtf",
+        "doc",
+        "docx",
+        "xls",
+        "xlsx",
+        "ppt",
+        "pptx",
+        "pdf",
+        "png",
+        "jpg",
+        "jpeg",
+        "bmp",
+        "tif",
+        "html",
+        "htm",
+        "aspx"
+    ],
+    "bnsfSPSites": [
+        {
+            "id": "1",
+            "name": "Timetables and Rule Books",
+            "desc": "Timetables, Rule Books, and General Orders.",
+            "refreshrate": "120",
+            "url": "http://depot2.bnsf.com/ops/timetables-and-rulebooks/"
+        }
+    ]
+}
