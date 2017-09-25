@@ -41,7 +41,7 @@
             "name": "Timetables and Rule Books",
             "desc": "Timetables, Rule Books, and General Orders.",
             "refreshrate": "120",
-            "url": "https://depot.bnsf.com/team/timetables-and-rulebooks"
+            "url": "https://depot2.bnsf.com/ops/timetables-and-rulebooks/"
         }
     ]
 }
