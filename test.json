@@ -2,7 +2,7 @@
     "enableMultiSite": false, 
     "analyticsKey" : "safetyAndroid.html",
     "analyticsAppName" : "RulesTTs",
-    "versionControlUrl" : "http://www.bnsf.com/bnsf.was7/versioncontrol/Main?name=randtts&platform=android&version=",
+    "versionControlUrl" : "http://www.bnsf.com/bnsf.was7/versioncontrol/Main?name=randttsT&platform=android&version=",
 
     "refreshrate": 120, 
     "libDescForMandatedNotif": "(Mandated Notifications)",
