@@ -20,6 +20,9 @@
 * {
     font-family: 'Source Sans Pro', Arial, sans-serif;
 }
+a{
+    text-decoration: underline;
+}
 a:hover {
     color: #9FB1BC;
     text-decoration: none;
@@ -75,6 +78,11 @@ li {
     background: linear-gradient(to bottom right, #666A86, #8BE8CB);
     /* Standard syntax */
 }
+
+.nav-link{
+    text-decoration: none !important;
+}
+
 /* ----- Hello World -----*/
 
 #hello-world {
@@ -139,6 +147,28 @@ li {
     font-size: 1.2em;
     color: #F2F5EA;
 }
+
+#bnsf-job {
+    color: #F2F5EA;
+    /*Color Gradients*/
+    
+    background: #EE6C4D;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left top, #F2A359, #EE6C4D);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(bottom right, #F2A359, #EE6C4D);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to bottom right, #F2A359, #EE6C4D);
+    /* Standard syntax */
+    
+}
+
 #atmos-job {
     background-color: #61988E;
 }
