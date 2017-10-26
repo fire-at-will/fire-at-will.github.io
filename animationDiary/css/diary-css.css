@@ -1,0 +1,43 @@
+body{
+    background-color: #FFFCF9;
+    
+}
+
+.center-animation{
+    display: flex;
+    justify-content: center;
+	align-items: center;
+}
+
+#october25-17-background{
+    width: 20em;
+    height: 20em;
+    background-color: #26547c;
+    display: inline-block;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+}
+
+#october25-17{
+    width: 10em;
+    height: 10em;
+    background-color: #ffd166;
+    opacity: 0;
+    /* display: inline-block; */
+    border-radius:100%;
+    
+    
+    animation: october25-17-animation 1.5s infinite alternate linear;
+}
+
+@keyframes october25-17-animation{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
