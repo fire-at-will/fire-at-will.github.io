@@ -12,6 +12,7 @@
     animation: october26-17-animation 3s linear alternate infinite;
 }
 
+
 @keyframes october26-17-animation{
     0% {
         border-radius: 0%;
