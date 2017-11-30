@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Beat Bot</title>
+  <meta name="description" content="Beat Bot">
+  <meta name="author" content="Will Taylor">
+
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+</head>
+
+<body onload="init();">
+
+    Muted:<input type="checkbox" id="mute" value=false onchange="muteToggled();">
+
+    <div>
+        <h2>Beat 1</h2>
+        <p>Active beats:</p>
+        <input type="number" value="6" max="32" min="0" id='activeBeats1' onChange='updateBeatMaps();'>
+
+        <p>Total beats:</p>
+        <input type="number" value="16" max="32" min="0" id='totalBeats1' onChange='updateBeatMaps();'/>
+    </div>
+
+    <div>
+        <h2>Beat 2</h2>
+        <p>Active beats:</p>
+        <input type="number" value="2" max="32" min="0" id='activeBeats2' onChange='updateBeatMaps();'/>
+
+        <p>Total beats:</p>
+        <input type="number" value="16" max="32" min="0" id='totalBeats2' onChange='updateBeatMaps();'/>
+    </div>
+
+    <div>
+        <h2>Beat 3</h2>
+        <p>Active beats:</p>
+        <input type="number" value="4" max="32" min="0" id='activeBeats3' onChange='updateBeatMaps();'/>
+
+        <p>Total beats:</p>
+        <input type="number" value="11" max="32" min="0" id='totalBeats3' onChange='updateBeatMaps();'/>
+    </div>
+
+    <div>
+        <h2>Beat 4</h2>
+        <p>Active beats:</p>
+        <input type="number" value="4" max="32" min="0" id='activeBeats4' onChange='updateBeatMaps();'/>
+
+        <p>Total beats:</p>
+        <input type="number" value="14" max="32" min="0" id='totalBeats4' onChange='updateBeatMaps();'/>
+    </div>
+
+    <div>
+        <h2>Beat 5</h2>
+        <p>Active beats:</p>
+        <input type="number" value="5" max="32" min="0" id='activeBeats5' onChange='updateBeatMaps();'/>
+
+        <p>Total beats:</p>
+        <input type="number" value="13" max="32" min="0" id='totalBeats5' onChange='updateBeatMaps();'/>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/soundController.js"></script>
+    <script src="js/beatGenerator.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+</html>
